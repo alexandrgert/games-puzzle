@@ -21,9 +21,15 @@ android {
             val ks = rootProject.file("release.keystore")
             if (ks.exists()) {
                 storeFile = ks
-                storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: ""
-                keyAlias = System.getenv("ANDROID_KEY_ALIAS") ?: ""
-                keyPassword = System.getenv("ANDROID_KEY_PASSWORD") ?: ""
+                storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+                    ?.takeIf { it.isNotBlank() }
+                    ?: throw GradleException("missing Android signing env")
+                keyAlias = System.getenv("ANDROID_KEY_ALIAS")
+                    ?.takeIf { it.isNotBlank() }
+                    ?: throw GradleException("missing Android signing env")
+                keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+                    ?.takeIf { it.isNotBlank() }
+                    ?: throw GradleException("missing Android signing env")
             }
         }
     }
