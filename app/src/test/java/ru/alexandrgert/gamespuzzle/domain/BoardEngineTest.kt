@@ -1,6 +1,7 @@
 package ru.alexandrgert.gamespuzzle.domain
 
 import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertThrows
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -29,6 +30,35 @@ class BoardEngineTest {
         val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(4, 4))
         assertTrue(result is MoveResult.Reverted)
         assertArrayEquals(start.tiles, (result as MoveResult.Reverted).board.tiles)
+    }
+
+    @Test
+    fun lockedTileNotAtHomeThrows() {
+        val locked = BooleanArray(25).also { it[0] = true }
+        val tiles = intArrayOf(
+            1, 0, 2, 3, 4,
+            5, 6, 7, 8, 9,
+            10, 11, 12, 13, 14,
+            15, 16, 17, 18, 19,
+            20, 21, 22, 23, 24,
+        )
+        assertThrows(IllegalArgumentException::class.java) {
+            Board(GridSize.FIVE, tiles, locked)
+        }
+    }
+
+    @Test
+    fun duplicateTileIdsThrow() {
+        val tiles = intArrayOf(
+            0, 0, 2, 3, 4,
+            5, 6, 7, 8, 9,
+            10, 11, 12, 13, 14,
+            15, 16, 17, 18, 19,
+            20, 21, 22, 23, 24,
+        )
+        assertThrows(IllegalArgumentException::class.java) {
+            Board(GridSize.FIVE, tiles, BooleanArray(25))
+        }
     }
 
     @Test
