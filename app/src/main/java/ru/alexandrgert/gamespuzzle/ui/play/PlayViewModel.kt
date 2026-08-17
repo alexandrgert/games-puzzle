@@ -22,6 +22,8 @@ data class PlayState(
     val won: Boolean,
     val peek: Boolean,
     val lastReverted: Boolean,
+    val revertedA: Cell?,
+    val revertedB: Cell?,
     val recordSavePending: Boolean,
     val recordUpdate: RecordUpdate?,
 )
@@ -45,6 +47,11 @@ class PlayViewModel(
 
     fun onCell(cell: Cell) {
         session?.tap(cell)
+        publish()
+    }
+
+    fun onSwap(a: Cell, b: Cell) {
+        session?.swap(a, b)
         publish()
     }
 
@@ -74,6 +81,8 @@ class PlayViewModel(
             won = won,
             peek = current.peek,
             lastReverted = current.lastReverted,
+            revertedA = current.revertedA,
+            revertedB = current.revertedB,
             recordSavePending = previous?.recordSavePending ?: false,
             recordUpdate = previous?.recordUpdate,
         )

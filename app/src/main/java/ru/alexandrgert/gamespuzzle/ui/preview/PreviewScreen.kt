@@ -6,7 +6,8 @@ import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +29,7 @@ import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.domain.CatalogPuzzle
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun PreviewScreen(
     puzzle: CatalogPuzzle?,
@@ -67,20 +69,18 @@ fun PreviewScreen(
                 .fillMaxWidth()
                 .aspectRatio(1f),
         )
-        Row(
+        FlowRow(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            FilterChip(
-                selected = gridSize == GridSize.FIVE,
-                onClick = { gridSize = GridSize.FIVE },
-                label = { Text(stringResource(R.string.grid_5)) },
-            )
-            FilterChip(
-                selected = gridSize == GridSize.SIX,
-                onClick = { gridSize = GridSize.SIX },
-                label = { Text(stringResource(R.string.grid_6)) },
-            )
+            GridSize.entries.forEach { sizeOption ->
+                FilterChip(
+                    selected = gridSize == sizeOption,
+                    onClick = { gridSize = sizeOption },
+                    label = { Text(stringResource(R.string.grid_size, sizeOption.n)) },
+                )
+            }
         }
         Button(
             onClick = { onStart(gridSize) },

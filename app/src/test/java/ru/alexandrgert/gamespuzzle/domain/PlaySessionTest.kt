@@ -49,6 +49,40 @@ class PlaySessionTest {
     }
 
     @Test
+    fun dragSwapAppliesJoinWithoutPriorSelection() {
+        val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(2L))
+        val (first, second) = findPair(session.board, applied = true)
+
+        val result = session.swap(first, second)
+
+        assertTrue(result is MoveResult.Applied)
+        assertNull(session.selected)
+        assertEquals(1, session.moves)
+        assertFalse(session.lastReverted)
+    }
+
+    @Test
+    fun revertedSwapShowsAttemptedTilesUntilCleared() {
+        val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(3L))
+        val original = session.board
+        val (first, second) = findPair(original, applied = false)
+        val firstTile = original.tileAt(first)
+        val secondTile = original.tileAt(second)
+
+        session.swap(first, second)
+
+        assertTrue(session.lastReverted)
+        assertSame(original, session.board)
+        assertEquals(secondTile, session.tileShownAt(first))
+        assertEquals(firstTile, session.tileShownAt(second))
+
+        session.clearLastReverted()
+
+        assertEquals(firstTile, session.tileShownAt(first))
+        assertEquals(secondTile, session.tileShownAt(second))
+    }
+
+    @Test
     fun appliedSwapDoesNotCountWhenStatsDisabled() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = false, Random(4L))
         val (first, second) = findPair(session.board, applied = true)

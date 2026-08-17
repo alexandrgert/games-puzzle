@@ -192,4 +192,13 @@ class BoardEngineTest {
             assertTrue(!BoardEngine.isWin(b))
         }
     }
+
+    @Test
+    fun shuffleWorksForTwelveByTwelve() {
+        val b = BoardEngine.shuffle(GridSize.TWELVE, java.util.Random(2L))
+        assertTrue(b.tiles.size == 144)
+        assertTrue(b.tiles.toList() != (0 until 144).toList())
+        assertTrue(b.locked.all { !it })
+        assertTrue(BoardEngine.hasResultativeSwap(b))
+    }
 }

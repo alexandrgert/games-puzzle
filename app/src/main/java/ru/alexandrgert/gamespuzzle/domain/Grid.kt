@@ -3,6 +3,9 @@ package ru.alexandrgert.gamespuzzle.domain
 enum class GridSize(val n: Int) {
     FIVE(5),
     SIX(6),
+    EIGHT(8),
+    TEN(10),
+    TWELVE(12),
 }
 
 data class Cell(val row: Int, val col: Int) {

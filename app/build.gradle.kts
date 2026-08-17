@@ -12,31 +12,25 @@ android {
         applicationId = "ru.alexandrgert.gamespuzzle"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         create("release") {
             val ks = rootProject.file("release.keystore")
-            if (ks.exists()) {
+            if (ks.exists() && hasReleaseSigningEnv()) {
                 storeFile = ks
                 storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
-                    ?.takeIf { it.isNotBlank() }
-                    ?: throw GradleException("missing Android signing env")
                 keyAlias = System.getenv("ANDROID_KEY_ALIAS")
-                    ?.takeIf { it.isNotBlank() }
-                    ?: throw GradleException("missing Android signing env")
                 keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
-                    ?.takeIf { it.isNotBlank() }
-                    ?: throw GradleException("missing Android signing env")
             }
         }
     }
     buildTypes {
         release {
             isMinifyEnabled = false
-            if (rootProject.file("release.keystore").exists()) {
+            if (rootProject.file("release.keystore").exists() && hasReleaseSigningEnv()) {
                 signingConfig = signingConfigs.getByName("release")
             }
             proguardFiles(
@@ -72,4 +66,19 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
+}
+
+tasks.matching { it.name.contains("assembleRelease", ignoreCase = true) }.configureEach {
+    doFirst {
+        if (!rootProject.file("release.keystore").exists() || !hasReleaseSigningEnv()) {
+            throw GradleException("missing Android signing env")
+        }
+    }
+}
+
+fun hasReleaseSigningEnv(): Boolean {
+    val password = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+    val alias = System.getenv("ANDROID_KEY_ALIAS")
+    val keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+    return !password.isNullOrBlank() && !alias.isNullOrBlank() && !keyPassword.isNullOrBlank()
 }

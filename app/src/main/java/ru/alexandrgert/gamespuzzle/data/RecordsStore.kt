@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
 import ru.alexandrgert.gamespuzzle.domain.BestRecord
+import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.domain.mergeRecord
 
 private val Context.recordsDataStore by preferencesDataStore(name = "records")
@@ -49,8 +50,9 @@ class RecordsStore(private val context: Context) : RecordSaver {
 
     suspend fun delete(puzzleId: String) {
         context.recordsDataStore.edit { preferences ->
-            preferences.remove(recordKey(puzzleId, 5))
-            preferences.remove(recordKey(puzzleId, 6))
+            GridSize.entries.forEach { size ->
+                preferences.remove(recordKey(puzzleId, size.n))
+            }
         }
     }
 

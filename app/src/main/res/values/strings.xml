@@ -12,8 +12,7 @@
     <string name="action_download">Скачать</string>
     <string name="action_add_photo">Добавить фотографию</string>
     <string name="action_delete">Удалить</string>
-    <string name="grid_5">5 × 5</string>
-    <string name="grid_6">6 × 6</string>
+    <string name="grid_size">%1$d × %1$d</string>
     <string name="filter_all">Все</string>
     <string name="category_nature">Природа</string>
     <string name="category_animals">Животные</string>
