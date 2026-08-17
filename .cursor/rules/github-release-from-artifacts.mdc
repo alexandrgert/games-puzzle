@@ -1,0 +1,51 @@
+---
+description: >-
+  Публикация GitHub Release из CI-артефактов: дождаться green run, скачать,
+  gh release create с notes-file. Не коммитить без запроса; не force-push main.
+globs: docs/github-release*.md,docs/release-notes*.md,.github/workflows/**
+alwaysApply: false
+---
+
+# GitHub Release from CI artifacts
+
+## Preconditions
+
+- Код в `main` (или release branch) с выровненными версиями.
+- Workflow CI зелёный на целевом commit.
+- Файлы `docs/release-notes-vX.Y.Z.md` и черновик `docs/github-release-vX.Y.Z.md` в репозитории.
+
+## Шаги агента
+
+1. `gh run list --branch main --limit 5` — найти успешный run для commit.
+2. `gh run download <id> --dir <staging>/` — все job artifacts (linux-packages, apk, exe, macos).
+3. Проверить наличие ожидаемых файлов `app-name-X.Y.Z-*`.
+4. `gh release create vX.Y.Z --title "..." --notes-file docs/github-release-vX.Y.Z.md --target main <files...>`
+5. `gh release view vX.Y.Z` — список assets.
+
+## Текст релиза
+
+- Краткое описание в `github-release-v*.md` на странице Release.
+- Подробности (миграция, breaking changes, signing) — в `release-notes-v*.md` со ссылкой.
+
+## Ошибки
+
+| Ошибка | Действие |
+|--------|----------|
+| `target_commitish is invalid` | использовать `--target main` или полный SHA |
+| missing artifact | проверить failed/skipped job; не публиковать неполный набор без предупреждения |
+| version mismatch в именах файлов | stop — вернуться к `multi-platform-version-sync` |
+
+## Не делать
+
+- Force-push `main` для «починки» релиза.
+- Коммит/push без явного запроса пользователя (см. user rules).
+- Вкладывать keystore, `.env`, секреты в assets.
+
+## Обновление документации продукта
+
+После релиза обновить в **продуктовом** репозитории (не обязательно в ag-agent-catalog):
+
+- README / user guide — текущая версия и таблица артеfactов;
+- `system-requirements` или аналог.
+
+Это отдельный commit в product repo по запросу.

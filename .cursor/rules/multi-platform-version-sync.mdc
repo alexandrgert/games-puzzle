@@ -1,0 +1,45 @@
+---
+description: >-
+  Синхронизация versionName/versionCode (Android) и других платформенных полей с
+  единым источником semver перед push и CI. Обязательная проверка check_version_sync.
+globs: pyproject.toml,android/**/build.gradle*,package.json,VERSION,scripts/check_version*
+alwaysApply: false
+---
+
+# Multi-platform version sync
+
+## Источник версии
+
+Один **канонический** semver в репозитории (например `[project].version` в `pyproject.toml`, `version` в `package.json`, файл `VERSION`).
+
+Все артефакты релиза (`*.deb`, `*.apk`, `*.exe`, …) должны носить **тот же** номер.
+
+## Проблема рассинхрона
+
+CI job мобильной сборки часто читает версию **только** из native-конфига (Gradle, Xcode), а desktop — из Python/Node. Если не выровнять перед push:
+
+- GitHub Release содержит `.deb` 1.2.0 и `.apk` 1.1.0;
+- пользователи и «проверка обновлений» видят хаос.
+
+## Чеклист перед push (агент и разработчик)
+
+1. Прочитать версию из канонического файла.
+2. Обновить platform-specific поля:
+   - Android: `versionName = "X.Y.Z"`, `versionCode` — монотонно растёт (часто `XYZ` как целое без точек).
+   - iOS: `CFBundleShortVersionString` / build number — по политике проекта.
+   - Windows/macOS — resource version, если есть отдельные файлы.
+3. Запустить скрипт проверки (`scripts/check_version_sync.py` или аналог) → exit 0, вывод `OK`.
+4. Commit выравнивания **до** push, если менялась версия продукта.
+
+## CI
+
+Шаг `Verify version sync` **перед** mobile build job. Падение → не собирать APK с устаревшим номером.
+
+## Локальная сборка vs push
+
+После локальной сборки primary-формата канонический файл может быть **новее** native-конфига — допустимо **до** подготовки push. Перед push — всегда выровнять.
+
+## Агент
+
+- Перед **любым** push, если в релизе участвует mobile: sync + скрипт.
+- Не публиковать Release вручную, пока артефакты CI не с одним semver.
