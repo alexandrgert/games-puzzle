@@ -1,0 +1,18 @@
+{
+  "tag_name": "v1.2.3",
+  "body": "Fixes and improvements.",
+  "assets": [
+    {
+      "name": "checksums.txt",
+      "browser_download_url": "https://example.com/downloads/checksums.txt"
+    },
+    {
+      "name": "games-puzzle-v1.2.3.apk",
+      "browser_download_url": "https://example.com/downloads/games-puzzle-v1.2.3.apk"
+    },
+    {
+      "name": "games-puzzle-v1.2.3-universal.apk",
+      "browser_download_url": "https://example.com/downloads/games-puzzle-v1.2.3-universal.apk"
+    }
+  ]
+}
