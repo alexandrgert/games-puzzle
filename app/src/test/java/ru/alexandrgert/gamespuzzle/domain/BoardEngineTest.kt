@@ -149,4 +149,24 @@ class BoardEngineTest {
         val result = BoardEngine.trySwap(start, Cell(1, 0), Cell(0, 0))
         assertTrue(result is MoveResult.Reverted)
     }
+
+    @Test
+    fun identityIsWinOnlyWhenLocked() {
+        val unlocked = BoardEngine.identityUnlocked(GridSize.FIVE)
+        assertTrue(!BoardEngine.isWin(unlocked))
+        val locked = Board(unlocked.size, unlocked.tiles, BooleanArray(25) { true })
+        assertTrue(BoardEngine.isWin(locked))
+    }
+
+    @Test
+    fun shuffleNeverIdentityAndHasAMove() {
+        val r = java.util.Random(1L)
+        repeat(20) {
+            val b = BoardEngine.shuffle(GridSize.FIVE, r)
+            assertTrue(b.tiles.toList() != (0 until 25).toList())
+            assertTrue(b.locked.all { !it })
+            assertTrue(BoardEngine.hasResultativeSwap(b))
+            assertTrue(!BoardEngine.isWin(b))
+        }
+    }
 }

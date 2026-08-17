@@ -16,6 +16,49 @@ object BoardEngine {
         return Board(size, IntArray(count) { it }, BooleanArray(count))
     }
 
+    fun isWin(board: Board): Boolean {
+        for (i in board.tiles.indices) {
+            if (board.tiles[i] != i || !board.locked[i]) return false
+        }
+        return true
+    }
+
+    fun hasResultativeSwap(board: Board): Boolean {
+        val n = board.n
+        val cells = mutableListOf<Cell>()
+        for (r in 0 until n) {
+            for (c in 0 until n) {
+                val cell = Cell(r, c)
+                if (!board.isLockedCell(cell)) cells.add(cell)
+            }
+        }
+        for (i in cells.indices) {
+            for (j in i + 1 until cells.size) {
+                if (trySwap(board, cells[i], cells[j]) is MoveResult.Applied) return true
+            }
+        }
+        return false
+    }
+
+    fun shuffle(size: GridSize, random: java.util.Random): Board {
+        val n = size.n
+        val count = n * n
+        repeat(500) {
+            val tiles = IntArray(count) { it }
+            for (i in count - 1 downTo 1) {
+                val j = random.nextInt(i + 1)
+                val tmp = tiles[i]
+                tiles[i] = tiles[j]
+                tiles[j] = tmp
+            }
+            if (tiles.toList() != (0 until count).toList()) {
+                val board = Board(size, tiles, BooleanArray(count))
+                if (hasResultativeSwap(board)) return board
+            }
+        }
+        error("shuffle failed to find a playable permutation")
+    }
+
     fun trySwap(board: Board, a: Cell, b: Cell): MoveResult {
         val n = board.n
         if (a == b || !a.inBounds(n) || !b.inBounds(n)) return MoveResult.Reverted(board)
