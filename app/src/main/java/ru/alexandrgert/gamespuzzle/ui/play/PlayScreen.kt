@@ -3,6 +3,7 @@ package ru.alexandrgert.gamespuzzle.ui.play
 import android.graphics.Bitmap
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import java.util.Random
 import kotlin.math.min
+import kotlinx.coroutines.delay
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
@@ -47,15 +49,26 @@ fun PlayScreen(
         PlayViewModel(statsEnabled)
     }
     var confirmAbandon by remember { mutableStateOf(false) }
+    var revertedFlash by remember { mutableStateOf(false) }
+    val state = playViewModel.state
 
-    LaunchedEffect(size) {
-        playViewModel.start(size, Random())
+    LaunchedEffect(size, playViewModel) {
+        if (playViewModel.state == null) {
+            playViewModel.start(size, Random())
+        }
+    }
+    LaunchedEffect(state?.lastReverted) {
+        if (state?.lastReverted == true) {
+            revertedFlash = true
+            delay(180)
+            revertedFlash = false
+            playViewModel.clearLastReverted()
+        }
     }
     BackHandler {
         confirmAbandon = true
     }
 
-    val state = playViewModel.state
     if (sourceBitmap == null || state == null) {
         Text(
             text = stringResource(R.string.play_image_not_found),
@@ -108,6 +121,13 @@ fun PlayScreen(
                         contentDescription = stringResource(R.string.puzzle_image),
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize(),
+                    )
+                }
+                if (revertedFlash) {
+                    Box(
+                        Modifier
+                            .matchParentSize()
+                            .background(MaterialTheme.colorScheme.error.copy(alpha = 0.32f)),
                     )
                 }
             }

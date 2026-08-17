@@ -29,6 +29,7 @@ class PlayViewModel(
     private var session: PlaySession? = null
 
     fun start(size: GridSize, random: Random) {
+        if (session != null) return
         session = PlaySession(size, statsEnabled, random)
         publish()
     }
@@ -40,6 +41,11 @@ class PlayViewModel(
 
     fun togglePeek() {
         session?.togglePeek()
+        publish()
+    }
+
+    fun clearLastReverted() {
+        session?.clearLastReverted()
         publish()
     }
 

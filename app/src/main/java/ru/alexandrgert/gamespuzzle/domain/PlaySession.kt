@@ -52,5 +52,9 @@ class PlaySession(
         peek = !peek
     }
 
+    fun clearLastReverted() {
+        lastReverted = false
+    }
+
     fun isWin(): Boolean = BoardEngine.isWin(board)
 }
