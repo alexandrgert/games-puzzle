@@ -70,4 +70,34 @@ class BoardEngineTest {
         val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(0, 1))
         assertTrue(result is MoveResult.Reverted)
     }
+
+    @Test
+    fun joiningPairAwayFromHomeSnapsAndLocks() {
+        val tiles = IntArray(25) { it }
+        tiles[20] = 0
+        tiles[16] = 1
+        tiles[0] = 20
+        tiles[1] = 16
+        val start = Board(GridSize.FIVE, tiles, BooleanArray(25))
+
+        val result = BoardEngine.trySwap(start, Cell(3, 1), Cell(4, 1))
+
+        assertTrue(result is MoveResult.Applied)
+        val board = (result as MoveResult.Applied).board
+        assertTrue(board.tiles[0] == 0)
+        assertTrue(board.tiles[1] == 1)
+        assertTrue(board.locked[0])
+        assertTrue(board.locked[1])
+        assertTrue(board.tiles[20] == 20)
+        assertTrue(board.tiles[21] == 16)
+    }
+
+    @Test
+    fun joiningPairWrongOrderDoesNotJoin() {
+        val start = BoardEngine.identityUnlocked(GridSize.FIVE)
+
+        val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(0, 2))
+
+        assertTrue(result is MoveResult.Reverted)
+    }
 }
