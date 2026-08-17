@@ -23,3 +23,10 @@ android/build/
 .env
 *.keystore
 .worktrees/
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+release.keystore
