@@ -1,0 +1,26 @@
+---
+description: >-
+  After every release APK/CI/GitHub Release, verify notes, product docs, and
+  system requirements against the shipped build before calling the release done.
+alwaysApply: true
+---
+
+# Post-release notes and requirements audit
+
+После **любой** релизной сборки (`assembleRelease` в CI, артефакт APK, `gh release create` / правка релиза) **нельзя** считать работу законченной, пока не сверены notes, документация и системные требования.
+
+## Сверить с фактом сборки
+
+1. `VERSION`, `versionName`, `versionCode`, имя APK, тег `vX.Y.Z` — один semver (`scripts/check_version_sync.py`).
+2. Тело GitHub Release = `docs/github-release-vX.Y.Z.md` (или обновить Release через `gh release edit`).
+3. README и notes не обещают функций, которых нет в этом APK, и не молчат про то, что пользователь уже видит (сетка, каталог, импорт, обновления).
+4. Системные требования совпадают с кодом: `minSdk` → версия Android, ориентация из манифеста, нужны ли интернет / «неизвестные источники».
+
+## Если расходится
+
+Поправить docs/notes (и опубликованный Release, если он уже есть). Не оставлять «поправим потом».
+
+## Не делать
+
+- Заявлять релиз готовым только по зелёному CI.
+- Копировать системные требования из старого релиза без сверки с `minSdk` / манифестом.

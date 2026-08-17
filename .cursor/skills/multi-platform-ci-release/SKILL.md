@@ -46,6 +46,7 @@ Local release builds **may** auto-bump patch when code changed — product polic
 3. Verify file list (`*-VERSION-*` naming).
 4. `gh release create vX.Y.Z --notes-file docs/github-release-vX.Y.Z.md --target main <files...>`
 5. Confirm assets on release page.
+6. **Required:** audit release notes, README/docs, and system requirements against the shipped APK (`minSdk`, orientation, permissions, version). Fix stale copy and `gh release edit` if the published body drifted. See rule `post-release-docs-audit`.
 
 Draft release notes in repo (`docs/github-release-v*.md`) before publishing; link to full `release-notes-v*.md`.
 
