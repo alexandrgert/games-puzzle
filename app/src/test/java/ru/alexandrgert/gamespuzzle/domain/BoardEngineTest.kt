@@ -74,13 +74,13 @@ class BoardEngineTest {
     @Test
     fun joiningPairAwayFromHomeSnapsAndLocks() {
         val tiles = IntArray(25) { it }
-        tiles[20] = 0
-        tiles[16] = 1
+        tiles[20] = 1
+        tiles[21] = 0
         tiles[0] = 20
-        tiles[1] = 16
+        tiles[1] = 21
         val start = Board(GridSize.FIVE, tiles, BooleanArray(25))
 
-        val result = BoardEngine.trySwap(start, Cell(3, 1), Cell(4, 1))
+        val result = BoardEngine.trySwap(start, Cell(4, 0), Cell(4, 1))
 
         assertTrue(result is MoveResult.Applied)
         val board = (result as MoveResult.Applied).board
@@ -89,7 +89,29 @@ class BoardEngineTest {
         assertTrue(board.locked[0])
         assertTrue(board.locked[1])
         assertTrue(board.tiles[20] == 20)
-        assertTrue(board.tiles[21] == 16)
+        assertTrue(board.tiles[21] == 21)
+    }
+
+    @Test
+    fun swappedCorrectNeighboursAtHomeAwayFromLockedGroupUseJoinSnap() {
+        val tiles = IntArray(25) { it }
+        val locked = BooleanArray(25).also {
+            it[0] = true
+            it[1] = true
+        }
+        tiles[6] = 7
+        tiles[7] = 6
+        val start = Board(GridSize.FIVE, tiles, locked)
+
+        val result = BoardEngine.trySwap(start, Cell(1, 1), Cell(1, 2))
+
+        assertTrue(result is MoveResult.Applied)
+        val board = (result as MoveResult.Applied).board
+        assertTrue(board.tiles[6] == 6)
+        assertTrue(board.tiles[7] == 7)
+        assertTrue(board.locked[6])
+        assertTrue(board.locked[7])
+        assertTrue(board.locked[0] && board.locked[1])
     }
 
     @Test

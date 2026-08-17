@@ -28,28 +28,14 @@ object BoardEngine {
         swappedTiles[ib] = board.tiles[ia]
         val swapped = Board(board.size, swappedTiles, board.locked)
 
-        for (cell in listOf(a, b)) {
-            for (direction in orthogonalDirections) {
-                val neighbor = Cell(cell.row + direction.row, cell.col + direction.col)
-                if (!neighbor.inBounds(n)) continue
-
-                val tile = swapped.tileAt(cell)
-                val neighborTile = swapped.tileAt(neighbor)
-                if (swapped.isLockedTile(tile) || swapped.isLockedTile(neighborTile)) continue
-                if (!isCorrectJoin(n, cell, tile, neighbor, neighborTile)) continue
-                if (swapped.tiles[tile] == tile && swapped.tiles[neighborTile] == neighborTile) continue
-                if (lockIfHomeAgainstLocked(swapped, tile) || lockIfHomeAgainstLocked(swapped, neighborTile)) {
-                    continue
-                }
-
-                val snapped = snapPairToHome(swapped, tile, neighborTile)
-                    ?: return MoveResult.Reverted(board)
-                return MoveResult.Applied(snapped)
-            }
-        }
-
         val tileA = swapped.tileAt(a)
         val tileB = swapped.tileAt(b)
+        if (isCorrectJoin(n, a, tileA, b, tileB)) {
+            val snapped = snapPairToHome(swapped, tileA, tileB)
+                ?: return MoveResult.Reverted(board)
+            return MoveResult.Applied(snapped)
+        }
+
         val nextLocked = swapped.locked.copyOf()
         var any = false
         for (t in listOf(tileA, tileB)) {
