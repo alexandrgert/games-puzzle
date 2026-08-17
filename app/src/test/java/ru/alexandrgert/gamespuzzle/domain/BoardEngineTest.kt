@@ -1,0 +1,43 @@
+package ru.alexandrgert.gamespuzzle.domain
+
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class BoardEngineTest {
+    @Test
+    fun identityHasNoEmptyAndAllUnlocked() {
+        val b = BoardEngine.identityUnlocked(GridSize.FIVE)
+        assertTrue(b.tiles.size == 25)
+        assertTrue(b.tiles.toList() == (0 until 25).toList())
+        assertTrue(b.locked.all { !it })
+    }
+
+    @Test
+    fun swapNonJoiningTilesReverts() {
+        val start = Board(
+            GridSize.FIVE,
+            intArrayOf(
+                1, 0, 2, 3, 4,
+                5, 6, 7, 8, 9,
+                10, 11, 12, 13, 14,
+                15, 16, 17, 18, 19,
+                20, 21, 22, 23, 24,
+            ),
+            BooleanArray(25),
+        )
+        val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(4, 4))
+        assertTrue(result is MoveResult.Reverted)
+        assertArrayEquals(start.tiles, (result as MoveResult.Reverted).board.tiles)
+    }
+
+    @Test
+    fun swapLockedCellReverts() {
+        val locked = BooleanArray(25).also { it[0] = true }
+        val start = BoardEngine.identityUnlocked(GridSize.FIVE).let {
+            Board(it.size, it.tiles, locked)
+        }
+        val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(0, 1))
+        assertTrue(result is MoveResult.Reverted)
+    }
+}
