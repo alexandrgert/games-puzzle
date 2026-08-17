@@ -93,6 +93,23 @@ class BoardEngineTest {
     }
 
     @Test
+    fun joiningPairCreatedByThirdTileSwapSnapsAndLocks() {
+        val tiles = IntArray(25) { it }
+        // (4,0)=slot 20 has tile 0; (3,1)=slot 16 has tile 1; (4,1)=slot 21 has tile 21
+        tiles[20] = 0
+        tiles[16] = 1
+        tiles[0] = 20
+        tiles[1] = 16
+        val start = Board(GridSize.FIVE, tiles, BooleanArray(25))
+        val result = BoardEngine.trySwap(start, Cell(3, 1), Cell(4, 1))
+        assertTrue(result is MoveResult.Applied)
+        val board = (result as MoveResult.Applied).board
+        assertTrue(board.tiles[0] == 0 && board.tiles[1] == 1)
+        assertTrue(board.locked[0] && board.locked[1])
+        assertTrue(!board.locked[21])
+    }
+
+    @Test
     fun swappedCorrectNeighboursAtHomeAwayFromLockedGroupUseJoinSnap() {
         val tiles = IntArray(25) { it }
         val locked = BooleanArray(25).also {
@@ -130,8 +147,13 @@ class BoardEngineTest {
             it[0] = true
             it[1] = true
         }
+        // Keep unlocked home-neighbours of both swapped cells from forming a join,
+        // so this move is attach-to-locked (case 3), not a neighbour-pair snap.
         tiles[24] = 2
-        tiles[2] = 24
+        tiles[2] = 12
+        tiles[12] = 24
+        tiles[3] = 7
+        tiles[7] = 3
         val start = Board(GridSize.FIVE, tiles, locked)
         val result = BoardEngine.trySwap(start, Cell(4, 4), Cell(0, 2))
         assertTrue(result is MoveResult.Applied)
@@ -139,7 +161,8 @@ class BoardEngineTest {
         assertTrue(board.tiles[2] == 2)
         assertTrue(board.locked[2])
         assertTrue(board.locked[0] && board.locked[1])
-        assertTrue(board.tiles[24] == 24)
+        assertTrue(board.tiles[24] == 12)
+        assertTrue(!board.locked[12])
     }
 
     @Test

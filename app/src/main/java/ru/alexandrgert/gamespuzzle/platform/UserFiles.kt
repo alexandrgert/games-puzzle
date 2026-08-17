@@ -29,25 +29,28 @@ class UserFiles(private val context: Context) {
         }.getOrNull() ?: return@withContext UserPhotoImportResult.OpenError
 
         try {
-            val side = min(source.width, source.height)
-            if (side < MIN_SIDE) {
-                return@withContext UserPhotoImportResult.TooSmall
-            }
+            val shortest = min(source.width, source.height)
+            val outputSide = importSquareOutputSide(shortest)
+                ?: return@withContext UserPhotoImportResult.TooSmall
 
             val idPart = UUID.randomUUID().toString()
             val target = File(userDirectory, "$idPart.webp")
             val square = Bitmap.createBitmap(
                 source,
-                (source.width - side) / 2,
-                (source.height - side) / 2,
-                side,
-                side,
+                (source.width - shortest) / 2,
+                (source.height - shortest) / 2,
+                shortest,
+                shortest,
             )
+            var playBitmap = square
             try {
+                if (outputSide < shortest) {
+                    playBitmap = Bitmap.createScaledBitmap(square, outputSide, outputSide, true)
+                }
                 userDirectory.mkdirs()
                 val saved = runCatching {
                     target.outputStream().buffered().use { output ->
-                        compressWebp(square, output)
+                        compressWebp(playBitmap, output)
                     }
                 }.getOrDefault(false)
                 if (!saved) {
@@ -55,6 +58,7 @@ class UserFiles(private val context: Context) {
                     return@withContext UserPhotoImportResult.OpenError
                 }
             } finally {
+                if (playBitmap !== square) playBitmap.recycle()
                 if (square !== source) square.recycle()
             }
 
@@ -91,7 +95,6 @@ class UserFiles(private val context: Context) {
     private companion object {
         const val USER_DIRECTORY = "user"
         const val USER_ID_PREFIX = "user:"
-        const val MIN_SIDE = 512
         const val WEBP_QUALITY = 90
         val UUID_PATTERN = Regex(
             "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-" +

@@ -79,6 +79,13 @@ object BoardEngine {
             return MoveResult.Applied(snapped)
         }
 
+        val neighbourJoin = findUnlockedNeighbourJoin(swapped, a, b)
+        if (neighbourJoin != null) {
+            val snapped = snapPairToHome(swapped, neighbourJoin.first, neighbourJoin.second)
+                ?: return MoveResult.Reverted(board)
+            return MoveResult.Applied(snapped)
+        }
+
         val nextLocked = swapped.locked.copyOf()
         var any = false
         for (t in listOf(tileA, tileB)) {
@@ -92,6 +99,24 @@ object BoardEngine {
         } else {
             MoveResult.Reverted(board)
         }
+    }
+
+    private fun findUnlockedNeighbourJoin(board: Board, a: Cell, b: Cell): Pair<Int, Int>? {
+        val n = board.n
+        for (cell in listOf(a, b)) {
+            val tile = board.tileAt(cell)
+            if (board.isLockedTile(tile)) continue
+            for (direction in orthogonalDirections) {
+                val neighbor = Cell(cell.row + direction.row, cell.col + direction.col)
+                if (!neighbor.inBounds(n)) continue
+                val neighborTile = board.tileAt(neighbor)
+                if (board.isLockedTile(neighborTile)) continue
+                if (isCorrectJoin(n, cell, tile, neighbor, neighborTile)) {
+                    return tile to neighborTile
+                }
+            }
+        }
+        return null
     }
 
     private fun lockIfHomeAgainstLocked(board: Board, tileId: Int): Boolean {

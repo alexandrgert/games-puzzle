@@ -17,7 +17,6 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -55,7 +54,6 @@ fun SettingsScreen(
     var updateResult by remember { mutableStateOf<UpdateCheckResult?>(null) }
     var isChecking by remember { mutableStateOf(false) }
     var isDownloading by remember { mutableStateOf(false) }
-    var immediateStartedVersion by remember { mutableStateOf<String?>(null) }
     val offlineError = stringResource(R.string.error_offline)
     val downloadError = stringResource(R.string.error_download)
     val installPermissionError = stringResource(R.string.error_install_permission)
@@ -63,26 +61,17 @@ fun SettingsScreen(
     val downloadAndInstall: suspend (UpdateCheckResult) -> Unit = download@{ result ->
         if (isDownloading) return@download
         isDownloading = true
-        val apk = result.apkAssetUrl?.let { url ->
-            downloadApk(context, client, url)
+        val apk = try {
+            result.apkAssetUrl?.let { url ->
+                downloadApk(context, client, url)
+            }
+        } finally {
+            isDownloading = false
         }
-        isDownloading = false
         if (apk == null) {
             snackbarHostState.showSnackbar(downloadError)
         } else if (!ApkInstaller.install(context, apk)) {
             snackbarHostState.showSnackbar(installPermissionError)
-        }
-    }
-
-    LaunchedEffect(updateResult, settings.updateDownloadMode) {
-        val result = updateResult ?: return@LaunchedEffect
-        val version = result.latest?.toString() ?: return@LaunchedEffect
-        if (result.updateAvailable &&
-            settings.updateDownloadMode == UpdateDownloadMode.IMMEDIATE &&
-            immediateStartedVersion != version
-        ) {
-            immediateStartedVersion = version
-            downloadAndInstall(result)
         }
     }
 
@@ -124,13 +113,17 @@ fun SettingsScreen(
                     scope.launch {
                         isChecking = true
                         updateResult = null
-                        immediateStartedVersion = null
                         val result = withContext(Dispatchers.IO) {
                             UpdateChecker.check(client, parseSemver(versionName))
                         }
                         isChecking = false
                         if (result.ok) {
                             updateResult = result
+                            if (result.updateAvailable &&
+                                settings.updateDownloadMode == UpdateDownloadMode.IMMEDIATE
+                            ) {
+                                downloadAndInstall(result)
+                            }
                         } else {
                             snackbarHostState.showSnackbar(offlineError)
                         }
