@@ -8,18 +8,26 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import ru.alexandrgert.gamespuzzle.BuildConfig
 import ru.alexandrgert.gamespuzzle.R
+import ru.alexandrgert.gamespuzzle.data.AppSettings
+import ru.alexandrgert.gamespuzzle.data.RecordsStore
+import ru.alexandrgert.gamespuzzle.data.SettingsStore
 import ru.alexandrgert.gamespuzzle.domain.CatalogFile
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.ui.catalog.CatalogScreen
 import ru.alexandrgert.gamespuzzle.ui.play.PlayScreen
 import ru.alexandrgert.gamespuzzle.ui.preview.PreviewScreen
+import ru.alexandrgert.gamespuzzle.ui.settings.SettingsScreen
 
 object Routes {
     const val CATALOG = "catalog"
@@ -42,6 +50,17 @@ fun PuzzleNavHost(
     catalog: CatalogFile,
     assets: AssetManager,
 ) {
+    val applicationContext = LocalContext.current.applicationContext
+    val settingsStore = remember(applicationContext) { SettingsStore(applicationContext) }
+    val recordsStore = remember(applicationContext) { RecordsStore(applicationContext) }
+    val currentSettings by produceState<AppSettings?>(
+        initialValue = null,
+        key1 = settingsStore,
+    ) {
+        settingsStore.settings.collect { value = it }
+    }
+    val settings = currentSettings ?: return
+
     NavHost(
         navController = navController,
         startDestination = Routes.CATALOG,
@@ -90,19 +109,33 @@ fun PuzzleNavHost(
                     }.getOrNull()
                 }
             }
-            if (size == null) {
+            if (size == null || id == null || source == null) {
                 PlaceholderScreen(R.string.play_invalid_size)
             } else {
                 PlayScreen(
+                    puzzleId = id,
                     sourceBitmap = bitmap,
                     size = size,
-                    statsEnabled = false,
+                    statsEnabled = settings.statsEnabled,
+                    recordsStore = recordsStore,
                     onAbandon = { navController.popBackStack() },
+                    onAgain = {
+                        navController.navigate(Routes.play(id, source, size.n)) {
+                            popUpTo(Routes.PLAY) { inclusive = true }
+                        }
+                    },
+                    onCatalog = {
+                        navController.popBackStack(Routes.CATALOG, inclusive = false)
+                    },
                 )
             }
         }
         composable(Routes.SETTINGS) {
-            PlaceholderScreen(R.string.screen_settings)
+            SettingsScreen(
+                settings = settings,
+                settingsStore = settingsStore,
+                versionName = BuildConfig.VERSION_NAME,
+            )
         }
         composable(Routes.MY_PHOTOS) {
             PlaceholderScreen(R.string.screen_my_photos)

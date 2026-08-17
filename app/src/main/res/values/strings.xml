@@ -8,6 +8,7 @@
     <string name="action_abandon">Выйти</string>
     <string name="action_cancel">Отмена</string>
     <string name="action_ok">Хорошо</string>
+    <string name="action_check_update">Проверить обновления</string>
     <string name="grid_5">5 × 5</string>
     <string name="grid_6">6 × 6</string>
     <string name="filter_all">Все</string>
@@ -32,6 +33,15 @@
     <string name="confirm_abandon_message">Текущий прогресс будет потерян.</string>
     <string name="win_title">Пазл собран!</string>
     <string name="win_message">Поздравляем с победой.</string>
+    <string name="win_time">Время: %1$d с</string>
+    <string name="win_moves">Ходы: %1$d</string>
+    <string name="win_new_best_time">Новый рекорд по времени!</string>
+    <string name="win_new_best_moves">Новый рекорд по ходам!</string>
+    <string name="win_again">Собрать ещё раз</string>
+    <string name="win_catalog">В каталог</string>
+    <string name="settings_stats">Показывать время и ходы</string>
+    <string name="settings_download_immediately">Скачивать обновления сразу</string>
+    <string name="settings_version">Версия: %1$s</string>
     <string name="screen_play">Игра</string>
     <string name="screen_settings">Настройки</string>
     <string name="screen_my_photos">Мои фотографии</string>

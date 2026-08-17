@@ -35,21 +35,28 @@ import java.util.Random
 import kotlin.math.min
 import kotlinx.coroutines.delay
 import ru.alexandrgert.gamespuzzle.R
+import ru.alexandrgert.gamespuzzle.data.RecordUpdate
+import ru.alexandrgert.gamespuzzle.data.RecordsStore
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 
 @Composable
 fun PlayScreen(
+    puzzleId: String,
     sourceBitmap: Bitmap?,
     size: GridSize,
     statsEnabled: Boolean,
+    recordsStore: RecordsStore,
     onAbandon: () -> Unit,
+    onAgain: () -> Unit,
+    onCatalog: () -> Unit,
 ) {
-    val playViewModel: PlayViewModel = viewModel {
+    val playViewModel: PlayViewModel = viewModel(key = "$puzzleId:${size.n}:$statsEnabled") {
         PlayViewModel(statsEnabled)
     }
     var confirmAbandon by remember { mutableStateOf(false) }
     var revertedFlash by remember { mutableStateOf(false) }
+    var recordUpdate by remember(puzzleId, size) { mutableStateOf<RecordUpdate?>(null) }
     val state = playViewModel.state
 
     LaunchedEffect(size, playViewModel) {
@@ -75,6 +82,17 @@ fun PlayScreen(
                 revertedFlash = false
                 playViewModel.clearLastReverted()
             }
+        }
+    }
+    LaunchedEffect(state?.won, puzzleId, size, statsEnabled) {
+        val wonState = state ?: return@LaunchedEffect
+        if (wonState.won && statsEnabled && recordUpdate == null) {
+            recordUpdate = recordsStore.save(
+                puzzleId = puzzleId,
+                n = size.n,
+                timeMs = wonState.elapsedMs,
+                moves = wonState.moves,
+            )
         }
     }
     BackHandler {
@@ -170,15 +188,13 @@ fun PlayScreen(
         }
 
         if (state.won) {
-            AlertDialog(
-                onDismissRequest = {},
-                title = { Text(stringResource(R.string.win_title)) },
-                text = { Text(stringResource(R.string.win_message)) },
-                confirmButton = {
-                    TextButton(onClick = onAbandon) {
-                        Text(stringResource(R.string.action_ok))
-                    }
-                },
+            WinDialog(
+                statsEnabled = statsEnabled,
+                elapsedMs = state.elapsedMs,
+                moves = state.moves,
+                recordUpdate = recordUpdate,
+                onAgain = onAgain,
+                onCatalog = onCatalog,
             )
         }
     }
