@@ -35,7 +35,6 @@ import java.util.Random
 import kotlin.math.min
 import kotlinx.coroutines.delay
 import ru.alexandrgert.gamespuzzle.R
-import ru.alexandrgert.gamespuzzle.data.RecordUpdate
 import ru.alexandrgert.gamespuzzle.data.RecordsStore
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
@@ -52,11 +51,14 @@ fun PlayScreen(
     onCatalog: () -> Unit,
 ) {
     val playViewModel: PlayViewModel = viewModel(key = "$puzzleId:${size.n}:$statsEnabled") {
-        PlayViewModel(statsEnabled)
+        PlayViewModel(
+            statsEnabled = statsEnabled,
+            puzzleId = puzzleId,
+            recordSaver = recordsStore,
+        )
     }
     var confirmAbandon by remember { mutableStateOf(false) }
     var revertedFlash by remember { mutableStateOf(false) }
-    var recordUpdate by remember(puzzleId, size) { mutableStateOf<RecordUpdate?>(null) }
     val state = playViewModel.state
 
     LaunchedEffect(size, playViewModel) {
@@ -82,17 +84,6 @@ fun PlayScreen(
                 revertedFlash = false
                 playViewModel.clearLastReverted()
             }
-        }
-    }
-    LaunchedEffect(state?.won, puzzleId, size, statsEnabled) {
-        val wonState = state ?: return@LaunchedEffect
-        if (wonState.won && statsEnabled && recordUpdate == null) {
-            recordUpdate = recordsStore.save(
-                puzzleId = puzzleId,
-                n = size.n,
-                timeMs = wonState.elapsedMs,
-                moves = wonState.moves,
-            )
         }
     }
     BackHandler {
@@ -192,7 +183,8 @@ fun PlayScreen(
                 statsEnabled = statsEnabled,
                 elapsedMs = state.elapsedMs,
                 moves = state.moves,
-                recordUpdate = recordUpdate,
+                recordUpdate = state.recordUpdate,
+                navigationEnabled = !state.recordSavePending,
                 onAgain = onAgain,
                 onCatalog = onCatalog,
             )

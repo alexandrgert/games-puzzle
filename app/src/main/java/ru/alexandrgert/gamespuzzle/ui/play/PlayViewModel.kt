@@ -4,7 +4,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import java.util.Random
+import kotlinx.coroutines.launch
+import ru.alexandrgert.gamespuzzle.data.RecordSaver
+import ru.alexandrgert.gamespuzzle.data.RecordUpdate
 import ru.alexandrgert.gamespuzzle.domain.Board
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
@@ -18,10 +22,14 @@ data class PlayState(
     val won: Boolean,
     val peek: Boolean,
     val lastReverted: Boolean,
+    val recordSavePending: Boolean,
+    val recordUpdate: RecordUpdate?,
 )
 
 class PlayViewModel(
     private val statsEnabled: Boolean = false,
+    private val puzzleId: String = "",
+    private val recordSaver: RecordSaver? = null,
     private val currentTimeMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
     var state: PlayState? by mutableStateOf(null)
@@ -56,14 +64,39 @@ class PlayViewModel(
 
     private fun publish() {
         val current = session ?: return
+        val previous = state
+        val won = current.isWin()
         state = PlayState(
             board = current.board,
             selected = current.selected,
             elapsedMs = current.elapsedMs,
             moves = current.moves,
-            won = current.isWin(),
+            won = won,
             peek = current.peek,
             lastReverted = current.lastReverted,
+            recordSavePending = previous?.recordSavePending ?: false,
+            recordUpdate = previous?.recordUpdate,
         )
+        if (won && previous?.won != true && statsEnabled) saveRecord(current)
+    }
+
+    private fun saveRecord(current: PlaySession) {
+        val saver = checkNotNull(recordSaver) {
+            "A RecordSaver is required when statistics are enabled"
+        }
+        state = state?.copy(recordSavePending = true)
+        viewModelScope.launch {
+            try {
+                val update = saver.save(
+                    puzzleId = puzzleId,
+                    n = current.size.n,
+                    timeMs = current.elapsedMs,
+                    moves = current.moves,
+                )
+                state = state?.copy(recordUpdate = update)
+            } finally {
+                state = state?.copy(recordSavePending = false)
+            }
+        }
     }
 }

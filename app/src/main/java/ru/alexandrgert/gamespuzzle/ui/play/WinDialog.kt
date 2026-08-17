@@ -17,6 +17,7 @@ fun WinDialog(
     elapsedMs: Long,
     moves: Int,
     recordUpdate: RecordUpdate?,
+    navigationEnabled: Boolean,
     onAgain: () -> Unit,
     onCatalog: () -> Unit,
 ) {
@@ -39,12 +40,18 @@ fun WinDialog(
             }
         },
         confirmButton = {
-            TextButton(onClick = onAgain) {
+            TextButton(
+                onClick = onAgain,
+                enabled = navigationEnabled,
+            ) {
                 Text(stringResource(R.string.win_again))
             }
         },
         dismissButton = {
-            TextButton(onClick = onCatalog) {
+            TextButton(
+                onClick = onCatalog,
+                enabled = navigationEnabled,
+            ) {
                 Text(stringResource(R.string.win_catalog))
             }
         },

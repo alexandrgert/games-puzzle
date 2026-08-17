@@ -16,13 +16,22 @@ data class RecordUpdate(
     val improvedMoves: Boolean,
 )
 
-class RecordsStore(private val context: Context) {
+interface RecordSaver {
+    suspend fun save(puzzleId: String, n: Int, timeMs: Long, moves: Int): RecordUpdate
+}
+
+class RecordsStore(private val context: Context) : RecordSaver {
     suspend fun load(puzzleId: String, n: Int): BestRecord? {
         val value = context.recordsDataStore.data.first()[recordKey(puzzleId, n)]
         return parseRecord(value)
     }
 
-    suspend fun save(puzzleId: String, n: Int, timeMs: Long, moves: Int): RecordUpdate {
+    override suspend fun save(
+        puzzleId: String,
+        n: Int,
+        timeMs: Long,
+        moves: Int,
+    ): RecordUpdate {
         var result: RecordUpdate? = null
         context.recordsDataStore.edit { preferences ->
             val key = recordKey(puzzleId, n)
