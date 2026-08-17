@@ -57,12 +57,24 @@ fun PlayScreen(
             playViewModel.start(size, Random())
         }
     }
+    LaunchedEffect(statsEnabled, playViewModel) {
+        if (!statsEnabled) return@LaunchedEffect
+        while (true) {
+            delay(250)
+            val current = playViewModel.state ?: continue
+            if (current.won) break
+            playViewModel.tick()
+        }
+    }
     LaunchedEffect(state?.lastReverted) {
         if (state?.lastReverted == true) {
             revertedFlash = true
-            delay(180)
-            revertedFlash = false
-            playViewModel.clearLastReverted()
+            try {
+                delay(180)
+            } finally {
+                revertedFlash = false
+                playViewModel.clearLastReverted()
+            }
         }
     }
     BackHandler {

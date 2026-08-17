@@ -50,6 +50,10 @@ class PlayViewModel(
         publish()
     }
 
+    fun tick() {
+        publish()
+    }
+
     private fun publish() {
         val current = session ?: return
         state = PlayState(

@@ -26,6 +26,18 @@ class PlayViewModelTest {
     }
 
     @Test
+    fun elapsedTimeUpdatesOnTickWhileIdle() {
+        var now = 1_000L
+        val viewModel = PlayViewModel(statsEnabled = true, currentTimeMillis = { now })
+        viewModel.start(GridSize.FIVE, Random(1L))
+
+        now = 1_500L
+        viewModel.tick()
+
+        assertEquals(500L, viewModel.state!!.elapsedMs)
+    }
+
+    @Test
     fun repeatedStartKeepsTheActiveBoard() {
         val viewModel = PlayViewModel()
         viewModel.start(GridSize.FIVE, Random(1L))
