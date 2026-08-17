@@ -16,4 +16,4 @@ Android-пазл по фотографии. Картина режется на �
 
 ## Установка
 
-Подписанный APK собирается на GitHub Actions и публикуется в [Releases](https://github.com/alexandrgert/games-puzzle/releases). Локально проект можно проверять тестами; сборка APK — только в CI.
+Подписанный APK собирается на GitHub Actions и публикуется в [Releases](https://github.com/alexandrgert/games-puzzle/releases).
