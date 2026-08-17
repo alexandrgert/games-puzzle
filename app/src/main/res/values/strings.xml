@@ -9,6 +9,7 @@
     <string name="action_cancel">Отмена</string>
     <string name="action_ok">Хорошо</string>
     <string name="action_check_update">Проверить обновления</string>
+    <string name="action_download">Скачать</string>
     <string name="action_add_photo">Добавить фотографию</string>
     <string name="action_delete">Удалить</string>
     <string name="grid_5">5 × 5</string>
@@ -44,6 +45,8 @@
     <string name="settings_stats">Показывать время и ходы</string>
     <string name="settings_download_immediately">Скачивать обновления сразу</string>
     <string name="settings_version">Версия: %1$s</string>
+    <string name="update_available">Доступно обновление</string>
+    <string name="update_current">Установлена последняя версия</string>
     <string name="screen_play">Игра</string>
     <string name="screen_settings">Настройки</string>
     <string name="screen_my_photos">Мои фотографии</string>
@@ -54,6 +57,9 @@
     <string name="error_image_too_small">Изображение должно быть не меньше 512 пикселей по каждой стороне</string>
     <string name="error_image_open">Не удалось открыть изображение</string>
     <string name="error_photo_delete">Не удалось удалить фотографию</string>
+    <string name="error_offline">Не удалось проверить обновления. Проверьте подключение к интернету.</string>
+    <string name="error_download">Не удалось скачать обновление</string>
+    <string name="error_install_permission">Разрешите установку приложений из этого источника</string>
     <string name="photo_imported">Фотография добавлена</string>
     <string name="photo_deleted">Фотография удалена</string>
 </resources>
