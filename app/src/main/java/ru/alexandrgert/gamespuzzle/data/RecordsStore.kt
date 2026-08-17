@@ -47,6 +47,13 @@ class RecordsStore(private val context: Context) : RecordSaver {
         return checkNotNull(result)
     }
 
+    suspend fun delete(puzzleId: String) {
+        context.recordsDataStore.edit { preferences ->
+            preferences.remove(recordKey(puzzleId, 5))
+            preferences.remove(recordKey(puzzleId, 6))
+        }
+    }
+
     private fun recordKey(puzzleId: String, n: Int) =
         stringPreferencesKey("rec:$puzzleId:$n")
 }

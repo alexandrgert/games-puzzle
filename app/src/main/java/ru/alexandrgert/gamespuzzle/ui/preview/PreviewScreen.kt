@@ -1,6 +1,7 @@
 package ru.alexandrgert.gamespuzzle.ui.preview
 
 import android.content.res.AssetManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -31,18 +32,19 @@ import ru.alexandrgert.gamespuzzle.domain.GridSize
 fun PreviewScreen(
     puzzle: CatalogPuzzle?,
     assets: AssetManager,
+    userBitmap: Bitmap? = null,
     onStart: (GridSize) -> Unit,
 ) {
     var gridSize by remember { mutableStateOf(GridSize.FIVE) }
-    val bitmap = remember(puzzle?.file, assets) {
-        puzzle?.let {
+    val bitmap = remember(puzzle?.file, assets, userBitmap) {
+        userBitmap ?: puzzle?.let {
             runCatching {
                 assets.open(it.file).use(BitmapFactory::decodeStream)
             }.getOrNull()
         }
     }
 
-    if (puzzle == null || bitmap == null) {
+    if (bitmap == null) {
         Text(
             text = stringResource(R.string.preview_not_found),
             modifier = Modifier.padding(16.dp),
@@ -56,7 +58,7 @@ fun PreviewScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        Text(puzzle.titleRu)
+        Text(puzzle?.titleRu ?: stringResource(R.string.user_photo_title))
         Image(
             bitmap = bitmap.asImageBitmap(),
             contentDescription = stringResource(R.string.puzzle_image),
