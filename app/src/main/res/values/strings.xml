@@ -48,6 +48,7 @@
     <string name="screen_settings">Настройки</string>
     <string name="screen_my_photos">Мои фотографии</string>
     <string name="screen_credits">Авторы</string>
+    <string name="credits_attribution">%1$s — %2$s — %3$s</string>
     <string name="user_photo_title">Моя фотография</string>
     <string name="my_photos_empty">Добавленных фотографий пока нет</string>
     <string name="error_image_too_small">Изображение должно быть не меньше 512 пикселей по каждой стороне</string>

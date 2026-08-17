@@ -27,6 +27,7 @@ import ru.alexandrgert.gamespuzzle.domain.CatalogFile
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.platform.UserFiles
 import ru.alexandrgert.gamespuzzle.ui.catalog.CatalogScreen
+import ru.alexandrgert.gamespuzzle.ui.credits.CreditsScreen
 import ru.alexandrgert.gamespuzzle.ui.myphotos.MyPhotosScreen
 import ru.alexandrgert.gamespuzzle.ui.play.PlayScreen
 import ru.alexandrgert.gamespuzzle.ui.preview.PreviewScreen
@@ -163,7 +164,7 @@ fun PuzzleNavHost(
             )
         }
         composable(Routes.CREDITS) {
-            PlaceholderScreen(R.string.screen_credits)
+            CreditsScreen(puzzles = catalog.puzzles)
         }
     }
 }
