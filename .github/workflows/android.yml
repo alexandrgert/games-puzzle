@@ -1,0 +1,104 @@
+name: Android CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    env:
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+      ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Read release version
+        id: version
+        run: echo "value=$(tr -d '\r\n' < VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate catalog
+        run: |
+          python -m pip install jsonschema
+          python -m jsonschema \
+            -i app/src/main/assets/catalog.json \
+            docs/schemas/catalog.schema.json
+
+      - name: Verify version sync
+        run: python scripts/check_version_sync.py
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Run tests
+        run: ./gradlew test
+
+      - name: Check release signing secrets
+        if: github.event_name == 'push'
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ] ||
+             [ -z "$ANDROID_KEYSTORE_PASSWORD" ] ||
+             [ -z "$ANDROID_KEY_ALIAS" ] ||
+             [ -z "$ANDROID_KEY_PASSWORD" ]; then
+            echo "Release signing secrets are required on main." >&2
+            exit 1
+          fi
+
+      - name: Restore Android keystore
+        if: >-
+          env.ANDROID_KEYSTORE_BASE64 != '' &&
+          env.ANDROID_KEYSTORE_PASSWORD != '' &&
+          env.ANDROID_KEY_ALIAS != '' &&
+          env.ANDROID_KEY_PASSWORD != ''
+        run: python scripts/write_android_keystore_from_env.py
+
+      - name: Assemble signed release APK
+        if: >-
+          env.ANDROID_KEYSTORE_BASE64 != '' &&
+          env.ANDROID_KEYSTORE_PASSWORD != '' &&
+          env.ANDROID_KEY_ALIAS != '' &&
+          env.ANDROID_KEY_PASSWORD != ''
+        run: ./gradlew assembleRelease
+
+      - name: Name release APK
+        if: >-
+          env.ANDROID_KEYSTORE_BASE64 != '' &&
+          env.ANDROID_KEYSTORE_PASSWORD != '' &&
+          env.ANDROID_KEY_ALIAS != '' &&
+          env.ANDROID_KEY_PASSWORD != ''
+        run: |
+          cp app/build/outputs/apk/release/app-release.apk \
+            "games-puzzle-${{ steps.version.outputs.value }}.apk"
+
+      - name: Upload signed APK
+        if: >-
+          env.ANDROID_KEYSTORE_BASE64 != '' &&
+          env.ANDROID_KEYSTORE_PASSWORD != '' &&
+          env.ANDROID_KEY_ALIAS != '' &&
+          env.ANDROID_KEY_PASSWORD != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: games-puzzle-${{ steps.version.outputs.value }}.apk
+          path: games-puzzle-${{ steps.version.outputs.value }}.apk
+          if-no-files-found: error
