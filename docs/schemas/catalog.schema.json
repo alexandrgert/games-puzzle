@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gamespuzzle.alexandrgert.ru/schemas/catalog.schema.json",
+  "title": "Games Puzzle catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "puzzles"],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "puzzles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "file",
+          "thumb",
+          "category",
+          "season",
+          "title_ru",
+          "license",
+          "attribution",
+          "source_url"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "minLength": 1 },
+          "thumb": { "type": "string", "minLength": 1 },
+          "category": {
+            "type": "string",
+            "enum": ["nature", "animals", "birds", "aquatic", "trees", "flowers"]
+          },
+          "season": {
+            "type": "string",
+            "enum": ["spring", "summer", "autumn", "winter", "any"]
+          },
+          "title_ru": { "type": "string", "minLength": 1 },
+          "license": { "type": "string", "minLength": 1 },
+          "attribution": { "type": "string", "minLength": 1 },
+          "source_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}

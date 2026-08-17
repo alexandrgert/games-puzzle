@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "puzzles": [
+    {
+      "id": "ph-01",
+      "file": "puzzles/ph-01.webp",
+      "thumb": "thumbs/ph-01.webp",
+      "category": "nature",
+      "season": "spring",
+      "title_ru": "Весенняя природа",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-01"
+    },
+    {
+      "id": "ph-02",
+      "file": "puzzles/ph-02.webp",
+      "thumb": "thumbs/ph-02.webp",
+      "category": "animals",
+      "season": "summer",
+      "title_ru": "Летние животные",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-02"
+    },
+    {
+      "id": "ph-03",
+      "file": "puzzles/ph-03.webp",
+      "thumb": "thumbs/ph-03.webp",
+      "category": "birds",
+      "season": "autumn",
+      "title_ru": "Осенние птицы",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-03"
+    },
+    {
+      "id": "ph-04",
+      "file": "puzzles/ph-04.webp",
+      "thumb": "thumbs/ph-04.webp",
+      "category": "aquatic",
+      "season": "winter",
+      "title_ru": "Зимний водоём",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-04"
+    },
+    {
+      "id": "ph-05",
+      "file": "puzzles/ph-05.webp",
+      "thumb": "thumbs/ph-05.webp",
+      "category": "trees",
+      "season": "spring",
+      "title_ru": "Весенние деревья",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-05"
+    },
+    {
+      "id": "ph-06",
+      "file": "puzzles/ph-06.webp",
+      "thumb": "thumbs/ph-06.webp",
+      "category": "flowers",
+      "season": "summer",
+      "title_ru": "Летние цветы",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-06"
+    },
+    {
+      "id": "ph-07",
+      "file": "puzzles/ph-07.webp",
+      "thumb": "thumbs/ph-07.webp",
+      "category": "nature",
+      "season": "autumn",
+      "title_ru": "Осенняя природа",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-07"
+    },
+    {
+      "id": "ph-08",
+      "file": "puzzles/ph-08.webp",
+      "thumb": "thumbs/ph-08.webp",
+      "category": "animals",
+      "season": "winter",
+      "title_ru": "Зимние животные",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-08"
+    },
+    {
+      "id": "ph-09",
+      "file": "puzzles/ph-09.webp",
+      "thumb": "thumbs/ph-09.webp",
+      "category": "birds",
+      "season": "spring",
+      "title_ru": "Весенние птицы",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-09"
+    },
+    {
+      "id": "ph-10",
+      "file": "puzzles/ph-10.webp",
+      "thumb": "thumbs/ph-10.webp",
+      "category": "aquatic",
+      "season": "summer",
+      "title_ru": "Летний водоём",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-10"
+    },
+    {
+      "id": "ph-11",
+      "file": "puzzles/ph-11.webp",
+      "thumb": "thumbs/ph-11.webp",
+      "category": "trees",
+      "season": "autumn",
+      "title_ru": "Осенние деревья",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-11"
+    },
+    {
+      "id": "ph-12",
+      "file": "puzzles/ph-12.webp",
+      "thumb": "thumbs/ph-12.webp",
+      "category": "flowers",
+      "season": "winter",
+      "title_ru": "Зимние цветы",
+      "license": "CC0-1.0",
+      "attribution": "Generated placeholder",
+      "source_url": "https://example.com/placeholders/ph-12"
+    }
+  ]
+}
