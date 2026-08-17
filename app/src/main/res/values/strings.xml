@@ -43,6 +43,7 @@
     <string name="win_catalog">В каталог</string>
     <string name="settings_stats">Показывать время и ходы</string>
     <string name="settings_download_immediately">Скачивать обновления сразу</string>
+    <string name="settings_check_updates_on_launch">Проверять обновления при запуске</string>
     <string name="settings_version">Версия: %1$s</string>
     <string name="update_available">Доступно обновление</string>
     <string name="update_current">Установлена последняя версия</string>
@@ -51,6 +52,7 @@
     <string name="screen_my_photos">Мои фотографии</string>
     <string name="screen_credits">Авторы</string>
     <string name="credits_attribution">%1$s — %2$s — %3$s</string>
+    <string name="credits_launcher_icon">Иконка приложения — фрагмент фото «%1$s» — %2$s — %3$s</string>
     <string name="user_photo_title">Моя фотография</string>
     <string name="my_photos_empty">Добавленных фотографий пока нет</string>
     <string name="error_image_too_small">Изображение должно быть не меньше 512 пикселей по каждой стороне</string>

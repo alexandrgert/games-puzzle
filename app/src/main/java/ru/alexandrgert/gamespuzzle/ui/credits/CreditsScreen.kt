@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
@@ -22,46 +21,71 @@ import androidx.compose.ui.unit.dp
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.domain.CatalogPuzzle
 
+const val LAUNCHER_ICON_PUZZLE_ID = "dzhangyskol-autumn-altai"
+
+fun launcherIconPuzzle(puzzles: List<CatalogPuzzle>): CatalogPuzzle? =
+    puzzles.firstOrNull { it.id == LAUNCHER_ICON_PUZZLE_ID }
+
 @Composable
 fun CreditsScreen(
     puzzles: List<CatalogPuzzle>,
 ) {
+    val iconPuzzle = launcherIconPuzzle(puzzles)
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+        if (iconPuzzle != null) {
+            item(key = "launcher-icon") {
+                CreditLines(
+                    text = stringResource(
+                        R.string.credits_launcher_icon,
+                        iconPuzzle.titleRu,
+                        iconPuzzle.attribution,
+                        iconPuzzle.license,
+                    ),
+                    sourceUrl = iconPuzzle.sourceUrl,
+                )
+            }
+        }
         items(puzzles, key = { it.id }) { puzzle ->
-            CreditEntry(puzzle = puzzle)
+            CreditLines(
+                text = stringResource(
+                    R.string.credits_attribution,
+                    puzzle.titleRu,
+                    puzzle.attribution,
+                    puzzle.license,
+                ),
+                sourceUrl = puzzle.sourceUrl,
+            )
         }
     }
 }
 
 @Composable
-private fun CreditEntry(puzzle: CatalogPuzzle) {
+private fun CreditLines(
+    text: String,
+    sourceUrl: String,
+) {
     val context = LocalContext.current
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         Text(
-            text = stringResource(
-                R.string.credits_attribution,
-                puzzle.titleRu,
-                puzzle.attribution,
-                puzzle.license,
-            ),
+            text = text,
             style = MaterialTheme.typography.bodyLarge,
         )
         Text(
-            text = puzzle.sourceUrl,
+            text = sourceUrl,
             style = MaterialTheme.typography.bodyMedium.copy(
                 color = MaterialTheme.colorScheme.primary,
                 textDecoration = TextDecoration.Underline,
             ),
             modifier = Modifier.clickable {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse(puzzle.sourceUrl)),
+                    Intent(Intent.ACTION_VIEW, Uri.parse(sourceUrl)),
                 )
             },
         )

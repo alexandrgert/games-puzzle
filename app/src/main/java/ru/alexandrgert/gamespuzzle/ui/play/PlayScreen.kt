@@ -200,24 +200,44 @@ fun PlayScreen(
                                 } else {
                                     Modifier
                                 }
-                                if (dragging == cell) {
-                                    Box(
-                                        modifier = selectedModifier
-                                            .weight(1f)
-                                            .fillMaxHeight()
-                                            .background(
-                                                MaterialTheme.colorScheme.surfaceVariant,
-                                            ),
-                                    )
-                                } else {
-                                    Image(
-                                        bitmap = tiles[tileId],
-                                        contentDescription = null,
-                                        contentScale = ContentScale.FillBounds,
-                                        modifier = selectedModifier
-                                            .weight(1f)
-                                            .fillMaxHeight(),
-                                    )
+                                val flashThis = isRevertedFlashCell(
+                                    cell,
+                                    lastReverted = revertedFlash,
+                                    revertedA = state.revertedA,
+                                    revertedB = state.revertedB,
+                                )
+                                Box(
+                                    modifier = selectedModifier
+                                        .weight(1f)
+                                        .fillMaxHeight(),
+                                ) {
+                                    if (dragging == cell) {
+                                        Box(
+                                            modifier = Modifier
+                                                .fillMaxSize()
+                                                .background(
+                                                    MaterialTheme.colorScheme.surfaceVariant,
+                                                ),
+                                        )
+                                    } else {
+                                        Image(
+                                            bitmap = tiles[tileId],
+                                            contentDescription = null,
+                                            contentScale = ContentScale.FillBounds,
+                                            modifier = Modifier.fillMaxSize(),
+                                        )
+                                    }
+                                    if (flashThis) {
+                                        Box(
+                                            Modifier
+                                                .fillMaxSize()
+                                                .background(
+                                                    MaterialTheme.colorScheme.error.copy(
+                                                        alpha = 0.32f,
+                                                    ),
+                                                ),
+                                        )
+                                    }
                                 }
                             }
                         }
@@ -258,13 +278,6 @@ fun PlayScreen(
                             .pointerInput(Unit) {
                                 detectTapGestures { playViewModel.togglePeek() }
                             },
-                    )
-                }
-                if (revertedFlash) {
-                    Box(
-                        Modifier
-                            .matchParentSize()
-                            .background(MaterialTheme.colorScheme.error.copy(alpha = 0.32f)),
                     )
                 }
             }

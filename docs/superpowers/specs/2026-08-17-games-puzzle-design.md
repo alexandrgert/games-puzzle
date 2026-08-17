@@ -7,7 +7,7 @@ Approach: native Kotlin + Jetpack Compose, single Android app module
 
 ## Goal
 
-Android picture puzzle: a photo is split into a full grid with **no empty cells**. The player moves any tile; the move stays only if two matching picture parts join along an edge, otherwise both tiles return to their previous cells. Built-in catalog of Russia-themed free-license photos plus user imports. APK is built only on GitHub Actions. The app can check GitHub Releases, always show the changelog, and download the update.
+Android picture puzzle: a photo is split into a full grid with **no empty cells**. The player moves any tile; the move stays only if two matching picture parts join along an edge, otherwise both tiles return to their previous cells. Built-in catalog of Russia-themed free-license photos plus user imports. APK is built only on GitHub Actions. The app can check GitHub Releases: a **manual** check always shows the changelog; an optional launch check (default **off**) stays silent unless a newer version is available.
 
 ## Out of scope (v1)
 
@@ -29,7 +29,7 @@ Android picture puzzle: a photo is split into a full grid with **no empty cells*
 - Signing: one long-lived release keystore in GitHub Secrets (`ANDROID_KEYSTORE_BASE64`, passwords, alias). Never generate a new keystore per CI run. Keystore files are gitignored.
 - Version: one canonical semver in `VERSION`. Android `versionName` matches it; `versionCode` is monotonic integer. CI verifies sync before assemble.
 - UI copy: Russian in `values/strings.xml`. No hardcoded user-visible Russian/English in Kotlin. Adding a language later is a new `values-xx/strings.xml` only.
-- Images: public domain or licenses that allow free redistribution (prefer Wikimedia Commons CC0 / Public Domain / CC BY with attribution). No copyrighted stock. Attribution stored in catalog metadata and shown in Credits.
+- Images: public domain or licenses that allow free redistribution (prefer Wikimedia Commons CC0 / Public Domain / CC BY with attribution). No copyrighted stock. Attribution stored in catalog metadata and shown in Credits. The launcher icon is a jigsaw-piece crop of catalog entry `dzhangyskol-autumn-altai` (Discoverynn, CC BY-SA 4.0); Credits lists that derivative.
 
 ## Architecture
 
@@ -70,8 +70,9 @@ User-imported photos are **not** in `catalog.json`. They live only in app-privat
 
 - `stats_enabled` — timer, move count, best results (default: **off**)
 - `update_download_mode` — `immediate` | `confirm` (default: `confirm`)
-- `last_update_check_at`
-- `dismissed_update_version`
+- `auto_check_updates` — check GitHub Releases on launch (default: **off**)
+- `last_update_check_at` — ISO timestamp of the last successful check
+- `dismissed_update_version` — latest version the user postponed from a startup prompt
 
 ### Best results (DataStore or local JSON)
 
@@ -90,7 +91,7 @@ Single-activity Compose app.
 3. **Play** — board filling the width; **all cells occupied** (no gap). Locked tiles sit in their final-plan cells and do not move. Optional timer and move counter if stats enabled. Button **Картинка** shows the original as an overlay; peek is not a move. Back asks to abandon the run.
 4. **Win** — message; if stats on, show time, moves, and whether a best was beaten. Buttons: again (same picture/grid), catalog.
 5. **My photos** — list of imports, add from gallery, delete (removes file + records for that id).
-6. **Settings** — toggles for stats and update download mode; **Проверить обновление**; app version.
+6. **Settings** — toggles for stats, update download mode, and check-on-launch (default off); **Проверить обновления**; app version.
 7. **Credits** — bundled image attributions from catalog metadata.
 
 ## Game rules
@@ -121,11 +122,11 @@ Single-activity Compose app.
 Source: GitHub Releases API for `alexandrgert/games-puzzle`.
 
 - Compare semver (tuple, not string). Strip leading `v`.
-- **Always show changelog** (release body) when a check finds a newer release, and also when the user is already on latest (then: «установлена актуальная версия» + current notes if present).
+- **Always show changelog** (release body) on a **manual** check: when a newer release exists, and also when the user is already on latest (then: «установлена актуальная версия» + current notes if present).
 - Setting `immediate`: after showing changelog, start APK download without a second confirm.
 - Setting `confirm`: show changelog and wait for **Скачать**.
 - Downloaded APK is installed via a package-installer intent (permission to install unknown apps if needed). Failures (network, HTTP, storage, permission) set an error status; they do not crash.
-- Manual check from Settings only in v1. No silent auto-install and no startup auto-check.
+- Setting `auto_check_updates` (default **off**): on launch, if enabled, check GitHub Releases once per process. Startup UI is silent unless a newer version is available and not `dismissed_update_version`. Offline / already latest: no snackbar and no «установлена актуальная версия». The startup dialog appears only on the catalog screen (not over play). **Отмена** on that dialog stores `dismissed_update_version`; OK / back / a failed immediate download do not. Manual **Проверить обновления** always reports (changelog or offline snackbar) and ignores dismissed.
 - CI publishes release notes used as that changelog (`docs/github-release-vX.Y.Z.md` body).
 
 ## CI and release
@@ -196,6 +197,6 @@ Separate content pass after the app shell works:
 - Install APK from GitHub Release on Poco X7 / X8 Pro Max: catalog, filter, preview, 5×5 and 6×6 play, win.
 - Import a photo, play, delete it; it is gone.
 - Stats toggle hides or shows timer, moves, and bests.
-- Settings update check shows changelog; download follows immediate vs confirm; APK installs.
+- Settings update check shows changelog; download follows immediate vs confirm; APK installs. Startup auto-check runs only when the launch toggle is on and stays silent if already latest or offline.
 - UI remains Russian; a second language can be added via resource files only.
 - CI on GitHub produces the signed APK; no local release build in the normal workflow.

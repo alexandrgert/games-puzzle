@@ -4,27 +4,50 @@ import android.content.res.AssetManager
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import java.time.Instant
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
 import ru.alexandrgert.gamespuzzle.BuildConfig
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.data.AppSettings
 import ru.alexandrgert.gamespuzzle.data.RecordsStore
 import ru.alexandrgert.gamespuzzle.data.SettingsStore
+import ru.alexandrgert.gamespuzzle.data.UpdateCheckResult
+import ru.alexandrgert.gamespuzzle.data.UpdateChecker
 import ru.alexandrgert.gamespuzzle.data.UserPuzzlesStore
+import ru.alexandrgert.gamespuzzle.data.decideAfterUpdateCheck
+import ru.alexandrgert.gamespuzzle.data.shouldPersistDismissed
+import ru.alexandrgert.gamespuzzle.data.shouldRunAutoCheck
+import ru.alexandrgert.gamespuzzle.data.shouldShowUpdatePromptOnScreen
+import ru.alexandrgert.gamespuzzle.data.versionLabel
 import ru.alexandrgert.gamespuzzle.domain.CatalogFile
 import ru.alexandrgert.gamespuzzle.domain.GridSize
+import ru.alexandrgert.gamespuzzle.domain.parseSemver
+import ru.alexandrgert.gamespuzzle.platform.ApkInstaller
 import ru.alexandrgert.gamespuzzle.platform.UserFiles
 import ru.alexandrgert.gamespuzzle.ui.catalog.CatalogScreen
 import ru.alexandrgert.gamespuzzle.ui.credits.CreditsScreen
@@ -32,6 +55,8 @@ import ru.alexandrgert.gamespuzzle.ui.myphotos.MyPhotosScreen
 import ru.alexandrgert.gamespuzzle.ui.play.PlayScreen
 import ru.alexandrgert.gamespuzzle.ui.preview.PreviewScreen
 import ru.alexandrgert.gamespuzzle.ui.settings.SettingsScreen
+import ru.alexandrgert.gamespuzzle.ui.update.UpdateResultDialog
+import ru.alexandrgert.gamespuzzle.ui.update.downloadUpdateApk
 
 object Routes {
     const val CATALOG = "catalog"
@@ -55,6 +80,7 @@ fun PuzzleNavHost(
     assets: AssetManager,
 ) {
     val applicationContext = LocalContext.current.applicationContext
+    val context = LocalContext.current
     val settingsStore = remember(applicationContext) { SettingsStore(applicationContext) }
     val recordsStore = remember(applicationContext) { RecordsStore(applicationContext) }
     val userFiles = remember(applicationContext) { UserFiles(applicationContext) }
@@ -68,103 +94,206 @@ fun PuzzleNavHost(
         settingsStore.settings.collect { value = it }
     }
     val settings = currentSettings ?: return
+    val scope = rememberCoroutineScope()
+    val client = remember { OkHttpClient() }
+    val snackbarHostState = remember { SnackbarHostState() }
+    val currentVersion = remember { parseSemver(BuildConfig.VERSION_NAME) }
+    var updateResult by remember { mutableStateOf<UpdateCheckResult?>(null) }
+    var isChecking by remember { mutableStateOf(false) }
+    var isDownloading by remember { mutableStateOf(false) }
+    var promptIsManual by remember { mutableStateOf(false) }
+    var downloadWhenPromptShown by remember { mutableStateOf(false) }
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val onCatalog = navBackStackEntry?.destination?.route == Routes.CATALOG
+    val promptVisible = updateResult != null &&
+        shouldShowUpdatePromptOnScreen(promptIsManual, onCatalog)
+    val offlineError = stringResource(R.string.error_offline)
+    val downloadError = stringResource(R.string.error_download)
+    val installPermissionError = stringResource(R.string.error_install_permission)
 
-    NavHost(
-        navController = navController,
-        startDestination = Routes.CATALOG,
-    ) {
-        composable(Routes.CATALOG) {
-            CatalogScreen(
-                catalog = catalog,
-                assets = assets,
-                onPuzzleClick = { id ->
-                    navController.navigate(Routes.preview(id, SOURCE_BUILTIN))
-                },
-                onSettingsClick = { navController.navigate(Routes.SETTINGS) },
-                onMyPhotosClick = { navController.navigate(Routes.MY_PHOTOS) },
-                onCreditsClick = { navController.navigate(Routes.CREDITS) },
-            )
+    val downloadAndInstall: suspend (UpdateCheckResult) -> Unit = download@{ result ->
+        if (isDownloading) return@download
+        isDownloading = true
+        val apk = try {
+            result.apkAssetUrl?.let { url ->
+                downloadUpdateApk(context, client, url)
+            }
+        } finally {
+            isDownloading = false
         }
-        composable(Routes.PREVIEW) { entry ->
-            val id = entry.arguments?.getString(ARG_ID)
-            val source = entry.arguments?.getString(ARG_SOURCE)
-            val puzzle = catalog.puzzles.firstOrNull {
-                source == SOURCE_BUILTIN && it.id == id
-            }
-            val userBitmap = remember(id, source, userFiles) {
-                if (source == SOURCE_USER && id != null) userFiles.load(id) else null
-            }
-            PreviewScreen(
-                puzzle = puzzle,
-                assets = assets,
-                userBitmap = userBitmap,
-                onStart = { gridSize ->
-                    if (id != null && source != null) {
-                        navController.navigate(Routes.play(id, source, gridSize.n))
-                    }
-                },
-            )
+        if (apk == null) {
+            snackbarHostState.showSnackbar(downloadError)
+        } else if (!ApkInstaller.install(context, apk)) {
+            snackbarHostState.showSnackbar(installPermissionError)
         }
-        composable(Routes.PLAY) { entry ->
-            val id = entry.arguments?.getString(ARG_ID)
-            val source = entry.arguments?.getString(ARG_SOURCE)
-            val size = entry.arguments?.getString(ARG_SIZE)?.toIntOrNull()?.let { n ->
-                GridSize.entries.firstOrNull { it.n == n }
+    }
+
+    val performCheck: suspend (Boolean) -> Unit = check@{ manual ->
+        if (isChecking || isDownloading) return@check
+        isChecking = true
+        if (manual) updateResult = null
+        val result = withContext(Dispatchers.IO) {
+            UpdateChecker.check(client, currentVersion)
+        }
+        isChecking = false
+        val decision = decideAfterUpdateCheck(
+            manual = manual,
+            result = result,
+            downloadMode = settings.updateDownloadMode,
+            dismissedVersion = settings.dismissedUpdateVersion,
+        )
+        if (decision.recordCheckTimestamp) {
+            settingsStore.setLastUpdateCheckAt(Instant.now().toString())
+        }
+        if (decision.showOfflineSnackbar) {
+            snackbarHostState.showSnackbar(offlineError)
+        }
+        promptIsManual = decision.isManualPrompt
+        downloadWhenPromptShown = decision.downloadWhenPromptShown
+        updateResult = if (decision.showDialog) result else null
+    }
+
+    LaunchedEffect(Unit) {
+        if (shouldRunAutoCheck(settings.autoCheckUpdates)) {
+            performCheck(false)
+        }
+    }
+
+    LaunchedEffect(promptVisible, updateResult) {
+        val result = updateResult
+        if (!promptVisible || result == null || !downloadWhenPromptShown) return@LaunchedEffect
+        downloadWhenPromptShown = false
+        downloadAndInstall(result)
+    }
+
+    val dismissPrompt: (Boolean) -> Unit = { postpone ->
+        val latest = updateResult?.latest
+        if (shouldPersistDismissed(promptIsManual, postpone) && latest != null) {
+            scope.launch {
+                settingsStore.setDismissedUpdateVersion(versionLabel(latest))
             }
-            val puzzle = catalog.puzzles.firstOrNull {
-                source == SOURCE_BUILTIN && it.id == id
-            }
-            val bitmap = remember(puzzle?.file, id, source, assets, userFiles) {
-                if (source == SOURCE_USER && id != null) {
-                    userFiles.load(id)
-                } else {
-                    puzzle?.let {
-                        runCatching {
-                            assets.open(it.file).use(BitmapFactory::decodeStream)
-                        }.getOrNull()
-                    }
-                }
-            }
-            if (size == null || id == null || source == null) {
-                PlaceholderScreen(R.string.play_invalid_size)
-            } else {
-                PlayScreen(
-                    puzzleId = id,
-                    sourceBitmap = bitmap,
-                    size = size,
-                    statsEnabled = settings.statsEnabled,
-                    recordsStore = recordsStore,
-                    onAbandon = { navController.popBackStack() },
-                    onAgain = {
-                        navController.navigate(Routes.play(id, source, size.n)) {
-                            popUpTo(Routes.PLAY) { inclusive = true }
-                        }
+        }
+        updateResult = null
+        downloadWhenPromptShown = false
+    }
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        NavHost(
+            navController = navController,
+            startDestination = Routes.CATALOG,
+        ) {
+            composable(Routes.CATALOG) {
+                CatalogScreen(
+                    catalog = catalog,
+                    assets = assets,
+                    onPuzzleClick = { id ->
+                        navController.navigate(Routes.preview(id, SOURCE_BUILTIN))
                     },
-                    onCatalog = {
-                        navController.popBackStack(Routes.CATALOG, inclusive = false)
+                    onSettingsClick = { navController.navigate(Routes.SETTINGS) },
+                    onMyPhotosClick = { navController.navigate(Routes.MY_PHOTOS) },
+                    onCreditsClick = { navController.navigate(Routes.CREDITS) },
+                )
+            }
+            composable(Routes.PREVIEW) { entry ->
+                val id = entry.arguments?.getString(ARG_ID)
+                val source = entry.arguments?.getString(ARG_SOURCE)
+                val puzzle = catalog.puzzles.firstOrNull {
+                    source == SOURCE_BUILTIN && it.id == id
+                }
+                val userBitmap = remember(id, source, userFiles) {
+                    if (source == SOURCE_USER && id != null) userFiles.load(id) else null
+                }
+                PreviewScreen(
+                    puzzle = puzzle,
+                    assets = assets,
+                    userBitmap = userBitmap,
+                    onStart = { gridSize ->
+                        if (id != null && source != null) {
+                            navController.navigate(Routes.play(id, source, gridSize.n))
+                        }
                     },
                 )
             }
+            composable(Routes.PLAY) { entry ->
+                val id = entry.arguments?.getString(ARG_ID)
+                val source = entry.arguments?.getString(ARG_SOURCE)
+                val size = entry.arguments?.getString(ARG_SIZE)?.toIntOrNull()?.let { n ->
+                    GridSize.entries.firstOrNull { it.n == n }
+                }
+                val puzzle = catalog.puzzles.firstOrNull {
+                    source == SOURCE_BUILTIN && it.id == id
+                }
+                val bitmap = remember(puzzle?.file, id, source, assets, userFiles) {
+                    if (source == SOURCE_USER && id != null) {
+                        userFiles.load(id)
+                    } else {
+                        puzzle?.let {
+                            runCatching {
+                                assets.open(it.file).use(BitmapFactory::decodeStream)
+                            }.getOrNull()
+                        }
+                    }
+                }
+                if (size == null || id == null || source == null) {
+                    PlaceholderScreen(R.string.play_invalid_size)
+                } else {
+                    PlayScreen(
+                        puzzleId = id,
+                        sourceBitmap = bitmap,
+                        size = size,
+                        statsEnabled = settings.statsEnabled,
+                        recordsStore = recordsStore,
+                        onAbandon = { navController.popBackStack() },
+                        onAgain = {
+                            navController.navigate(Routes.play(id, source, size.n)) {
+                                popUpTo(Routes.PLAY) { inclusive = true }
+                            }
+                        },
+                        onCatalog = {
+                            navController.popBackStack(Routes.CATALOG, inclusive = false)
+                        },
+                    )
+                }
+            }
+            composable(Routes.SETTINGS) {
+                SettingsScreen(
+                    settings = settings,
+                    settingsStore = settingsStore,
+                    versionName = BuildConfig.VERSION_NAME,
+                    isCheckingUpdate = isChecking,
+                    isDownloadingUpdate = isDownloading,
+                    onCheckUpdate = { scope.launch { performCheck(true) } },
+                )
+            }
+            composable(Routes.MY_PHOTOS) {
+                MyPhotosScreen(
+                    userFiles = userFiles,
+                    userPuzzlesStore = userPuzzlesStore,
+                    recordsStore = recordsStore,
+                    onPuzzleClick = { id ->
+                        navController.navigate(Routes.preview(id, SOURCE_USER))
+                    },
+                )
+            }
+            composable(Routes.CREDITS) {
+                CreditsScreen(puzzles = catalog.puzzles)
+            }
         }
-        composable(Routes.SETTINGS) {
-            SettingsScreen(
-                settings = settings,
-                settingsStore = settingsStore,
-                versionName = BuildConfig.VERSION_NAME,
-            )
-        }
-        composable(Routes.MY_PHOTOS) {
-            MyPhotosScreen(
-                userFiles = userFiles,
-                userPuzzlesStore = userPuzzlesStore,
-                recordsStore = recordsStore,
-                onPuzzleClick = { id ->
-                    navController.navigate(Routes.preview(id, SOURCE_USER))
-                },
-            )
-        }
-        composable(Routes.CREDITS) {
-            CreditsScreen(puzzles = catalog.puzzles)
+        SnackbarHost(
+            hostState = snackbarHostState,
+            modifier = Modifier.align(Alignment.BottomCenter),
+        )
+        if (promptVisible) {
+            updateResult?.let { result ->
+                UpdateResultDialog(
+                    result = result,
+                    downloadMode = settings.updateDownloadMode,
+                    isDownloading = isDownloading,
+                    onDownload = { scope.launch { downloadAndInstall(result) } },
+                    onDismiss = { dismissPrompt(false) },
+                    onPostpone = { dismissPrompt(true) },
+                )
+            }
         }
     }
 }

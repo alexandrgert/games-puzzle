@@ -132,6 +132,116 @@
       "license": "CC BY-SA 3.0",
       "attribution": "Andrey Korzun",
       "source_url": "https://commons.wikimedia.org/wiki/File:Syringa_'Krasavitsa_Moskvy'_01.jpg"
+    },
+    {
+      "id": "olkhon-ice-cave-winter",
+      "file": "puzzles/olkhon-ice-cave-winter.webp",
+      "thumb": "thumbs/olkhon-ice-cave-winter.webp",
+      "category": "nature",
+      "season": "winter",
+      "title_ru": "Ледяная пещера на Ольхоне",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Sergey Pesterev",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ice_cave_on_Olkhon_island.jpg"
+    },
+    {
+      "id": "dzhangyskol-autumn-altai",
+      "file": "puzzles/dzhangyskol-autumn-altai.webp",
+      "thumb": "thumbs/dzhangyskol-autumn-altai.webp",
+      "category": "nature",
+      "season": "autumn",
+      "title_ru": "Осень на озере Джангысколь",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Discoverynn",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9E%D1%81%D0%B5%D0%BD%D1%8C_%D0%BD%D0%B0_%D0%BE%D0%B7%D0%B5%D1%80%D0%B5_%D0%94%D0%B6%D0%B0%D0%BD%D0%B3%D1%8B%D1%81%D0%BA%D0%BE%D0%BB%D1%8C.jpg"
+    },
+    {
+      "id": "altai-birch-spring",
+      "file": "puzzles/altai-birch-spring.webp",
+      "thumb": "thumbs/altai-birch-spring.webp",
+      "category": "trees",
+      "season": "spring",
+      "title_ru": "Весенние берёзы в Алтайском крае",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Савин Игорь Игоревич",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spring_in_Bystroistokskiy_district_of_Altai_Krai_Russia_16.JPG"
+    },
+    {
+      "id": "ladoga-pine-skerry",
+      "file": "puzzles/ladoga-pine-skerry.webp",
+      "thumb": "thumbs/ladoga-pine-skerry.webp",
+      "category": "trees",
+      "season": "summer",
+      "title_ru": "Сосны Ладожских шхер",
+      "license": "CC BY-SA 4.0",
+      "attribution": "NastyaMatch",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B1%D0%BE%D1%80_%D0%BD%D0%B0_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B5.jpg"
+    },
+    {
+      "id": "autumn-asters",
+      "file": "puzzles/autumn-asters.webp",
+      "thumb": "thumbs/autumn-asters.webp",
+      "category": "flowers",
+      "season": "autumn",
+      "title_ru": "Осенние астры",
+      "license": "CC BY-SA 4.0",
+      "attribution": "ХВикт",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D0%B8%D0%BD%D0%BA%D0%B8_-_%D0%9E%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D0%B8%D0%BD%D0%BA%D0%B8_04.jpg"
+    },
+    {
+      "id": "kamchatka-brown-bear",
+      "file": "puzzles/kamchatka-brown-bear.webp",
+      "thumb": "thumbs/kamchatka-brown-bear.webp",
+      "category": "animals",
+      "season": "summer",
+      "title_ru": "Камчатский бурый медведь",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Robert F. Tobler",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg"
+    },
+    {
+      "id": "baikal-nerpa",
+      "file": "puzzles/baikal-nerpa.webp",
+      "thumb": "thumbs/baikal-nerpa.webp",
+      "category": "animals",
+      "season": "any",
+      "title_ru": "Нерпы у Ушканьих островов",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Nina Zhavoronkova",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B7_%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8_%D0%B1%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B5%D1%80%D0%BF%D1%8B_%D0%B1%D0%BB%D0%B8%D0%B7_%D0%A3%D1%88%D0%BA%D0%B0%D0%BD%D1%8C%D0%B8%D1%85_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%BE%D0%B2_01.jpg"
+    },
+    {
+      "id": "chistopol-bullfinch-winter",
+      "file": "puzzles/chistopol-bullfinch-winter.webp",
+      "thumb": "thumbs/chistopol-bullfinch-winter.webp",
+      "category": "birds",
+      "season": "winter",
+      "title_ru": "Снегирь в Чистополе",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Vadim Indeikin",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BD%D0%B5%D0%B3%D0%B8%D1%80%D1%8C._%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C._%D0%A0%D0%A2._%D0%A4%D0%B5%D0%B2%D1%80%D0%B0%D0%BB%D1%8C_2011_-_panoramio.jpg"
+    },
+    {
+      "id": "krimozero-autumn",
+      "file": "puzzles/krimozero-autumn.webp",
+      "thumb": "thumbs/krimozero-autumn.webp",
+      "category": "aquatic",
+      "season": "autumn",
+      "title_ru": "Острова Кримозера осенью",
+      "license": "Public domain",
+      "attribution": "Андрей Крижановский",
+      "source_url": "https://commons.wikimedia.org/wiki/File:P1068153_Islands_of_Lake_Krimozero_in_autumn_view_from_Belogorie_Karelia_2021.jpg"
+    },
+    {
+      "id": "lena-pillars-summer",
+      "file": "puzzles/lena-pillars-summer.webp",
+      "thumb": "thumbs/lena-pillars-summer.webp",
+      "category": "nature",
+      "season": "summer",
+      "title_ru": "Ленские столбы",
+      "license": "CC BY-SA 3.0",
+      "attribution": "ZankaM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lena_Pillars_20050716_15.JPG"
     }
   ]
 }
