@@ -1,12 +1,14 @@
 package ru.alexandrgert.gamespuzzle.ui
 
 import android.content.res.AssetManager
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
@@ -14,7 +16,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.domain.CatalogFile
+import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.ui.catalog.CatalogScreen
+import ru.alexandrgert.gamespuzzle.ui.play.PlayScreen
 import ru.alexandrgert.gamespuzzle.ui.preview.PreviewScreen
 
 object Routes {
@@ -70,8 +74,32 @@ fun PuzzleNavHost(
                 },
             )
         }
-        composable(Routes.PLAY) {
-            PlaceholderScreen(R.string.screen_play)
+        composable(Routes.PLAY) { entry ->
+            val id = entry.arguments?.getString(ARG_ID)
+            val source = entry.arguments?.getString(ARG_SOURCE)
+            val size = entry.arguments?.getString(ARG_SIZE)?.toIntOrNull()?.let { n ->
+                GridSize.entries.firstOrNull { it.n == n }
+            }
+            val puzzle = catalog.puzzles.firstOrNull {
+                source == SOURCE_BUILTIN && it.id == id
+            }
+            val bitmap = remember(puzzle?.file, assets) {
+                puzzle?.let {
+                    runCatching {
+                        assets.open(it.file).use(BitmapFactory::decodeStream)
+                    }.getOrNull()
+                }
+            }
+            if (size == null) {
+                PlaceholderScreen(R.string.play_invalid_size)
+            } else {
+                PlayScreen(
+                    sourceBitmap = bitmap,
+                    size = size,
+                    statsEnabled = false,
+                    onAbandon = { navController.popBackStack() },
+                )
+            }
         }
         composable(Routes.SETTINGS) {
             PlaceholderScreen(R.string.screen_settings)
@@ -98,3 +126,4 @@ private fun PlaceholderScreen(@StringRes textResource: Int) {
 private const val SOURCE_BUILTIN = "builtin"
 private const val ARG_ID = "id"
 private const val ARG_SOURCE = "source"
+private const val ARG_SIZE = "n"

@@ -4,6 +4,10 @@
     <string name="action_my_photos">Мои фотографии</string>
     <string name="action_credits">Авторы</string>
     <string name="action_start">Начать</string>
+    <string name="action_peek">Картинка</string>
+    <string name="action_abandon">Выйти</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_ok">Хорошо</string>
     <string name="grid_5">5 × 5</string>
     <string name="grid_6">6 × 6</string>
     <string name="filter_all">Все</string>
@@ -21,6 +25,13 @@
     <string name="catalog_empty">Подходящих изображений нет</string>
     <string name="preview_not_found">Изображение не найдено</string>
     <string name="puzzle_image">Изображение пазла</string>
+    <string name="play_image_not_found">Изображение для игры не найдено</string>
+    <string name="play_invalid_size">Неверный размер поля</string>
+    <string name="play_stats">Ходы: %1$d · Время: %2$d с</string>
+    <string name="confirm_abandon_title">Выйти из игры?</string>
+    <string name="confirm_abandon_message">Текущий прогресс будет потерян.</string>
+    <string name="win_title">Пазл собран!</string>
+    <string name="win_message">Поздравляем с победой.</string>
     <string name="screen_play">Игра</string>
     <string name="screen_settings">Настройки</string>
     <string name="screen_my_photos">Мои фотографии</string>
