@@ -75,9 +75,18 @@ fun PlayScreen(
             modifier = Modifier.padding(16.dp),
         )
     } else {
-        val tiles = remember(sourceBitmap, size) {
+        val squareBitmap = remember(sourceBitmap) {
+            val squareSide = min(sourceBitmap.width, sourceBitmap.height)
+            Bitmap.createScaledBitmap(
+                sourceBitmap,
+                squareSide,
+                squareSide,
+                true,
+            )
+        }
+        val tiles = remember(squareBitmap, size) {
             List(size.n * size.n) { tileId ->
-                tileBitmap(sourceBitmap, tileId, size.n).asImageBitmap()
+                tileBitmap(squareBitmap, tileId, size.n).asImageBitmap()
             }
         }
         Column(
@@ -117,9 +126,9 @@ fun PlayScreen(
                 }
                 if (state.peek) {
                     Image(
-                        bitmap = sourceBitmap.asImageBitmap(),
+                        bitmap = squareBitmap.asImageBitmap(),
                         contentDescription = stringResource(R.string.puzzle_image),
-                        contentScale = ContentScale.Crop,
+                        contentScale = ContentScale.FillBounds,
                         modifier = Modifier.fillMaxSize(),
                     )
                 }
@@ -185,17 +194,15 @@ fun tileBitmap(src: Bitmap, tileId: Int, n: Int): Bitmap {
     require(n > 0)
     require(tileId in 0 until n * n)
     val squareSide = min(src.width, src.height)
+    val squareBitmap = Bitmap.createScaledBitmap(src, squareSide, squareSide, true)
     val tileSide = squareSide / n
     require(tileSide > 0)
-    val squareSize = tileSide * n
-    val offsetX = (src.width - squareSize) / 2
-    val offsetY = (src.height - squareSize) / 2
     val homeRow = tileId / n
     val homeCol = tileId % n
     return Bitmap.createBitmap(
-        src,
-        offsetX + homeCol * tileSide,
-        offsetY + homeRow * tileSide,
+        squareBitmap,
+        homeCol * tileSide,
+        homeRow * tileSide,
         tileSide,
         tileSide,
     )

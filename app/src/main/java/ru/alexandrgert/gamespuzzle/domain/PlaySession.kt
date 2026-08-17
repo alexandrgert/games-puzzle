@@ -6,7 +6,11 @@ class PlaySession(
     val size: GridSize,
     val statsEnabled: Boolean,
     random: Random,
+    private val currentTimeMillis: () -> Long = System::currentTimeMillis,
 ) {
+    private val startedAtMs = currentTimeMillis()
+    private var wonAtMs: Long? = null
+
     var board: Board = BoardEngine.shuffle(size, random)
         private set
     var selected: Cell? = null
@@ -17,6 +21,8 @@ class PlaySession(
         private set
     var lastReverted: Boolean = false
         private set
+    val elapsedMs: Long
+        get() = ((wonAtMs ?: currentTimeMillis()) - startedAtMs).coerceAtLeast(0L)
 
     fun tap(cell: Cell): MoveResult? {
         if (!cell.inBounds(size.n) || board.isLockedCell(cell)) return null
@@ -39,6 +45,7 @@ class PlaySession(
             is MoveResult.Applied -> {
                 board = result.board
                 if (statsEnabled) moves++
+                if (isWin() && wonAtMs == null) wonAtMs = currentTimeMillis()
                 lastReverted = false
             }
             is MoveResult.Reverted -> {

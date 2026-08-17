@@ -1,6 +1,7 @@
 package ru.alexandrgert.gamespuzzle.ui.play
 
 import java.util.Random
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
@@ -12,6 +13,18 @@ import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.domain.MoveResult
 
 class PlayViewModelTest {
+    @Test
+    fun elapsedTimeIncreasesAfterStart() {
+        var now = 1_000L
+        val viewModel = PlayViewModel(currentTimeMillis = { now })
+        viewModel.start(GridSize.FIVE, Random(1L))
+
+        now = 1_450L
+        viewModel.togglePeek()
+
+        assertEquals(450L, viewModel.state!!.elapsedMs)
+    }
+
     @Test
     fun repeatedStartKeepsTheActiveBoard() {
         val viewModel = PlayViewModel()

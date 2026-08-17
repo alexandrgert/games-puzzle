@@ -22,6 +22,7 @@ data class PlayState(
 
 class PlayViewModel(
     private val statsEnabled: Boolean = false,
+    private val currentTimeMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
     var state: PlayState? by mutableStateOf(null)
         private set
@@ -30,7 +31,7 @@ class PlayViewModel(
 
     fun start(size: GridSize, random: Random) {
         if (session != null) return
-        session = PlaySession(size, statsEnabled, random)
+        session = PlaySession(size, statsEnabled, random, currentTimeMillis)
         publish()
     }
 
@@ -54,7 +55,7 @@ class PlayViewModel(
         state = PlayState(
             board = current.board,
             selected = current.selected,
-            elapsedMs = 0,
+            elapsedMs = current.elapsedMs,
             moves = current.moves,
             won = current.isWin(),
             peek = current.peek,
