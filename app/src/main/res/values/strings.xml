@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Пазл</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_my_photos">Мои фотографии</string>
+    <string name="action_credits">Авторы</string>
+    <string name="action_start">Начать</string>
+    <string name="grid_5">5 × 5</string>
+    <string name="grid_6">6 × 6</string>
+    <string name="filter_all">Все</string>
+    <string name="category_nature">Природа</string>
+    <string name="category_animals">Животные</string>
+    <string name="category_birds">Птицы</string>
+    <string name="category_aquatic">Водоёмы</string>
+    <string name="category_trees">Деревья</string>
+    <string name="category_flowers">Цветы</string>
+    <string name="season_spring">Весна</string>
+    <string name="season_summer">Лето</string>
+    <string name="season_autumn">Осень</string>
+    <string name="season_winter">Зима</string>
+    <string name="season_any">Любой сезон</string>
+    <string name="catalog_empty">Подходящих изображений нет</string>
+    <string name="preview_not_found">Изображение не найдено</string>
+    <string name="puzzle_image">Изображение пазла</string>
+    <string name="screen_play">Игра</string>
+    <string name="screen_settings">Настройки</string>
+    <string name="screen_my_photos">Мои фотографии</string>
+    <string name="screen_credits">Авторы</string>
 </resources>
