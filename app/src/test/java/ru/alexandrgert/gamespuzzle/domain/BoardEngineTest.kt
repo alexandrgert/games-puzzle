@@ -100,4 +100,31 @@ class BoardEngineTest {
 
         assertTrue(result is MoveResult.Reverted)
     }
+
+    @Test
+    fun attachToLockedNeighbourLocksInPlace() {
+        val tiles = IntArray(25) { it }
+        val locked = BooleanArray(25).also {
+            it[0] = true
+            it[1] = true
+        }
+        tiles[24] = 2
+        tiles[2] = 24
+        val start = Board(GridSize.FIVE, tiles, locked)
+        val result = BoardEngine.trySwap(start, Cell(4, 4), Cell(0, 2))
+        assertTrue(result is MoveResult.Applied)
+        val board = (result as MoveResult.Applied).board
+        assertTrue(board.tiles[2] == 2)
+        assertTrue(board.locked[2])
+        assertTrue(board.locked[0] && board.locked[1])
+        assertTrue(board.tiles[24] == 24)
+    }
+
+    @Test
+    fun cannotSwapOntoLockedTile() {
+        val locked = BooleanArray(25).also { it[0] = true }
+        val start = Board(GridSize.FIVE, IntArray(25) { it }, locked)
+        val result = BoardEngine.trySwap(start, Cell(1, 0), Cell(0, 0))
+        assertTrue(result is MoveResult.Reverted)
+    }
 }
