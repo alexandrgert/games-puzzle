@@ -5,7 +5,6 @@ import ru.alexandrgert.gamespuzzle.domain.parseSemver
 
 data class UpdateCheckDecision(
     val showDialog: Boolean,
-    val downloadWhenPromptShown: Boolean,
     val showOfflineSnackbar: Boolean,
     val recordCheckTimestamp: Boolean,
     val isManualPrompt: Boolean,
@@ -38,7 +37,6 @@ fun decideAfterUpdateCheck(
         val showDialog = result.ok
         return UpdateCheckDecision(
             showDialog = showDialog,
-            downloadWhenPromptShown = false,
             showOfflineSnackbar = !result.ok,
             recordCheckTimestamp = result.ok,
             isManualPrompt = true,
@@ -47,7 +45,6 @@ fun decideAfterUpdateCheck(
     val showDialog = shouldShowStartupPrompt(result, dismissedVersion)
     return UpdateCheckDecision(
         showDialog = showDialog,
-        downloadWhenPromptShown = false,
         showOfflineSnackbar = false,
         recordCheckTimestamp = result.ok,
         isManualPrompt = false,

@@ -52,7 +52,6 @@ class StartupUpdatePolicyTest {
         assertEquals(
             UpdateCheckDecision(
                 showDialog = false,
-                downloadWhenPromptShown = false,
                 showOfflineSnackbar = true,
                 recordCheckTimestamp = false,
                 isManualPrompt = true,
@@ -62,40 +61,37 @@ class StartupUpdatePolicyTest {
     }
 
     @Test
-    fun decideAfterCheck_manualLatestShowsDialogWithoutDownload() {
+    fun decideAfterCheck_manualLatestShowsDialog() {
         val decision = decideAfterUpdateCheck(
             manual = true,
             result = upToDate(),
             dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
-        assertFalse(decision.downloadWhenPromptShown)
         assertFalse(decision.showOfflineSnackbar)
         assertTrue(decision.recordCheckTimestamp)
         assertTrue(decision.isManualPrompt)
     }
 
     @Test
-    fun decideAfterCheck_manualAvailableDoesNotDownloadUntilConfirmed() {
+    fun decideAfterCheck_manualAvailableShowsDialog() {
         val decision = decideAfterUpdateCheck(
             manual = true,
             result = available(),
             dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
-        assertFalse(decision.downloadWhenPromptShown)
         assertTrue(decision.isManualPrompt)
     }
 
     @Test
-    fun decideAfterCheck_startupAvailableDoesNotDownloadUntilConfirmed() {
+    fun decideAfterCheck_startupAvailableShowsDialog() {
         val decision = decideAfterUpdateCheck(
             manual = false,
             result = available(),
             dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
-        assertFalse(decision.downloadWhenPromptShown)
         assertFalse(decision.showOfflineSnackbar)
         assertTrue(decision.recordCheckTimestamp)
         assertFalse(decision.isManualPrompt)
@@ -109,7 +105,6 @@ class StartupUpdatePolicyTest {
             dismissedVersion = "0.3.0",
         )
         assertFalse(dismissed.showDialog)
-        assertFalse(dismissed.downloadWhenPromptShown)
         assertFalse(dismissed.showOfflineSnackbar)
 
         val offline = decideAfterUpdateCheck(
