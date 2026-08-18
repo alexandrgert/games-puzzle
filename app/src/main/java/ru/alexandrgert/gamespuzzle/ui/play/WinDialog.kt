@@ -13,7 +13,6 @@ import ru.alexandrgert.gamespuzzle.data.RecordUpdate
 
 @Composable
 fun WinDialog(
-    statsEnabled: Boolean,
     elapsedMs: Long,
     moves: Int,
     recordUpdate: RecordUpdate?,
@@ -27,15 +26,13 @@ fun WinDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text(stringResource(R.string.win_message))
-                if (statsEnabled) {
-                    Text(stringResource(R.string.win_time, elapsedMs / 1_000))
-                    Text(stringResource(R.string.win_moves, moves))
-                    if (recordUpdate?.improvedTime == true) {
-                        Text(stringResource(R.string.win_new_best_time))
-                    }
-                    if (recordUpdate?.improvedMoves == true) {
-                        Text(stringResource(R.string.win_new_best_moves))
-                    }
+                Text(stringResource(R.string.win_time, elapsedMs / 1_000))
+                Text(stringResource(R.string.win_moves, moves))
+                if (recordUpdate?.improvedTime == true) {
+                    Text(stringResource(R.string.win_new_best_time))
+                }
+                if (recordUpdate?.improvedMoves == true) {
+                    Text(stringResource(R.string.win_new_best_moves))
                 }
             }
         },

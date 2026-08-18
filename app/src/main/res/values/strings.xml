@@ -41,7 +41,7 @@
     <string name="win_new_best_moves">Новый рекорд по ходам!</string>
     <string name="win_again">Собрать ещё раз</string>
     <string name="win_catalog">В каталог</string>
-    <string name="settings_stats">Показывать время и ходы</string>
+    <string name="settings_stats">Показывать время и ходы во время игры</string>
     <string name="settings_download_immediately">Скачивать обновления сразу</string>
     <string name="settings_check_updates_on_launch">Проверять обновления при запуске</string>
     <string name="settings_version">Версия: %1$s</string>

@@ -68,7 +68,6 @@ fun PlayScreen(
         )
     }
     var confirmAbandon by remember { mutableStateOf(false) }
-    var revertedFlash by remember { mutableStateOf(false) }
     val state = playViewModel.state
 
     LaunchedEffect(size, playViewModel) {
@@ -84,8 +83,6 @@ fun PlayScreen(
             playViewModel.tick()
         }
     }
-    // Task 4: flash UI. lastReverted/revertedA/revertedB dropped from PlayState in Task 3.
-    // LaunchedEffect(state?.lastReverted) { ... playViewModel.clearLastReverted() }
     BackHandler {
         confirmAbandon = true
     }
@@ -190,12 +187,6 @@ fun PlayScreen(
                                 } else {
                                     Modifier
                                 }
-                                val flashThis = isRevertedFlashCell(
-                                    cell,
-                                    lastReverted = revertedFlash,
-                                    revertedA = null,
-                                    revertedB = null,
-                                )
                                 Box(
                                     modifier = selectedModifier
                                         .weight(1f)
@@ -215,17 +206,6 @@ fun PlayScreen(
                                             contentDescription = null,
                                             contentScale = ContentScale.FillBounds,
                                             modifier = Modifier.fillMaxSize(),
-                                        )
-                                    }
-                                    if (flashThis) {
-                                        Box(
-                                            Modifier
-                                                .fillMaxSize()
-                                                .background(
-                                                    MaterialTheme.colorScheme.error.copy(
-                                                        alpha = 0.32f,
-                                                    ),
-                                                ),
                                         )
                                     }
                                 }
@@ -293,7 +273,6 @@ fun PlayScreen(
 
         if (state.won) {
             WinDialog(
-                statsEnabled = statsEnabled,
                 elapsedMs = state.elapsedMs,
                 moves = state.moves,
                 recordUpdate = state.recordUpdate,
@@ -323,10 +302,7 @@ fun PlayScreen(
     }
 }
 
-private fun tileShownAt(state: PlayState, cell: Cell): Int {
-    // Task 4: flash swap preview used lastReverted/revertedA/revertedB.
-    return state.board.tileAt(cell)
-}
+private fun tileShownAt(state: PlayState, cell: Cell): Int = state.board.tileAt(cell)
 
 fun tileBitmap(src: Bitmap, tileId: Int, n: Int): Bitmap {
     require(n > 0)
