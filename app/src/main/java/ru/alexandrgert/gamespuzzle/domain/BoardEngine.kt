@@ -77,29 +77,47 @@ object BoardEngine {
         if (isCorrectJoin(n, a, tileA, b, tileB)) {
             val snapped = snapPairToHome(swapped, tileA, tileB)
                 ?: return MoveResult.Reverted(board)
-            return MoveResult.Applied(snapped, joined = true)
+            return appliedAfterLocks(swapped, snapped)
         }
 
         val neighbourJoin = findUnlockedNeighbourJoin(swapped, a, b)
         if (neighbourJoin != null) {
             val snapped = snapPairToHome(swapped, neighbourJoin.first, neighbourJoin.second)
                 ?: return MoveResult.Reverted(board)
-            return MoveResult.Applied(snapped, joined = true)
+            return appliedAfterLocks(swapped, snapped)
         }
 
         val nextLocked = swapped.locked.copyOf()
-        var any = false
         for (t in listOf(tileA, tileB)) {
             if (lockIfHomeAgainstLocked(swapped, t)) {
                 nextLocked[t] = true
-                any = true
             }
         }
-        return if (any) {
-            MoveResult.Applied(Board(board.size, swapped.tiles, nextLocked), joined = true)
-        } else {
-            MoveResult.Applied(swapped, joined = false)
+        val attached = Board(board.size, swapped.tiles, nextLocked)
+        return appliedAfterLocks(swapped, attached)
+    }
+
+    private fun appliedAfterLocks(beforeLocks: Board, afterDirectLocks: Board): MoveResult.Applied {
+        val cascaded = cascadeHomeLocks(afterDirectLocks)
+        val joined = !cascaded.locked.contentEquals(beforeLocks.locked)
+        return MoveResult.Applied(cascaded, joined)
+    }
+
+    private fun cascadeHomeLocks(board: Board): Board {
+        val nextLocked = board.locked.copyOf()
+        var changed = true
+        while (changed) {
+            changed = false
+            for (tileId in nextLocked.indices) {
+                if (nextLocked[tileId]) continue
+                if (board.tiles[tileId] != tileId) continue
+                if (!joinsLockedNeighbour(board.n, board.tiles, nextLocked, tileId)) continue
+                nextLocked[tileId] = true
+                changed = true
+            }
         }
+        if (nextLocked.contentEquals(board.locked)) return board
+        return Board(board.size, board.tiles, nextLocked)
     }
 
     private fun findUnlockedNeighbourJoin(board: Board, a: Cell, b: Cell): Pair<Int, Int>? {
@@ -121,14 +139,22 @@ object BoardEngine {
     }
 
     private fun lockIfHomeAgainstLocked(board: Board, tileId: Int): Boolean {
-        val n = board.n
         if (board.tiles[tileId] != tileId) return false
+        return joinsLockedNeighbour(board.n, board.tiles, board.locked, tileId)
+    }
+
+    private fun joinsLockedNeighbour(
+        n: Int,
+        tiles: IntArray,
+        locked: BooleanArray,
+        tileId: Int,
+    ): Boolean {
         val home = Cell.fromIndex(tileId, n)
         for (direction in orthogonalDirections) {
             val neighbor = Cell(home.row + direction.row, home.col + direction.col)
             if (!neighbor.inBounds(n)) continue
-            val neighborTile = board.tileAt(neighbor)
-            if (!board.isLockedTile(neighborTile)) continue
+            val neighborTile = tiles[neighbor.index(n)]
+            if (!locked[neighborTile]) continue
             if (isCorrectJoin(n, home, tileId, neighbor, neighborTile)) return true
         }
         return false

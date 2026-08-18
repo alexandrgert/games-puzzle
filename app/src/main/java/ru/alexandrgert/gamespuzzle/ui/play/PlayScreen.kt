@@ -29,6 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
@@ -182,13 +183,23 @@ fun PlayScreen(
                             repeat(size.n) { col ->
                                 val cell = Cell(row, col)
                                 val tileId = tileShownAt(state, cell)
-                                val selectedModifier = if (state.selected == cell) {
-                                    Modifier.border(4.dp, MaterialTheme.colorScheme.primary)
-                                } else {
-                                    Modifier
+                                val locked = state.board.isLockedCell(cell)
+                                val selected = state.selected == cell
+                                val outlineModifier = when {
+                                    selected -> Modifier.border(4.dp, MaterialTheme.colorScheme.primary)
+                                    PlayTileChrome.shouldDrawUnlockedOutline(
+                                        locked = locked,
+                                        peek = state.peek,
+                                        selected = false,
+                                        dragging = dragging == cell,
+                                    ) -> Modifier.border(
+                                        PlayTileChrome.UNLOCKED_OUTLINE_DP.dp,
+                                        Color.White,
+                                    )
+                                    else -> Modifier
                                 }
                                 Box(
-                                    modifier = selectedModifier
+                                    modifier = outlineModifier
                                         .weight(1f)
                                         .fillMaxHeight(),
                                 ) {

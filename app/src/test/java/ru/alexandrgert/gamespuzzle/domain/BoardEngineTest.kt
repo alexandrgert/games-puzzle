@@ -222,4 +222,44 @@ class BoardEngineTest {
         assertTrue(b.locked.all { !it })
         assertTrue(BoardEngine.hasResultativeSwap(b))
     }
+
+    @Test
+    fun snapLocksHomeNeighbourThatWasAlreadyInPlace() {
+        val tiles = IntArray(25) { it }
+        tiles[5] = 0
+        tiles[0] = 5
+        val start = Board(GridSize.FIVE, tiles, BooleanArray(25))
+
+        val result = BoardEngine.trySwap(start, Cell(1, 0), Cell(0, 0))
+
+        assertTrue(result is MoveResult.Applied)
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        val board = applied.board
+        assertTrue(board.tiles.toList() == (0 until 25).toList())
+        assertTrue(board.locked[0] && board.locked[5])
+        assertTrue(board.locked[1])
+        assertTrue(BoardEngine.isWin(board))
+    }
+
+    @Test
+    fun lastHomeTileLocksWhenFinalPairSnaps() {
+        val tiles = IntArray(25) { it }
+        tiles[24] = 0
+        tiles[0] = 24
+        val locked = BooleanArray(25) { true }.also {
+            it[0] = false
+            it[1] = false
+            it[24] = false
+        }
+        val start = Board(GridSize.FIVE, tiles, locked)
+
+        val result = BoardEngine.trySwap(start, Cell(4, 4), Cell(0, 0))
+
+        assertTrue(result is MoveResult.Applied)
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        assertTrue(applied.board.locked[24])
+        assertTrue(BoardEngine.isWin(applied.board))
+    }
 }
