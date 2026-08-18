@@ -76,8 +76,7 @@ fun PlayScreen(
             playViewModel.start(size, Random())
         }
     }
-    LaunchedEffect(statsEnabled, playViewModel) {
-        if (!statsEnabled) return@LaunchedEffect
+    LaunchedEffect(playViewModel) {
         while (true) {
             delay(250)
             val current = playViewModel.state ?: continue
@@ -85,17 +84,8 @@ fun PlayScreen(
             playViewModel.tick()
         }
     }
-    LaunchedEffect(state?.lastReverted) {
-        if (state?.lastReverted == true) {
-            revertedFlash = true
-            try {
-                delay(180)
-            } finally {
-                revertedFlash = false
-                playViewModel.clearLastReverted()
-            }
-        }
-    }
+    // Task 4: flash UI. lastReverted/revertedA/revertedB dropped from PlayState in Task 3.
+    // LaunchedEffect(state?.lastReverted) { ... playViewModel.clearLastReverted() }
     BackHandler {
         confirmAbandon = true
     }
@@ -203,8 +193,8 @@ fun PlayScreen(
                                 val flashThis = isRevertedFlashCell(
                                     cell,
                                     lastReverted = revertedFlash,
-                                    revertedA = state.revertedA,
-                                    revertedB = state.revertedB,
+                                    revertedA = null,
+                                    revertedB = null,
                                 )
                                 Box(
                                     modifier = selectedModifier
@@ -334,12 +324,8 @@ fun PlayScreen(
 }
 
 private fun tileShownAt(state: PlayState, cell: Cell): Int {
-    val showAttempt = state.lastReverted && state.revertedA != null && state.revertedB != null
-    return when {
-        showAttempt && cell == state.revertedA -> state.board.tileAt(state.revertedB!!)
-        showAttempt && cell == state.revertedB -> state.board.tileAt(state.revertedA!!)
-        else -> state.board.tileAt(cell)
-    }
+    // Task 4: flash swap preview used lastReverted/revertedA/revertedB.
+    return state.board.tileAt(cell)
 }
 
 fun tileBitmap(src: Bitmap, tileId: Int, n: Int): Bitmap {

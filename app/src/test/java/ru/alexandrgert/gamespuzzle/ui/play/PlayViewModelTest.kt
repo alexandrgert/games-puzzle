@@ -18,11 +18,9 @@ import org.junit.Test
 import ru.alexandrgert.gamespuzzle.data.RecordSaver
 import ru.alexandrgert.gamespuzzle.data.RecordUpdate
 import ru.alexandrgert.gamespuzzle.domain.Board
-import ru.alexandrgert.gamespuzzle.domain.BoardEngine
 import ru.alexandrgert.gamespuzzle.domain.BestRecord
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
-import ru.alexandrgert.gamespuzzle.domain.MoveResult
 import ru.alexandrgert.gamespuzzle.domain.PlaySession
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -73,21 +71,6 @@ class PlayViewModelTest {
     }
 
     @Test
-    fun clearsRevertedSwapSignalAfterUiHandlesIt() {
-        val viewModel = PlayViewModel()
-        viewModel.start(GridSize.FIVE, Random(3L))
-        val (first, second) = findRevertedPair(viewModel.state!!.board)
-
-        viewModel.onCell(first)
-        viewModel.onCell(second)
-        assertTrue(viewModel.state!!.lastReverted)
-
-        viewModel.clearLastReverted()
-
-        assertFalse(viewModel.state!!.lastReverted)
-    }
-
-    @Test
     fun winningPersistsRecordInViewModelAndPublishesMergeResult() {
         val releaseSave = CompletableDeferred<Unit>()
         val update = RecordUpdate(
@@ -121,23 +104,37 @@ class PlayViewModelTest {
     }
 
     @Test
-    fun winningWithStatsDisabledDoesNotWaitForRecordSave() {
-        val saver = FakeRecordSaver(
-            CompletableDeferred(),
-            RecordUpdate(BestRecord(null, null), false, false),
+    fun winningWithStatsDisabledSavesRecord() {
+        val releaseSave = CompletableDeferred<Unit>()
+        val update = RecordUpdate(
+            record = BestRecord(bestTimeMs = 400L, bestMoves = 3),
+            improvedTime = true,
+            improvedMoves = true,
         )
+        val saver = FakeRecordSaver(releaseSave, update)
         val viewModel = PlayViewModel(
             statsEnabled = false,
             puzzleId = "puzzle-2",
             recordSaver = saver,
         )
         viewModel.start(GridSize.FIVE, Random(5L))
-
         solve(viewModel)
-
         assertTrue(viewModel.state!!.won)
+        assertTrue(viewModel.state!!.recordSavePending)
+        assertEquals(1, saver.calls)
+        releaseSave.complete(Unit)
         assertFalse(viewModel.state!!.recordSavePending)
-        assertEquals(0, saver.calls)
+        assertSame(update, viewModel.state!!.recordUpdate)
+    }
+
+    @Test
+    fun elapsedTimeTicksWhenStatsDisabled() {
+        var now = 1_000L
+        val viewModel = PlayViewModel(statsEnabled = false, currentTimeMillis = { now })
+        viewModel.start(GridSize.FIVE, Random(1L))
+        now = 1_500L
+        viewModel.tick()
+        assertEquals(500L, viewModel.state!!.elapsedMs)
     }
 
     private fun solve(viewModel: PlayViewModel) {
@@ -157,20 +154,6 @@ class PlayViewModelTest {
 
         viewModel.onCell(Cell(0, 0))
         viewModel.onCell(Cell(0, 1))
-    }
-
-    private fun findRevertedPair(
-        board: Board,
-    ): Pair<Cell, Cell> {
-        val cells = (0 until board.n * board.n).map { Cell.fromIndex(it, board.n) }
-        for (first in cells) {
-            for (second in cells) {
-                if (first != second && BoardEngine.trySwap(board, first, second) is MoveResult.Reverted) {
-                    return first to second
-                }
-            }
-        }
-        error("No reverted pair")
     }
 
     private class FakeRecordSaver(

@@ -21,9 +21,6 @@ data class PlayState(
     val moves: Int,
     val won: Boolean,
     val peek: Boolean,
-    val lastReverted: Boolean,
-    val revertedA: Cell?,
-    val revertedB: Cell?,
     val recordSavePending: Boolean,
     val recordUpdate: RecordUpdate?,
 )
@@ -60,10 +57,6 @@ class PlayViewModel(
         publish()
     }
 
-    fun clearLastReverted() {
-        publish()
-    }
-
     fun tick() {
         publish()
     }
@@ -79,13 +72,10 @@ class PlayViewModel(
             moves = current.moves,
             won = won,
             peek = current.peek,
-            lastReverted = false,
-            revertedA = null,
-            revertedB = null,
             recordSavePending = previous?.recordSavePending ?: false,
             recordUpdate = previous?.recordUpdate,
         )
-        if (won && previous?.won != true && statsEnabled) saveRecord(current)
+        if (won && previous?.won != true) saveRecord(current)
     }
 
     private fun saveRecord(current: PlaySession) {
