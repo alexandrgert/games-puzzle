@@ -1,0 +1,156 @@
+[
+  {
+    "id": "krasnoyarsk-stolby-syenite",
+    "title_ru": "Сиенитовый обелиск в Столбах",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:Krasnoyarsk Pillars, Rock formation, Syenite laccolith obelisk, Russia.jpg"
+  },
+  {
+    "id": "kungur-ice-grotto",
+    "title_ru": "Ледяной грот Кунгурской пещеры",
+    "category": "nature",
+    "season": "winter",
+    "commons_file": "File:Kungur Ice Cave P6242153 2575.jpg"
+  },
+  {
+    "id": "mutnovsky-crater-rock",
+    "title_ru": "Кратер вулкана Мутновский",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:В царстве огня и льда 1.jpg"
+  },
+  {
+    "id": "altai-kokkel-tundra",
+    "title_ru": "Осенняя тундра у Кок-Кёля",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Altai77.jpg"
+  },
+  {
+    "id": "amur-tiger-aleksei",
+    "title_ru": "Амурский тигр Алексей",
+    "category": "animals",
+    "season": "any",
+    "commons_file": "File:Amur tiger aleksei.jpg"
+  },
+  {
+    "id": "novaya-zemlya-fox-scratch",
+    "title_ru": "Песец на Новой Земле",
+    "category": "animals",
+    "season": "winter",
+    "commons_file": "File:Arctic fox in the Russian Arctic National Park, Novaya Zemlya 2015-2.jpg"
+  },
+  {
+    "id": "moscow-zoo-kamchatka-bear",
+    "title_ru": "Камчатский бурый медведь",
+    "category": "animals",
+    "season": "any",
+    "commons_file": "File:Ursus arctos beringianus.jpg"
+  },
+  {
+    "id": "ushkan-nerpa-pair",
+    "title_ru": "Нерпы на Ушканьих островах",
+    "category": "animals",
+    "season": "any",
+    "commons_file": "File:Из жизни байкальской нерпы близ Ушканьих островов 02.jpg"
+  },
+  {
+    "id": "stellers-eagle-portrait",
+    "title_ru": "Портрет белоплечего орлана",
+    "category": "birds",
+    "season": "any",
+    "commons_file": "File:Steller's Sea Eagle portrait.jpg"
+  },
+  {
+    "id": "moscow-zoo-snowy-owls",
+    "title_ru": "Белые совы в Московском зоопарке",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Bubo scandiacus in Moscow Zoo 2014.JPG"
+  },
+  {
+    "id": "kislovodsk-spotted-woodpecker",
+    "title_ru": "Большой пёстрый дятел в Кисловодске",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Dendrocopos major, Kislovodsk, Russia.jpg"
+  },
+  {
+    "id": "kostroma-hazel-grouse",
+    "title_ru": "Рябчик в таёжном лесу",
+    "category": "birds",
+    "season": "autumn",
+    "commons_file": "File:Рябчик - птица из рода рябчиков, подсемейства тетеревиных, семейства фазановых отряда курообразных.jpg"
+  },
+  {
+    "id": "baikal-methane-bubbles",
+    "title_ru": "Пузыри воздуха в байкальском льду",
+    "category": "aquatic",
+    "season": "winter",
+    "commons_file": "File:Пузыри воздуха в байкальском льду.jpg"
+  },
+  {
+    "id": "kivach-upper-cascade",
+    "title_ru": "Верхний каскад водопада Кивач",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:The upper cascade of the Kivach waterfall.jpg"
+  },
+  {
+    "id": "baikal-ice-fractures",
+    "title_ru": "Трещины байкальского льда",
+    "category": "aquatic",
+    "season": "winter",
+    "commons_file": "File:Необычный байкальский лёд.jpg"
+  },
+  {
+    "id": "moscow-downy-birch-bark",
+    "title_ru": "Кора берёзы пушистой",
+    "category": "trees",
+    "season": "any",
+    "commons_file": "File:Кора берёзы пушистой.jpg"
+  },
+  {
+    "id": "elagin-pedunculate-oak",
+    "title_ru": "Кора дуба на Елагином острове",
+    "category": "trees",
+    "season": "summer",
+    "commons_file": "File:Wrinkles of History.jpg"
+  },
+  {
+    "id": "ergaki-siberian-pine-cone",
+    "title_ru": "Шишка кедра сибирского в Ергаках",
+    "category": "trees",
+    "season": "summer",
+    "commons_file": "File:Ergaki, Siberian pine cone with seeds and foliage, Pinus sibirica, Sayan Mountains, Russia.jpg"
+  },
+  {
+    "id": "taiga-cedar-cone",
+    "title_ru": "Кедровая шишка на мху",
+    "category": "trees",
+    "season": "autumn",
+    "commons_file": "File:Кедровая шишка.jpg"
+  },
+  {
+    "id": "avacha-kamchatka-rhododendron",
+    "title_ru": "Рододендрон камчатский у Авачинской бухты",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Rhododendron camtschaticum (Ericaceae) (54166531065).jpg"
+  },
+  {
+    "id": "altai-siberian-poppy",
+    "title_ru": "Сибирский мак в Алтайском заповеднике",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Сибирский мак.jpg"
+  },
+  {
+    "id": "saratov-daurian-rhododendron",
+    "title_ru": "Рододендрон даурский в Саратове",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Рододендрон даурский цветы в парке Саратов.jpg"
+  }
+]
