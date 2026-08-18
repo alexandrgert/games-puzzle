@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.domain.CatalogPuzzle
 
-const val LAUNCHER_ICON_PUZZLE_ID = "dzhangyskol-autumn-altai"
+const val LAUNCHER_ICON_PUZZLE_ID = "ruskeala-marble-wall"
 
 fun launcherIconPuzzle(puzzles: List<CatalogPuzzle>): CatalogPuzzle? =
     puzzles.firstOrNull { it.id == LAUNCHER_ICON_PUZZLE_ID }

@@ -6,6 +6,8 @@ import ru.alexandrgert.gamespuzzle.domain.CatalogPuzzle
 import ru.alexandrgert.gamespuzzle.domain.Category
 import ru.alexandrgert.gamespuzzle.domain.Season
 
+private const val ICON_ID = "ruskeala-marble-wall"
+
 class CreditsFormattingTest {
     @Test
     fun formatCreditsAttribution_joinsWithEmDash() {
@@ -20,10 +22,9 @@ class CreditsFormattingTest {
     }
 
     @Test
-    fun launcherIconPuzzle_usesDzhangyskolCatalogEntry() {
-        val icon = puzzle("dzhangyskol-autumn-altai")
-        val other = puzzle("lena-pillars-summer")
-
+    fun launcherIconPuzzle_usesNewCatalogEntry() {
+        val icon = puzzle(ICON_ID)
+        val other = puzzle("other-id")
         assertEquals(icon, launcherIconPuzzle(listOf(other, icon)))
         assertEquals(null, launcherIconPuzzle(listOf(other)))
     }
