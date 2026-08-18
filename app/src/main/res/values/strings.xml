@@ -42,11 +42,11 @@
     <string name="win_again">Собрать ещё раз</string>
     <string name="win_catalog">В каталог</string>
     <string name="settings_stats">Показывать время и ходы во время игры</string>
-    <string name="settings_download_immediately">Скачивать обновления сразу</string>
     <string name="settings_check_updates_on_launch">Проверять обновления при запуске</string>
     <string name="settings_version">Версия: %1$s</string>
     <string name="update_available">Доступно обновление</string>
     <string name="update_current">Установлена последняя версия</string>
+    <string name="update_downloading">Скачивание обновления…</string>
     <string name="screen_play">Игра</string>
     <string name="screen_settings">Настройки</string>
     <string name="screen_my_photos">Мои фотографии</string>

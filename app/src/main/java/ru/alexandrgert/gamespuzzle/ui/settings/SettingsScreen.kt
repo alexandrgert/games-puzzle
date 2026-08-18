@@ -21,7 +21,6 @@ import kotlinx.coroutines.launch
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.data.AppSettings
 import ru.alexandrgert.gamespuzzle.data.SettingsStore
-import ru.alexandrgert.gamespuzzle.data.UpdateDownloadMode
 
 @Composable
 fun SettingsScreen(
@@ -47,21 +46,6 @@ fun SettingsScreen(
                 checked = settings.statsEnabled,
                 onCheckedChange = { enabled ->
                     scope.launch { settingsStore.setStatsEnabled(enabled) }
-                },
-            )
-            SettingSwitch(
-                label = stringResource(R.string.settings_download_immediately),
-                checked = settings.updateDownloadMode == UpdateDownloadMode.IMMEDIATE,
-                onCheckedChange = { immediate ->
-                    scope.launch {
-                        settingsStore.setUpdateDownloadMode(
-                            if (immediate) {
-                                UpdateDownloadMode.IMMEDIATE
-                            } else {
-                                UpdateDownloadMode.CONFIRM
-                            },
-                        )
-                    }
                 },
             )
             SettingSwitch(

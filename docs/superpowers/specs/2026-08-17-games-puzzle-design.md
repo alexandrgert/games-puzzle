@@ -70,7 +70,6 @@ User-imported photos are **not** in `catalog.json`. They live only in app-privat
 ### Settings (DataStore)
 
 - `stats_enabled` — show timer and move count **during play** (default: **off**). Does not affect win dialog or writing records.
-- `update_download_mode` — `immediate` | `confirm` (default: `confirm`)
 - `auto_check_updates` — check GitHub Releases on launch (default: **off**)
 - `last_update_check_at` — ISO timestamp of the last successful check
 - `dismissed_update_version` — latest version the user postponed from a startup prompt
@@ -92,7 +91,7 @@ Single-activity Compose app.
 3. **Play** — board filling the width; **all cells occupied** (no gap). Locked tiles sit in their final-plan cells and do not move. Timer and move counter on the board only if stats enabled (values are always tracked). Button **Картинка** shows the original as an overlay; peek is not a move. Back asks to abandon the run.
 4. **Win** — success message, this run’s time and moves, and whether a best was beaten. Buttons: again (same picture/grid), catalog.
 5. **My photos** — list of imports, add from gallery, delete (removes file + records for that id).
-6. **Settings** — toggle for in-play timer/moves (default off), update download mode, and check-on-launch (default off); **Проверить обновления**; app version.
+6. **Settings** — toggle for in-play timer/moves (default off) and check-on-launch (default off); **Проверить обновления**; app version.
 7. **Credits** — bundled image attributions from catalog metadata.
 
 ## Game rules
@@ -124,10 +123,9 @@ Source: GitHub Releases API for `alexandrgert/games-puzzle`.
 
 - Compare semver (tuple, not string). Strip leading `v`.
 - **Always show changelog** (release body) on a **manual** check: when a newer release exists, and also when the user is already on latest (then: «установлена актуальная версия» + current notes if present).
-- Setting `immediate`: after showing changelog, start APK download without a second confirm.
-- Setting `confirm`: show changelog and wait for **Скачать**.
+- After showing changelog for an available update, wait for explicit **Скачать**.
 - Downloaded APK is installed via a package-installer intent (permission to install unknown apps if needed). Failures (network, HTTP, storage, permission) set an error status; they do not crash.
-- Setting `auto_check_updates` (default **off**): on launch, if enabled, check GitHub Releases once per process. Startup UI is silent unless a newer version is available and not `dismissed_update_version`. Offline / already latest: no snackbar and no «установлена актуальная версия». The startup dialog appears only on the catalog screen (not over play). **Отмена** on that dialog stores `dismissed_update_version`; OK / back / a failed immediate download do not. Manual **Проверить обновления** always reports (changelog or offline snackbar) and ignores dismissed.
+- Setting `auto_check_updates` (default **off**): on launch, if enabled, check GitHub Releases once per process. Startup UI is silent unless a newer version is available and not `dismissed_update_version`. Offline / already latest: no snackbar and no «установлена актуальная версия». The startup dialog appears only on the catalog screen (not over play). **Отмена** on that dialog stores `dismissed_update_version`; OK / back do not. Manual **Проверить обновления** always reports (changelog or offline snackbar) and ignores dismissed.
 - CI publishes release notes used as that changelog (`docs/github-release-vX.Y.Z.md` body).
 
 ## CI and release
@@ -198,6 +196,6 @@ Separate content pass after the app shell works:
 - Install APK from GitHub Release on Poco X7 / X8 Pro Max: catalog, filter, preview, chosen grid play, win.
 - Import a photo, play, delete it; it is gone.
 - Stats toggle hides or shows in-play timer and moves; win dialog and bests always run.
-- Settings update check shows changelog; download follows immediate vs confirm; APK installs. Startup auto-check runs only when the launch toggle is on and stays silent if already latest or offline.
+- Settings update check shows changelog; download starts only after explicit confirmation; APK installs. Startup auto-check runs only when the launch toggle is on and stays silent if already latest or offline.
 - UI remains Russian; a second language can be added via resource files only.
 - CI on GitHub produces the signed APK; no local release build in the normal workflow.

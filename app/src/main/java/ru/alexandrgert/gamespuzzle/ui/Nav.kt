@@ -102,7 +102,6 @@ fun PuzzleNavHost(
     var isChecking by remember { mutableStateOf(false) }
     var isDownloading by remember { mutableStateOf(false) }
     var promptIsManual by remember { mutableStateOf(false) }
-    var downloadWhenPromptShown by remember { mutableStateOf(false) }
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val onCatalog = navBackStackEntry?.destination?.route == Routes.CATALOG
     val promptVisible = updateResult != null &&
@@ -139,7 +138,6 @@ fun PuzzleNavHost(
         val decision = decideAfterUpdateCheck(
             manual = manual,
             result = result,
-            downloadMode = settings.updateDownloadMode,
             dismissedVersion = settings.dismissedUpdateVersion,
         )
         if (decision.recordCheckTimestamp) {
@@ -149,7 +147,6 @@ fun PuzzleNavHost(
             snackbarHostState.showSnackbar(offlineError)
         }
         promptIsManual = decision.isManualPrompt
-        downloadWhenPromptShown = decision.downloadWhenPromptShown
         updateResult = if (decision.showDialog) result else null
     }
 
@@ -157,13 +154,6 @@ fun PuzzleNavHost(
         if (shouldRunAutoCheck(settings.autoCheckUpdates)) {
             performCheck(false)
         }
-    }
-
-    LaunchedEffect(promptVisible, updateResult) {
-        val result = updateResult
-        if (!promptVisible || result == null || !downloadWhenPromptShown) return@LaunchedEffect
-        downloadWhenPromptShown = false
-        downloadAndInstall(result)
     }
 
     val dismissPrompt: (Boolean) -> Unit = { postpone ->
@@ -174,7 +164,6 @@ fun PuzzleNavHost(
             }
         }
         updateResult = null
-        downloadWhenPromptShown = false
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -287,7 +276,6 @@ fun PuzzleNavHost(
             updateResult?.let { result ->
                 UpdateResultDialog(
                     result = result,
-                    downloadMode = settings.updateDownloadMode,
                     isDownloading = isDownloading,
                     onDownload = { scope.launch { downloadAndInstall(result) } },
                     onDismiss = { dismissPrompt(false) },

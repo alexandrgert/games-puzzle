@@ -47,7 +47,6 @@ class StartupUpdatePolicyTest {
         val decision = decideAfterUpdateCheck(
             manual = true,
             result = offline(),
-            downloadMode = UpdateDownloadMode.CONFIRM,
             dismissedVersion = null,
         )
         assertEquals(
@@ -67,7 +66,6 @@ class StartupUpdatePolicyTest {
         val decision = decideAfterUpdateCheck(
             manual = true,
             result = upToDate(),
-            downloadMode = UpdateDownloadMode.IMMEDIATE,
             dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
@@ -78,43 +76,28 @@ class StartupUpdatePolicyTest {
     }
 
     @Test
-    fun decideAfterCheck_manualAvailableImmediateDownloadsWhenShown() {
+    fun decideAfterCheck_manualAvailableDoesNotDownloadUntilConfirmed() {
         val decision = decideAfterUpdateCheck(
             manual = true,
             result = available(),
-            downloadMode = UpdateDownloadMode.IMMEDIATE,
-            dismissedVersion = "0.3.0",
+            dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
-        assertTrue(decision.downloadWhenPromptShown)
+        assertFalse(decision.downloadWhenPromptShown)
         assertTrue(decision.isManualPrompt)
     }
 
     @Test
-    fun decideAfterCheck_startupAvailableConfirmDoesNotDownloadUntilShown() {
+    fun decideAfterCheck_startupAvailableDoesNotDownloadUntilConfirmed() {
         val decision = decideAfterUpdateCheck(
             manual = false,
             result = available(),
-            downloadMode = UpdateDownloadMode.CONFIRM,
             dismissedVersion = null,
         )
         assertTrue(decision.showDialog)
         assertFalse(decision.downloadWhenPromptShown)
         assertFalse(decision.showOfflineSnackbar)
         assertTrue(decision.recordCheckTimestamp)
-        assertFalse(decision.isManualPrompt)
-    }
-
-    @Test
-    fun decideAfterCheck_startupAvailableImmediateDownloadsWhenShown() {
-        val decision = decideAfterUpdateCheck(
-            manual = false,
-            result = available(),
-            downloadMode = UpdateDownloadMode.IMMEDIATE,
-            dismissedVersion = null,
-        )
-        assertTrue(decision.showDialog)
-        assertTrue(decision.downloadWhenPromptShown)
         assertFalse(decision.isManualPrompt)
     }
 
@@ -123,7 +106,6 @@ class StartupUpdatePolicyTest {
         val dismissed = decideAfterUpdateCheck(
             manual = false,
             result = available(),
-            downloadMode = UpdateDownloadMode.IMMEDIATE,
             dismissedVersion = "0.3.0",
         )
         assertFalse(dismissed.showDialog)
@@ -133,7 +115,6 @@ class StartupUpdatePolicyTest {
         val offline = decideAfterUpdateCheck(
             manual = false,
             result = offline(),
-            downloadMode = UpdateDownloadMode.IMMEDIATE,
             dismissedVersion = null,
         )
         assertFalse(offline.showDialog)

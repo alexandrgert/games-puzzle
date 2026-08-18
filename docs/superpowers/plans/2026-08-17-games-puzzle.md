@@ -1002,10 +1002,10 @@ TDD `PlaySession` then thin ViewModel.
 - Modify: `strings.xml`, `PlayScreen.kt`
 
 **Interfaces:**
-- Settings keys: `stats_enabled` default **false**; `update_download_mode` `confirm` | `immediate` default `confirm`; `last_update_check_at` string ISO; `dismissed_update_version` string
+- Settings keys: `stats_enabled` default **false**; `last_update_check_at` string ISO; `dismissed_update_version` string
 - Records: preferences key `"rec:${puzzleId}:${n}"` value `"timeMs,moves"`; `suspend fun load/save`
 - Win dialog: `win_title`; if stats on show time, moves, `win_new_best_time` / `win_new_best_moves` when `mergeRecord` improved a field; buttons `win_again` (same id+size), `win_catalog`
-- Settings: switches for stats and download mode; version `stringResource` + `VERSION`/`versionName`; button `action_check_update` (no-op until Task 14)
+- Settings: switches for stats and launch update check; version `stringResource` + `VERSION`/`versionName`; button `action_check_update` (no-op until Task 14)
 
 - [ ] **Step 1:** Write `RecordsStore` merge using `mergeRecord` — unit test a pure helper `fun serialize/parse BestRecord` if store is Android-only.
 - [ ] **Step 2:** Settings + win UI
@@ -1050,7 +1050,7 @@ List each builtin `CatalogPuzzle` as `titleRu — attribution — license` plus 
 
 **Interfaces:**
 - `UpdateChecker.check(client: OkHttpClient, current: Semver): UpdateCheckResult` GET `https://api.github.com/repos/alexandrgert/games-puzzle/releases/latest` with `User-Agent: games-puzzle/<version>`. On IO/HTTP: `ok=false`, `error` mapped to `error_offline` in UI (do not parse body as changelog).
-- Settings: always show `result.changelog` in a dialog when `ok` (including “already latest”: title `update_current` + body). If `updateAvailable && mode==immediate` start download after dialog open. If `confirm`, button `action_download`.
+- Settings: always show `result.changelog` in a dialog when `ok` (including “already latest”: title `update_current` + body). If `updateAvailable`, show button `action_download` and wait for explicit confirmation.
 - Download APK to `cacheDir/updates/games-puzzle.apk`; on failure delete partial file; snackbar `error_download`.
 - `ApkInstaller.install(context, file)` via FileProvider URI + `ACTION_VIEW` / `ACTION_INSTALL_PACKAGE`. If blocked, snackbar `error_install_permission`.
 

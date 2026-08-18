@@ -1,12 +1,17 @@
 package ru.alexandrgert.gamespuzzle.ui.update
 
 import android.content.Context
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import java.io.File
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -14,19 +19,32 @@ import okhttp3.OkHttpClient
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.data.UpdateCheckResult
 import ru.alexandrgert.gamespuzzle.data.UpdateChecker
-import ru.alexandrgert.gamespuzzle.data.UpdateDownloadMode
+
+data class UpdateDialogState(
+    val canConfirmDownload: Boolean,
+    val showDownloadOverlay: Boolean,
+)
+
+fun buildUpdateDialogState(
+    result: UpdateCheckResult,
+    isDownloading: Boolean,
+): UpdateDialogState {
+    val canConfirmDownload = result.updateAvailable
+    return UpdateDialogState(
+        canConfirmDownload = canConfirmDownload,
+        showDownloadOverlay = canConfirmDownload && isDownloading,
+    )
+}
 
 @Composable
 fun UpdateResultDialog(
     result: UpdateCheckResult,
-    downloadMode: UpdateDownloadMode,
     isDownloading: Boolean,
     onDownload: () -> Unit,
     onDismiss: () -> Unit,
     onPostpone: () -> Unit,
 ) {
-    val canConfirmDownload = result.updateAvailable &&
-        downloadMode == UpdateDownloadMode.CONFIRM
+    val state = buildUpdateDialogState(result, isDownloading)
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
@@ -42,7 +60,7 @@ fun UpdateResultDialog(
         },
         text = { Text(result.changelog) },
         confirmButton = {
-            if (canConfirmDownload) {
+            if (state.canConfirmDownload) {
                 Button(
                     onClick = onDownload,
                     enabled = !isDownloading,
@@ -56,13 +74,28 @@ fun UpdateResultDialog(
             }
         },
         dismissButton = {
-            if (canConfirmDownload) {
+            if (state.canConfirmDownload) {
                 TextButton(onClick = onPostpone) {
                     Text(stringResource(R.string.action_cancel))
                 }
             }
         },
     )
+    if (state.showDownloadOverlay) {
+        AlertDialog(
+            onDismissRequest = {},
+            confirmButton = {},
+            text = {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    CircularProgressIndicator()
+                    Text(stringResource(R.string.update_downloading))
+                }
+            },
+        )
+    }
 }
 
 suspend fun downloadUpdateApk(

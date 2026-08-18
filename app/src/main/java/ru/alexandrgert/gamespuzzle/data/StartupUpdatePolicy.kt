@@ -32,16 +32,13 @@ fun shouldShowUpdatePromptOnScreen(isManualPrompt: Boolean, onCatalog: Boolean):
 fun decideAfterUpdateCheck(
     manual: Boolean,
     result: UpdateCheckResult,
-    downloadMode: UpdateDownloadMode,
     dismissedVersion: String?,
 ): UpdateCheckDecision {
     if (manual) {
         val showDialog = result.ok
         return UpdateCheckDecision(
             showDialog = showDialog,
-            downloadWhenPromptShown = showDialog &&
-                result.updateAvailable &&
-                downloadMode == UpdateDownloadMode.IMMEDIATE,
+            downloadWhenPromptShown = false,
             showOfflineSnackbar = !result.ok,
             recordCheckTimestamp = result.ok,
             isManualPrompt = true,
@@ -50,9 +47,7 @@ fun decideAfterUpdateCheck(
     val showDialog = shouldShowStartupPrompt(result, dismissedVersion)
     return UpdateCheckDecision(
         showDialog = showDialog,
-        downloadWhenPromptShown = showDialog &&
-            result.updateAvailable &&
-            downloadMode == UpdateDownloadMode.IMMEDIATE,
+        downloadWhenPromptShown = false,
         showOfflineSnackbar = false,
         recordCheckTimestamp = result.ok,
         isManualPrompt = false,
