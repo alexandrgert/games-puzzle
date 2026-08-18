@@ -61,7 +61,6 @@ class PlayViewModel(
     }
 
     fun clearLastReverted() {
-        session?.clearLastReverted()
         publish()
     }
 
@@ -80,9 +79,9 @@ class PlayViewModel(
             moves = current.moves,
             won = won,
             peek = current.peek,
-            lastReverted = current.lastReverted,
-            revertedA = current.revertedA,
-            revertedB = current.revertedB,
+            lastReverted = false,
+            revertedA = null,
+            revertedB = null,
             recordSavePending = previous?.recordSavePending ?: false,
             recordUpdate = previous?.recordUpdate,
         )

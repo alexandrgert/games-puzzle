@@ -21,7 +21,7 @@ class PlaySessionTest {
     @Test
     fun twoTapsApplySwapAndCountMoveWhenStatsEnabled() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(2L))
-        val (first, second) = findPair(session.board, applied = true)
+        val (first, second) = findPair(session.board, joined = true)
 
         assertNull(session.tap(first))
         val result = session.tap(second)
@@ -29,68 +29,60 @@ class PlaySessionTest {
         assertTrue(result is MoveResult.Applied)
         assertNull(session.selected)
         assertEquals(1, session.moves)
-        assertFalse(session.lastReverted)
     }
 
     @Test
-    fun revertedSwapClearsSelectionWithoutCountingMove() {
+    fun persistSwapCountsMoveAndKeepsTiles() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(3L))
-        val original = session.board
-        val (first, second) = findPair(original, applied = false)
+        val (first, second) = findPair(session.board, joined = false)
+        val firstTile = session.board.tileAt(first)
+        val secondTile = session.board.tileAt(second)
 
-        session.tap(first)
-        val result = session.tap(second)
+        val result = session.swap(first, second) as MoveResult.Applied
 
-        assertTrue(result is MoveResult.Reverted)
-        assertSame(original, session.board)
+        assertTrue(!result.joined)
+        assertEquals(secondTile, session.board.tileAt(first))
+        assertEquals(firstTile, session.board.tileAt(second))
+        assertEquals(1, session.moves)
         assertNull(session.selected)
-        assertEquals(0, session.moves)
-        assertTrue(session.lastReverted)
     }
 
     @Test
     fun dragSwapAppliesJoinWithoutPriorSelection() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(2L))
-        val (first, second) = findPair(session.board, applied = true)
+        val (first, second) = findPair(session.board, joined = true)
 
         val result = session.swap(first, second)
 
         assertTrue(result is MoveResult.Applied)
         assertNull(session.selected)
         assertEquals(1, session.moves)
-        assertFalse(session.lastReverted)
     }
 
     @Test
-    fun revertedSwapShowsAttemptedTilesUntilCleared() {
-        val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(3L))
-        val original = session.board
-        val (first, second) = findPair(original, applied = false)
-        val firstTile = original.tileAt(first)
-        val secondTile = original.tileAt(second)
-
-        session.swap(first, second)
-
-        assertTrue(session.lastReverted)
-        assertSame(original, session.board)
-        assertEquals(secondTile, session.tileShownAt(first))
-        assertEquals(firstTile, session.tileShownAt(second))
-
-        session.clearLastReverted()
-
-        assertEquals(firstTile, session.tileShownAt(first))
-        assertEquals(secondTile, session.tileShownAt(second))
-    }
-
-    @Test
-    fun appliedSwapDoesNotCountWhenStatsDisabled() {
+    fun persistSwapCountsMoveWhenStatsDisabled() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = false, Random(4L))
-        val (first, second) = findPair(session.board, applied = true)
+        val (first, second) = findPair(session.board, joined = false)
+        assertTrue(session.swap(first, second) is MoveResult.Applied)
+        assertEquals(1, session.moves)
+    }
 
-        session.tap(first)
-        assertTrue(session.tap(second) is MoveResult.Applied)
-
-        assertEquals(0, session.moves)
+    @Test
+    fun lockedSwapDoesNotCount() {
+        val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(6L))
+        val (first, second) = findPair(session.board, joined = true)
+        session.swap(first, second)
+        val locked = (0 until session.board.n * session.board.n)
+            .map { Cell.fromIndex(it, session.board.n) }
+            .first(session.board::isLockedCell)
+        val unlocked = (0 until session.board.n * session.board.n)
+            .map { Cell.fromIndex(it, session.board.n) }
+            .first { !session.board.isLockedCell(it) }
+        val movesBefore = session.moves
+        val boardBefore = session.board
+        assertTrue(session.swap(unlocked, locked) is MoveResult.Reverted)
+        assertEquals(movesBefore, session.moves)
+        assertSame(boardBefore, session.board)
     }
 
     @Test
@@ -109,7 +101,7 @@ class PlaySessionTest {
     @Test
     fun tappingLockedCellIsIgnored() {
         val session = PlaySession(GridSize.FIVE, statsEnabled = true, Random(6L))
-        val (first, second) = findPair(session.board, applied = true)
+        val (first, second) = findPair(session.board, joined = true)
         session.tap(first)
         val applied = session.tap(second) as MoveResult.Applied
         val lockedCell = (0 until applied.board.n * applied.board.n)
@@ -137,13 +129,15 @@ class PlaySessionTest {
         assertEquals(0, session.moves)
     }
 
-    private fun findPair(board: Board, applied: Boolean): Pair<Cell, Cell> {
+    private fun findPair(board: Board, joined: Boolean): Pair<Cell, Cell> {
         val cells = (0 until board.n * board.n).map { Cell.fromIndex(it, board.n) }
         for (first in cells) {
             for (second in cells) {
                 if (first == second) continue
                 val result = BoardEngine.trySwap(board, first, second)
-                if ((result is MoveResult.Applied) == applied) return first to second
+                if (result is MoveResult.Applied && result.joined == joined) {
+                    return first to second
+                }
             }
         }
         error("No matching pair")
