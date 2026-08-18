@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import java.io.File
@@ -24,6 +26,8 @@ data class UpdateDialogState(
     val canConfirmDownload: Boolean,
     val showDownloadOverlay: Boolean,
 )
+
+internal const val UPDATE_DOWNLOAD_OVERLAY_TAG = "update-download-overlay"
 
 fun buildUpdateDialogState(
     result: UpdateCheckResult,
@@ -87,6 +91,7 @@ fun UpdateResultDialog(
             confirmButton = {},
             text = {
                 Column(
+                    modifier = Modifier.testTag(UPDATE_DOWNLOAD_OVERLAY_TAG),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
