@@ -80,7 +80,12 @@ private fun SettingSwitch(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        Text(label)
+        Text(
+            text = label,
+            modifier = Modifier
+                .weight(1f)
+                .padding(end = 16.dp),
+        )
         Switch(
             checked = checked,
             onCheckedChange = onCheckedChange,
