@@ -2,12 +2,13 @@
 
 Date: 2026-08-17  
 Status: approved  
+Amended: 2026-08-18 (`docs/superpowers/specs/2026-08-18-swap-stay-records-photos.md`)  
 Repo: https://github.com/alexandrgert/games-puzzle  
 Approach: native Kotlin + Jetpack Compose, single Android app module
 
 ## Goal
 
-Android picture puzzle: a photo is split into a full grid with **no empty cells**. The player moves any tile; the move stays only if two matching picture parts join along an edge, otherwise both tiles return to their previous cells. Built-in catalog of Russia-themed free-license photos plus user imports. APK is built only on GitHub Actions. The app can check GitHub Releases: a **manual** check always shows the changelog; an optional launch check (default **off**) stays silent unless a newer version is available.
+Android picture puzzle: a photo is split into a full grid with **no empty cells**. The player swaps any two unlocked tiles; a correct edge snaps that pair onto the finished picture and locks them, otherwise the swap **stays**. Built-in catalog of Russia-themed free-license photos plus user imports. APK is built only on GitHub Actions. The app can check GitHub Releases: a **manual** check always shows the changelog; an optional launch check (default **off**) stays silent unless a newer version is available.
 
 ## Out of scope (v1)
 
@@ -29,7 +30,7 @@ Android picture puzzle: a photo is split into a full grid with **no empty cells*
 - Signing: one long-lived release keystore in GitHub Secrets (`ANDROID_KEYSTORE_BASE64`, passwords, alias). Never generate a new keystore per CI run. Keystore files are gitignored.
 - Version: one canonical semver in `VERSION`. Android `versionName` matches it; `versionCode` is monotonic integer. CI verifies sync before assemble.
 - UI copy: Russian in `values/strings.xml`. No hardcoded user-visible Russian/English in Kotlin. Adding a language later is a new `values-xx/strings.xml` only.
-- Images: public domain or licenses that allow free redistribution (prefer Wikimedia Commons CC0 / Public Domain / CC BY with attribution). No copyrighted stock. Attribution stored in catalog metadata and shown in Credits. The launcher icon is a jigsaw-piece crop of catalog entry `dzhangyskol-autumn-altai` (Discoverynn, CC BY-SA 4.0); Credits lists that derivative.
+- Images: public domain or licenses that allow free redistribution (prefer Wikimedia Commons CC0 / Public Domain / CC BY with attribution). No copyrighted stock. Attribution stored in catalog metadata and shown in Credits. The launcher icon is a jigsaw-piece crop of one bundled catalog photo; Credits lists that derivative. After 2026-08-18 the icon must not use the withdrawn `dzhangyskol-autumn-altai` file.
 
 ## Architecture
 
@@ -37,7 +38,7 @@ One data contract, one Android shell.
 
 | Layer | Responsibility | Location |
 |-------|----------------|----------|
-| Domain | board, unlock/lock, swap, snap-to-home, revert, shuffle, win, record comparison | `domain/` — no Android, no Compose |
+| Domain | board, unlock/lock, swap, snap-to-home, shuffle, win, record comparison | `domain/` — no Android, no Compose |
 | Application | start game, catalog filters, import/delete user image, update check | `app/` use-cases |
 | Adapters | assets, gallery, DataStore, GitHub Releases HTTP | `data/` |
 | Shell | Compose screens | `ui/` |
@@ -68,7 +69,7 @@ User-imported photos are **not** in `catalog.json`. They live only in app-privat
 
 ### Settings (DataStore)
 
-- `stats_enabled` — timer, move count, best results (default: **off**)
+- `stats_enabled` — show timer and move count **during play** (default: **off**). Does not affect win dialog or writing records.
 - `update_download_mode` — `immediate` | `confirm` (default: `confirm`)
 - `auto_check_updates` — check GitHub Releases on launch (default: **off**)
 - `last_update_check_at` — ISO timestamp of the last successful check
@@ -76,9 +77,9 @@ User-imported photos are **not** in `catalog.json`. They live only in app-privat
 
 ### Best results (DataStore or local JSON)
 
-Key: `(puzzle_id, grid)` where `grid` is `5` or `6`.  
+Key: `(puzzle_id, grid)` where `grid` is `5`, `6`, `8`, `10`, or `12`.  
 Value: best time (ms) and best move count, stored independently (a run can beat time without beating moves).  
-Only written when `stats_enabled` is on at the moment the puzzle is solved. User-imported ids use prefix `user:`.
+Written on every win. User-imported ids use prefix `user:`.
 
 Secrets never appear in any puzzle file.
 
@@ -87,16 +88,16 @@ Secrets never appear in any puzzle file.
 Single-activity Compose app.
 
 1. **Catalog** — category chips (природа, животные, птицы, водная фауна, деревья, цветы) + season filter + thumbnail grid. Entry to Settings, My photos, Credits.
-2. **Preview** — full picture, grid toggle **5×5 / 6×6** (both always available), button **Запуск**. No shuffle yet.
-3. **Play** — board filling the width; **all cells occupied** (no gap). Locked tiles sit in their final-plan cells and do not move. Optional timer and move counter if stats enabled. Button **Картинка** shows the original as an overlay; peek is not a move. Back asks to abandon the run.
-4. **Win** — message; if stats on, show time, moves, and whether a best was beaten. Buttons: again (same picture/grid), catalog.
+2. **Preview** — full picture, grid toggle **5×5 / 6×6 / 8×8 / 10×10 / 12×12** (all always available), button **Запуск**. No shuffle yet.
+3. **Play** — board filling the width; **all cells occupied** (no gap). Locked tiles sit in their final-plan cells and do not move. Timer and move counter on the board only if stats enabled (values are always tracked). Button **Картинка** shows the original as an overlay; peek is not a move. Back asks to abandon the run.
+4. **Win** — success message, this run’s time and moves, and whether a best was beaten. Buttons: again (same picture/grid), catalog.
 5. **My photos** — list of imports, add from gallery, delete (removes file + records for that id).
-6. **Settings** — toggles for stats, update download mode, and check-on-launch (default off); **Проверить обновления**; app version.
+6. **Settings** — toggle for in-play timer/moves (default off), update download mode, and check-on-launch (default off); **Проверить обновления**; app version.
 7. **Credits** — bundled image attributions from catalog metadata.
 
 ## Game rules
 
-- Grids: **5×5** (level 1 size) and **6×6** (level 2 size). User picks per picture; nothing is locked.
+- Grids: **5×5**, **6×6**, **8×8**, **10×10**, **12×12**. User picks per picture; nothing is locked.
 - Mechanic: **not** пятнашки. The picture is cut into N×N tiles. Every slot has a tile. There is **never** an empty cell. Tiles join along horizontal and vertical edges to restore the photo.
 - Groups: a **correct join** is two tiles that are neighbours in the original photo and currently share that same edge. After a join they **lock** and **do not travel** around the board. The group is **snapped onto the final-picture plan**: those tiles occupy their unique home cells and stay there until the run is reset. Locked tiles cannot be selected, dragged, or swapped.
 - Input: only **unlocked** tiles move. The player swaps any two unlocked tiles (tap-tap or drag one onto another). Locked cells are not valid drop targets: a swap may not displace a locked tile. The board stays full (no empty cells).
@@ -104,9 +105,9 @@ Single-activity Compose app.
   1. Two unlocked tiles share a correct relative edge after the swap → both **snap to their home cells** (the unique place of that pair on the finished picture). Unlocked tiles that sat in those home cells are displaced into the cells the pair left. Then the pair locks.
   2. Or an unlocked tile lands in the home cell that correctly neighbours an already locked group → it locks onto that group in place (no snap of the group; the group is already home).
   If home cells needed for a snap still hold **locked** tiles, the move is invalid.
-- Failed move: none of the cases above. Both swapped tiles **animate back**. Not counted as a move. Locked groups never split and never move.
+- Non-joining swap: none of the cases above. Both tiles **stay** in the new cells. Counted as a move. No rollback flash. Locked groups never split and never move.
 - Preview: show the complete picture. **Запуск** then shuffles.
-- Shuffle: random permutation of all N×N tiles, never the identity, all unlocked. Retry until unsolved and there is **at least one** resultative swap of unlocked tiles.
+- Shuffle: random permutation of all N×N tiles, never the identity, all unlocked. Retry until unsolved and there is **at least one** joining swap of unlocked tiles (snap or attach-to-locked — not merely a permutation).
 - Win: every tile is locked in its home cell (one group of N×N).
 - Example: `B` and `C` belong side by side. A swap puts them on the matching edge anywhere on the field → they jump to the home slots of `B` and `C` on the plan and freeze. Next, swap the tile that belongs at `A` into the cell left of locked `B` (that cell is `A`’s home). It locks. You cannot drag `BC` to another place.
 
@@ -149,16 +150,16 @@ Local Gradle: used for unit tests if needed; **not** for shipping APK.
 |------|-----------|
 | Catalog schema invalid | CI fails; app does not ship |
 | Asset missing at runtime | skip that entry, log; catalog still opens |
-| Shuffle / move bugs | domain tests must catch; failed swaps never persist; play screen never writes a board the domain rejected |
+| Shuffle / move bugs | domain tests must catch; invalid swaps never persist; play screen never writes a board the domain rejected |
 | Gallery import fail | snackbar, no partial file |
 | Update check offline | status «нет сети», changelog not claimed |
 | APK download fail | status with retry; leftover incomplete file deleted |
 | Install blocked | explain that unknown-sources install must be allowed for this app |
-| Stats off | no timer/moves/records UI; solving does not write records |
+| Stats off | hide in-play timer/moves; win dialog and records still run |
 
 ## Testing
 
-- Domain (JUnit, no Android): no empty cells; successful join snaps to home and locks; locked tiles never move or split; swap cannot displace locked tiles; failed swap reverts; shuffle never identity, all unlocked, always has ≥1 resultative move; win = all home and locked; record comparison.
+- Domain (JUnit, no Android): no empty cells; successful join snaps to home and locks; locked tiles never move or split; swap cannot displace locked tiles; non-joining swap persists and counts as a move; shuffle never identity, all unlocked, always has ≥1 joining swap; win = all home and locked; record comparison.
 - Catalog fixture: at least one JSON example per category and season in tests; schema check in CI.
 - Update parser: semver compare, changelog mapping from a fixture JSON of the Releases API.
 - No merge-lockstep suite (single platform). Domain stays fixture-friendly if a second client appears later.
@@ -194,9 +195,9 @@ Separate content pass after the app shell works:
 
 ## Success criteria
 
-- Install APK from GitHub Release on Poco X7 / X8 Pro Max: catalog, filter, preview, 5×5 and 6×6 play, win.
+- Install APK from GitHub Release on Poco X7 / X8 Pro Max: catalog, filter, preview, chosen grid play, win.
 - Import a photo, play, delete it; it is gone.
-- Stats toggle hides or shows timer, moves, and bests.
+- Stats toggle hides or shows in-play timer and moves; win dialog and bests always run.
 - Settings update check shows changelog; download follows immediate vs confirm; APK installs. Startup auto-check runs only when the launch toggle is on and stays silent if already latest or offline.
 - UI remains Russian; a second language can be added via resource files only.
 - CI on GitHub produces the signed APK; no local release build in the normal workflow.
