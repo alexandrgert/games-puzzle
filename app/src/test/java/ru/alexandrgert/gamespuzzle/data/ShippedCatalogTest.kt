@@ -29,6 +29,7 @@ class ShippedCatalogTest {
             "kislovodsk-spotted-woodpecker",
             "krasnoyarsk-stolby-syenite",
             "mutnovsky-crater-rock",
+            "stellers-eagle-portrait",
         )
         assertTrue(catalog.puzzles.none { it.id in oldIds })
         catalog.puzzles.forEach { puzzle ->

@@ -90,15 +90,15 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Из_жизни_байкальской_нерпы_близ_Ушканьих_островов_02.jpg"
     },
     {
-      "id": "stellers-eagle-portrait",
-      "file": "puzzles/stellers-eagle-portrait.webp",
-      "thumb": "thumbs/stellers-eagle-portrait.webp",
+      "id": "commander-rock-ptarmigan",
+      "file": "puzzles/commander-rock-ptarmigan.webp",
+      "thumb": "thumbs/commander-rock-ptarmigan.webp",
       "category": "birds",
-      "season": "any",
-      "title_ru": "Портрет белоплечего орлана",
+      "season": "summer",
+      "title_ru": "Тундряная куропатка на Командорах",
       "license": "CC BY-SA 4.0",
-      "attribution": "Jevgeni Fil",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Steller's_Sea_Eagle_portrait.jpg"
+      "attribution": "Витюгова Женя",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Командорский_заповедник._Куропатка_тундряная,_самец.jpg"
     },
     {
       "id": "moscow-zoo-snowy-owls",
