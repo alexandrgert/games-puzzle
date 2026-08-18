@@ -102,7 +102,7 @@ Single-activity Compose app.
 - Input: only **unlocked** tiles move. The player swaps any two unlocked tiles (tap-tap or drag one onto another). Locked cells are not valid drop targets: a swap may not displace a locked tile. The board stays full (no empty cells).
 - Resultative move:
   1. Two unlocked tiles share a correct relative edge after the swap → both **snap to their home cells** (the unique place of that pair on the finished picture). Unlocked tiles that sat in those home cells are displaced into the cells the pair left. Then the pair locks.
-  2. Or an unlocked tile lands in the home cell that correctly neighbours an already locked group → it locks onto that group in place (no snap of the group; the group is already home).
+  2. Then every unlocked tile already in its home cell that orthogonally joins a locked neighbour locks in place (the group does not move). Repeat until none remain. This includes tiles that were not swapped — that is how a leftover home piece, including the last cell, freezes and a visually complete board wins.
   If home cells needed for a snap still hold **locked** tiles, the move is invalid.
 - Non-joining swap: none of the cases above. Both tiles **stay** in the new cells. Counted as a move. No rollback flash. Locked groups never split and never move.
 - Preview: show the complete picture. **Запуск** then shuffles.

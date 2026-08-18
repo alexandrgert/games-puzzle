@@ -29,8 +29,8 @@ The board stays full (no empty cell). Only unlocked tiles move (tap–tap or dra
 After a swap of two unlocked cells:
 
 1. If the two tiles now share a correct original edge → snap that pair to their home cells, lock them, displace any unlocked occupants of those homes into the cells the pair left. If a needed home still holds a **locked** tile, the swap is rejected (board unchanged).
-2. Else if an unlocked tile is now in its home cell and orthogonally joins an already locked neighbour → lock that tile in place (group does not move).
-3. Else the swapped positions **stay**. No red flash. No animation back.
+2. Then every unlocked tile already in its home cell that orthogonally joins a locked neighbour locks in place (group does not move). Repeat until none remain, including tiles that were not part of the swap.
+3. If neither a snap nor any new lock happened, the swapped positions **stay**. No red flash. No animation back.
 
 Every accepted swap of two distinct unlocked cells is a **move** (join or not). Rejected gestures (same cell, out of bounds, locked target) are not moves.
 
