@@ -6,6 +6,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "app" / "src" / "main" / "assets"
 UA = "GamesPuzzle/0.3 (https://github.com/alexandrgert/games-puzzle)"
+ALLOWED_LICENSE_PREFIXES = ("CC0", "Public domain", "PD", "CC BY", "CC BY-SA")
 
 
 def api(params: dict) -> dict:
@@ -22,6 +23,15 @@ def download(url: str) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read()
+
+
+def is_allowed_license(license_short: str) -> bool:
+    normalized = license_short.strip()
+    if normalized.startswith("CC BY-SA "):
+        return True
+    if normalized.startswith("CC BY "):
+        return True
+    return any(normalized.startswith(prefix) for prefix in ("CC0", "Public domain", "PD"))
 
 
 def square(im: Image.Image, size: int) -> Image.Image:
@@ -43,8 +53,7 @@ def fetch_row(row: dict, puzzles_dir: Path, thumbs_dir: Path) -> dict:
     meta = info.get("extmetadata", {})
     license_short = meta.get("LicenseShortName", {}).get("value", "")
     artist = re.sub("<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()
-    allowed = ("CC0", "Public domain", "PD", "CC BY")
-    if not any(license_short.startswith(p) for p in allowed):
+    if not is_allowed_license(license_short):
         raise SystemExit(f"license not allowed for {title}: {license_short}")
     raw = download(info["url"])
     im = Image.open(io.BytesIO(raw))

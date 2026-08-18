@@ -9,6 +9,7 @@ import ru.alexandrgert.gamespuzzle.domain.Season
 
 class ShippedCatalogTest {
     private val assets = File("src/main/assets")
+    private val allowedLicensePrefixes = listOf("CC0", "Public domain", "PD", "CC BY", "CC BY-SA")
 
     @Test
     fun shippedCatalogHasTwentyTwoHighReliefEntries() {
@@ -35,6 +36,7 @@ class ShippedCatalogTest {
         catalog.puzzles.forEach { puzzle ->
             assertTrue(File(assets, puzzle.file).isFile)
             assertTrue(File(assets, puzzle.thumb).isFile)
+            assertTrue(allowedLicensePrefixes.any { puzzle.license.startsWith(it) })
             assertTrue(puzzle.sourceUrl.startsWith("https://commons.wikimedia.org/wiki/File:"))
             assertTrue(!puzzle.sourceUrl.contains("File%3A"))
         }

@@ -80,7 +80,7 @@ class PlayViewModel(
 
     private fun saveRecord(current: PlaySession) {
         val saver = checkNotNull(recordSaver) {
-            "A RecordSaver is required when statistics are enabled"
+            "A RecordSaver is required to save best results on win"
         }
         state = state?.copy(recordSavePending = true)
         viewModelScope.launch {

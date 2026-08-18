@@ -173,7 +173,6 @@ private fun Category.labelResource(): Int = when (this) {
     Category.AQUATIC -> R.string.category_aquatic
     Category.TREES -> R.string.category_trees
     Category.FLOWERS -> R.string.category_flowers
-    else -> error("unhandled")
 }
 
 @StringRes
@@ -183,5 +182,4 @@ private fun Season.labelResource(): Int = when (this) {
     Season.AUTUMN -> R.string.season_autumn
     Season.WINTER -> R.string.season_winter
     Season.ANY -> R.string.season_any
-    else -> error("unhandled")
 }
