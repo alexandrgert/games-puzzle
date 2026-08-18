@@ -1,6 +1,5 @@
 package ru.alexandrgert.gamespuzzle.domain
 
-import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertThrows
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -15,7 +14,7 @@ class BoardEngineTest {
     }
 
     @Test
-    fun swapNonJoiningTilesReverts() {
+    fun swapNonJoiningTilesPersistsWithoutLocking() {
         val start = Board(
             GridSize.FIVE,
             intArrayOf(
@@ -28,8 +27,12 @@ class BoardEngineTest {
             BooleanArray(25),
         )
         val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(4, 4))
-        assertTrue(result is MoveResult.Reverted)
-        assertArrayEquals(start.tiles, (result as MoveResult.Reverted).board.tiles)
+        assertTrue(result is MoveResult.Applied)
+        val applied = result as MoveResult.Applied
+        assertTrue(!applied.joined)
+        assertTrue(applied.board.tiles[0] == 24)
+        assertTrue(applied.board.tiles[24] == 1)
+        assertTrue(applied.board.locked.all { !it })
     }
 
     @Test
@@ -83,7 +86,9 @@ class BoardEngineTest {
         val result = BoardEngine.trySwap(start, Cell(4, 0), Cell(4, 1))
 
         assertTrue(result is MoveResult.Applied)
-        val board = (result as MoveResult.Applied).board
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        val board = applied.board
         assertTrue(board.tiles[0] == 0)
         assertTrue(board.tiles[1] == 1)
         assertTrue(board.locked[0])
@@ -103,7 +108,9 @@ class BoardEngineTest {
         val start = Board(GridSize.FIVE, tiles, BooleanArray(25))
         val result = BoardEngine.trySwap(start, Cell(3, 1), Cell(4, 1))
         assertTrue(result is MoveResult.Applied)
-        val board = (result as MoveResult.Applied).board
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        val board = applied.board
         assertTrue(board.tiles[0] == 0 && board.tiles[1] == 1)
         assertTrue(board.locked[0] && board.locked[1])
         assertTrue(!board.locked[21])
@@ -123,7 +130,9 @@ class BoardEngineTest {
         val result = BoardEngine.trySwap(start, Cell(1, 1), Cell(1, 2))
 
         assertTrue(result is MoveResult.Applied)
-        val board = (result as MoveResult.Applied).board
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        val board = applied.board
         assertTrue(board.tiles[6] == 6)
         assertTrue(board.tiles[7] == 7)
         assertTrue(board.locked[6])
@@ -132,12 +141,22 @@ class BoardEngineTest {
     }
 
     @Test
-    fun joiningPairWrongOrderDoesNotJoin() {
+    fun joiningPairWrongOrderPersistsWithoutJoin() {
         val start = BoardEngine.identityUnlocked(GridSize.FIVE)
-
         val result = BoardEngine.trySwap(start, Cell(0, 0), Cell(0, 2))
+        assertTrue(result is MoveResult.Applied)
+        val applied = result as MoveResult.Applied
+        assertTrue(!applied.joined)
+        assertTrue(applied.board.tiles[0] == 2)
+        assertTrue(applied.board.tiles[2] == 0)
+    }
 
-        assertTrue(result is MoveResult.Reverted)
+    @Test
+    fun hasResultativeSwapIgnoresPersistOnlySwaps() {
+        val start = BoardEngine.identityUnlocked(GridSize.FIVE)
+        val persist = BoardEngine.trySwap(start, Cell(0, 0), Cell(0, 2)) as MoveResult.Applied
+        assertTrue(!persist.joined)
+        assertTrue(!BoardEngine.hasResultativeSwap(start))
     }
 
     @Test
@@ -157,7 +176,9 @@ class BoardEngineTest {
         val start = Board(GridSize.FIVE, tiles, locked)
         val result = BoardEngine.trySwap(start, Cell(4, 4), Cell(0, 2))
         assertTrue(result is MoveResult.Applied)
-        val board = (result as MoveResult.Applied).board
+        val applied = result as MoveResult.Applied
+        assertTrue(applied.joined)
+        val board = applied.board
         assertTrue(board.tiles[2] == 2)
         assertTrue(board.locked[2])
         assertTrue(board.locked[0] && board.locked[1])

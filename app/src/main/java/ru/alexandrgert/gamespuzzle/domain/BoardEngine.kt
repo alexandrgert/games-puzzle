@@ -34,7 +34,8 @@ object BoardEngine {
         }
         for (i in cells.indices) {
             for (j in i + 1 until cells.size) {
-                if (trySwap(board, cells[i], cells[j]) is MoveResult.Applied) return true
+                val result = trySwap(board, cells[i], cells[j])
+                if (result is MoveResult.Applied && result.joined) return true
             }
         }
         return false
@@ -76,14 +77,14 @@ object BoardEngine {
         if (isCorrectJoin(n, a, tileA, b, tileB)) {
             val snapped = snapPairToHome(swapped, tileA, tileB)
                 ?: return MoveResult.Reverted(board)
-            return MoveResult.Applied(snapped)
+            return MoveResult.Applied(snapped, joined = true)
         }
 
         val neighbourJoin = findUnlockedNeighbourJoin(swapped, a, b)
         if (neighbourJoin != null) {
             val snapped = snapPairToHome(swapped, neighbourJoin.first, neighbourJoin.second)
                 ?: return MoveResult.Reverted(board)
-            return MoveResult.Applied(snapped)
+            return MoveResult.Applied(snapped, joined = true)
         }
 
         val nextLocked = swapped.locked.copyOf()
@@ -95,9 +96,9 @@ object BoardEngine {
             }
         }
         return if (any) {
-            MoveResult.Applied(Board(board.size, swapped.tiles, nextLocked))
+            MoveResult.Applied(Board(board.size, swapped.tiles, nextLocked), joined = true)
         } else {
-            MoveResult.Reverted(board)
+            MoveResult.Applied(swapped, joined = false)
         }
     }
 

@@ -41,6 +41,6 @@ class Board(
 }
 
 sealed class MoveResult {
-    data class Applied(val board: Board) : MoveResult()
+    data class Applied(val board: Board, val joined: Boolean) : MoveResult()
     data class Reverted(val board: Board) : MoveResult()
 }
