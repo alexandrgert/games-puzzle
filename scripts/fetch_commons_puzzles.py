@@ -27,11 +27,14 @@ def download(url: str) -> bytes:
 
 def is_allowed_license(license_short: str) -> bool:
     normalized = license_short.strip()
-    if normalized.startswith("CC BY-SA "):
-        return True
-    if normalized.startswith("CC BY "):
-        return True
-    return any(normalized.startswith(prefix) for prefix in ("CC0", "Public domain", "PD"))
+    for prefix in ALLOWED_LICENSE_PREFIXES:
+        if prefix in {"CC BY", "CC BY-SA"}:
+            if normalized.startswith(f"{prefix} "):
+                return True
+            continue
+        if normalized.startswith(prefix):
+            return True
+    return False
 
 
 def square(im: Image.Image, size: int) -> Image.Image:

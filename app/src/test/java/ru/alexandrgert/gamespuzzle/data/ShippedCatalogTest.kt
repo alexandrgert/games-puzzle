@@ -9,7 +9,14 @@ import ru.alexandrgert.gamespuzzle.domain.Season
 
 class ShippedCatalogTest {
     private val assets = File("src/main/assets")
-    private val allowedLicensePrefixes = listOf("CC0", "Public domain", "PD", "CC BY", "CC BY-SA")
+    private val unrestrictedLicensePrefixes = listOf("CC0", "Public domain", "PD")
+
+    @Test
+    fun shippedLicenseMatcher_rejectsNonCommercialVariants() {
+        assertTrue(isAllowedShippedLicense("CC BY 4.0"))
+        assertTrue(isAllowedShippedLicense("CC BY-SA 4.0"))
+        assertTrue(!isAllowedShippedLicense("CC BY-NC 4.0"))
+    }
 
     @Test
     fun shippedCatalogHasTwentyTwoHighReliefEntries() {
@@ -36,9 +43,18 @@ class ShippedCatalogTest {
         catalog.puzzles.forEach { puzzle ->
             assertTrue(File(assets, puzzle.file).isFile)
             assertTrue(File(assets, puzzle.thumb).isFile)
-            assertTrue(allowedLicensePrefixes.any { puzzle.license.startsWith(it) })
+            assertTrue(isAllowedShippedLicense(puzzle.license))
             assertTrue(puzzle.sourceUrl.startsWith("https://commons.wikimedia.org/wiki/File:"))
             assertTrue(!puzzle.sourceUrl.contains("File%3A"))
+        }
+    }
+
+    private fun isAllowedShippedLicense(license: String): Boolean {
+        val normalized = license.trim()
+        return when {
+            normalized.startsWith("CC BY-SA ") -> true
+            normalized.startsWith("CC BY ") -> true
+            else -> unrestrictedLicensePrefixes.any { normalized.startsWith(it) }
         }
     }
 }
