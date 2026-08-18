@@ -26,6 +26,9 @@ class ShippedCatalogTest {
             "ladoga-pine-skerry", "autumn-asters", "kamchatka-brown-bear",
             "baikal-nerpa", "chistopol-bullfinch-winter", "krimozero-autumn",
             "lena-pillars-summer",
+            "kislovodsk-spotted-woodpecker",
+            "krasnoyarsk-stolby-syenite",
+            "mutnovsky-crater-rock",
         )
         assertTrue(catalog.puzzles.none { it.id in oldIds })
         catalog.puzzles.forEach { puzzle ->

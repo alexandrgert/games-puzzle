@@ -2,15 +2,15 @@
   "schema_version": 1,
   "puzzles": [
     {
-      "id": "krasnoyarsk-stolby-syenite",
-      "file": "puzzles/krasnoyarsk-stolby-syenite.webp",
-      "thumb": "thumbs/krasnoyarsk-stolby-syenite.webp",
+      "id": "ruskeala-marble-wall",
+      "file": "puzzles/ruskeala-marble-wall.webp",
+      "thumb": "thumbs/ruskeala-marble-wall.webp",
       "category": "nature",
       "season": "summer",
-      "title_ru": "Сиенитовый обелиск в Столбах",
-      "license": "CC BY 4.0",
-      "attribution": "Vyacheslav Argenberg",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Krasnoyarsk_Pillars,_Rock_formation,_Syenite_laccolith_obelisk,_Russia.jpg"
+      "title_ru": "Мраморная стена Рускеалы",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Aleksander Kaasik",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Marble_wall_of_Ruskeala.jpg"
     },
     {
       "id": "kungur-ice-grotto",
@@ -24,15 +24,15 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Kungur_Ice_Cave_P6242153_2575.jpg"
     },
     {
-      "id": "mutnovsky-crater-rock",
-      "file": "puzzles/mutnovsky-crater-rock.webp",
-      "thumb": "thumbs/mutnovsky-crater-rock.webp",
+      "id": "gorely-volcano-crater",
+      "file": "puzzles/gorely-volcano-crater.webp",
+      "thumb": "thumbs/gorely-volcano-crater.webp",
       "category": "nature",
       "season": "summer",
-      "title_ru": "Кратер вулкана Мутновский",
+      "title_ru": "Кратер вулкана Горелый",
       "license": "CC BY-SA 4.0",
-      "attribution": "Aysa t",
-      "source_url": "https://commons.wikimedia.org/wiki/File:В_царстве_огня_и_льда_1.jpg"
+      "attribution": "Титов Владимир",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Кратер_вулкана_Горелый.JPG"
     },
     {
       "id": "altai-kokkel-tundra",
@@ -112,15 +112,15 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Bubo_scandiacus_in_Moscow_Zoo_2014.JPG"
     },
     {
-      "id": "kislovodsk-spotted-woodpecker",
-      "file": "puzzles/kislovodsk-spotted-woodpecker.webp",
-      "thumb": "thumbs/kislovodsk-spotted-woodpecker.webp",
+      "id": "novosibirsk-waxwing-april",
+      "file": "puzzles/novosibirsk-waxwing-april.webp",
+      "thumb": "thumbs/novosibirsk-waxwing-april.webp",
       "category": "birds",
       "season": "spring",
-      "title_ru": "Большой пёстрый дятел в Кисловодске",
-      "license": "CC BY-SA 4.0",
-      "attribution": "KpokeJlJla",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Dendrocopos_major,_Kislovodsk,_Russia.jpg"
+      "title_ru": "Свиристель в Новосибирске",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Tatiana Bulyonkova from Novosibirsk, Russia",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bombycilla_garrulus,_Novosibirsk_1.jpg"
     },
     {
       "id": "kostroma-hazel-grouse",

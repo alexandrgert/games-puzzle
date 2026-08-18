@@ -32,49 +32,73 @@ def square(im: Image.Image, size: int) -> Image.Image:
     return im.crop((left, top, left + side, top + side)).resize((size, size), Image.Resampling.LANCZOS)
 
 
+def fetch_row(row: dict, puzzles_dir: Path, thumbs_dir: Path) -> dict:
+    title = row["commons_file"]
+    data = api({
+        "action": "query", "format": "json", "prop": "imageinfo",
+        "titles": title, "iiprop": "url|extmetadata|mime|size",
+    })
+    page = next(iter(data["query"]["pages"].values()))
+    info = page["imageinfo"][0]
+    meta = info.get("extmetadata", {})
+    license_short = meta.get("LicenseShortName", {}).get("value", "")
+    artist = re.sub("<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()
+    allowed = ("CC0", "Public domain", "PD", "CC BY")
+    if not any(license_short.startswith(p) for p in allowed):
+        raise SystemExit(f"license not allowed for {title}: {license_short}")
+    raw = download(info["url"])
+    im = Image.open(io.BytesIO(raw))
+    if min(im.size) < 1200:
+        raise SystemExit(f"too small: {title} {im.size}")
+    pid = row["id"]
+    square(im, 1200).save(puzzles_dir / f"{pid}.webp", "WEBP", quality=90)
+    square(im, 256).save(thumbs_dir / f"{pid}.webp", "WEBP", quality=85)
+    return {
+        "id": pid,
+        "file": f"puzzles/{pid}.webp",
+        "thumb": f"thumbs/{pid}.webp",
+        "category": row["category"],
+        "season": row["season"],
+        "title_ru": row["title_ru"],
+        "license": license_short,
+        "attribution": artist or "Unknown",
+        "source_url": f"https://commons.wikimedia.org/wiki/{title.replace(' ', '_')}",
+    }
+
+
 def main() -> None:
+    only = None
+    if "--only" in sys.argv:
+        idx = sys.argv.index("--only")
+        if idx + 1 >= len(sys.argv):
+            raise SystemExit("usage: fetch_commons_puzzles.py [--only id1,id2]")
+        only = set(sys.argv[idx + 1].split(","))
     sources = json.loads((ROOT / "scripts" / "catalog_sources.json").read_text())
     puzzles_dir, thumbs_dir = ASSETS / "puzzles", ASSETS / "thumbs"
     puzzles_dir.mkdir(parents=True, exist_ok=True)
     thumbs_dir.mkdir(parents=True, exist_ok=True)
-    for old in list(puzzles_dir.glob("*.webp")) + list(thumbs_dir.glob("*.webp")):
-        old.unlink()
+    existing = {}
+    catalog_path = ASSETS / "catalog.json"
+    if catalog_path.exists():
+        existing = {p["id"]: p for p in json.loads(catalog_path.read_text())["puzzles"]}
+    if only is None:
+        for old in list(puzzles_dir.glob("*.webp")) + list(thumbs_dir.glob("*.webp")):
+            old.unlink()
     out = []
     for row in sources:
-        title = row["commons_file"]
-        data = api({
-            "action": "query", "format": "json", "prop": "imageinfo",
-            "titles": title, "iiprop": "url|extmetadata|mime|size",
-        })
-        page = next(iter(data["query"]["pages"].values()))
-        info = page["imageinfo"][0]
-        meta = info.get("extmetadata", {})
-        license_short = meta.get("LicenseShortName", {}).get("value", "")
-        artist = re.sub("<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()
-        allowed = ("CC0", "Public domain", "PD", "CC BY")
-        if not any(license_short.startswith(p) for p in allowed):
-            raise SystemExit(f"license not allowed for {title}: {license_short}")
-        raw = download(info["url"])
-        im = Image.open(io.BytesIO(raw))
-        if min(im.size) < 1200:
-            raise SystemExit(f"too small: {title} {im.size}")
-        pid = row["id"]
-        square(im, 1200).save(puzzles_dir / f"{pid}.webp", "WEBP", quality=90)
-        square(im, 256).save(thumbs_dir / f"{pid}.webp", "WEBP", quality=85)
-        file_page = "https://commons.wikimedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"))
-        file_page = file_page.replace("File%3A", "File:")
-        out.append({
-            "id": pid,
-            "file": f"puzzles/{pid}.webp",
-            "thumb": f"thumbs/{pid}.webp",
-            "category": row["category"],
-            "season": row["season"],
-            "title_ru": row["title_ru"],
-            "license": license_short,
-            "attribution": artist or "Unknown",
-            "source_url": f"https://commons.wikimedia.org/wiki/{title.replace(' ', '_')}",
-        })
-    (ASSETS / "catalog.json").write_text(
+        if only is not None and row["id"] not in only:
+            prev = existing.get(row["id"])
+            if not prev:
+                raise SystemExit(f"missing existing catalog entry for {row['id']}")
+            out.append(prev)
+            continue
+        out.append(fetch_row(row, puzzles_dir, thumbs_dir))
+    wanted = {row["id"] for row in sources}
+    for folder in (puzzles_dir, thumbs_dir):
+        for path in folder.glob("*.webp"):
+            if path.stem not in wanted:
+                path.unlink()
+    catalog_path.write_text(
         json.dumps({"schema_version": 1, "puzzles": out}, ensure_ascii=False, indent=2) + "\n"
     )
     print(f"wrote {len(out)} puzzles")

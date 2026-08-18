@@ -1,10 +1,10 @@
 [
   {
-    "id": "krasnoyarsk-stolby-syenite",
-    "title_ru": "Сиенитовый обелиск в Столбах",
+    "id": "ruskeala-marble-wall",
+    "title_ru": "Мраморная стена Рускеалы",
     "category": "nature",
     "season": "summer",
-    "commons_file": "File:Krasnoyarsk Pillars, Rock formation, Syenite laccolith obelisk, Russia.jpg"
+    "commons_file": "File:Marble wall of Ruskeala.jpg"
   },
   {
     "id": "kungur-ice-grotto",
@@ -14,11 +14,11 @@
     "commons_file": "File:Kungur Ice Cave P6242153 2575.jpg"
   },
   {
-    "id": "mutnovsky-crater-rock",
-    "title_ru": "Кратер вулкана Мутновский",
+    "id": "gorely-volcano-crater",
+    "title_ru": "Кратер вулкана Горелый",
     "category": "nature",
     "season": "summer",
-    "commons_file": "File:В царстве огня и льда 1.jpg"
+    "commons_file": "File:Кратер вулкана Горелый.JPG"
   },
   {
     "id": "altai-kokkel-tundra",
@@ -70,11 +70,11 @@
     "commons_file": "File:Bubo scandiacus in Moscow Zoo 2014.JPG"
   },
   {
-    "id": "kislovodsk-spotted-woodpecker",
-    "title_ru": "Большой пёстрый дятел в Кисловодске",
+    "id": "novosibirsk-waxwing-april",
+    "title_ru": "Свиристель в Новосибирске",
     "category": "birds",
     "season": "spring",
-    "commons_file": "File:Dendrocopos major, Kislovodsk, Russia.jpg"
+    "commons_file": "File:Bombycilla garrulus, Novosibirsk 1.jpg"
   },
   {
     "id": "kostroma-hazel-grouse",
