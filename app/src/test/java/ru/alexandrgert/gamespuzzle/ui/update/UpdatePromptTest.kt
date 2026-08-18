@@ -19,6 +19,17 @@ class UpdatePromptTest {
     }
 
     @Test
+    fun `idle available update does not show download overlay`() {
+        val state = buildUpdateDialogState(
+            result = availableUpdate(),
+            isDownloading = false,
+        )
+
+        assertTrue(state.canConfirmDownload)
+        assertFalse(state.showDownloadOverlay)
+    }
+
+    @Test
     fun `up to date dialog never shows download overlay`() {
         val state = buildUpdateDialogState(
             result = latestVersion(),
