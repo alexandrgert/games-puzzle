@@ -19,10 +19,10 @@ class ShippedCatalogTest {
     }
 
     @Test
-    fun shippedCatalogHasTwentyTwoHighReliefEntries() {
+    fun shippedCatalogHasSeventyTwoHighReliefEntries() {
         val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
-        assertEquals(22, catalog.puzzles.size)
-        assertEquals(catalog.puzzles.map { it.id }.toSet().size, 22)
+        assertEquals(72, catalog.puzzles.size)
+        assertEquals(catalog.puzzles.map { it.id }.toSet().size, 72)
         assertEquals(Category.entries.toSet(), catalog.puzzles.map { it.category }.toSet())
         assertTrue(catalog.puzzles.map { it.season }.containsAll(Season.entries - Season.ANY))
         val oldIds = setOf(
