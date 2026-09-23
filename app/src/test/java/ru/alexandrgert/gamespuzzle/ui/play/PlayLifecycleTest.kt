@@ -30,6 +30,6 @@ class PlayLifecycleTest {
     }
 
     private class TestLifecycleOwner : LifecycleOwner {
-        override val lifecycle = LifecycleRegistry(this)
+        override val lifecycle = LifecycleRegistry.createUnsafe(this)
     }
 }
