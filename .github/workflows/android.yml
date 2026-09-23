@@ -104,3 +104,39 @@ jobs:
           name: games-puzzle-${{ steps.version.outputs.value }}.apk
           path: games-puzzle-${{ steps.version.outputs.value }}.apk
           if-no-files-found: error
+
+  publish-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [test-and-debug-build, signed-release-build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Validate release tag
+        run: |
+          version="$(tr -d '\r\n' < VERSION)"
+          if [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match VERSION $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_ENV"
+
+      - name: Download signed APK
+        uses: actions/download-artifact@v8
+        with:
+          name: games-puzzle-${{ env.version }}.apk
+          path: release-artifact
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "release-artifact/games-puzzle-${version}.apk" \
+            --title "Games Puzzle ${version}" \
+            --notes-file docs/github-release-draft.md \
+            --verify-tag
