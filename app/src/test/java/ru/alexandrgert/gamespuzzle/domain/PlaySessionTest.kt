@@ -129,6 +129,76 @@ class PlaySessionTest {
         assertEquals(0, session.moves)
     }
 
+    @Test
+    fun snapshotRoundTripRestoresProgressAndContinuesTimer() {
+        var now = 1_000L
+        val session = PlaySession(GridSize.FIVE, true, Random(8L)) { now }
+        val (first, second) = findPair(session.board, joined = false)
+        session.swap(first, second)
+        val selected = (0 until session.board.n * session.board.n)
+            .map { Cell.fromIndex(it, session.board.n) }
+            .first { !session.board.isLockedCell(it) }
+        session.tap(selected)
+        session.togglePeek()
+        now = 1_600L
+
+        val restored = PlaySession.restore(session.snapshot()) { now }!!
+
+        assertTrue(session.board.tiles.contentEquals(restored.board.tiles))
+        assertTrue(session.board.locked.contentEquals(restored.board.locked))
+        assertEquals(selected, restored.selected)
+        assertEquals(1, restored.moves)
+        assertTrue(restored.peek)
+        assertEquals(600L, restored.elapsedMs)
+        now = 1_900L
+        assertEquals(900L, restored.elapsedMs)
+    }
+
+    @Test
+    fun invalidSnapshotIsRejected() {
+        val session = PlaySession(GridSize.FIVE, true, Random(9L))
+        val damaged = session.snapshot().copy(tiles = IntArray(25))
+
+        assertNull(PlaySession.restore(damaged))
+    }
+
+    @Test
+    fun completedSnapshotKeepsElapsedTimeFrozen() {
+        var now = 2_000L
+        val completed = PlaySessionSnapshot(
+            sizeN = 5,
+            statsEnabled = true,
+            tiles = IntArray(25) { it },
+            locked = BooleanArray(25) { true },
+            selectedIndex = -1,
+            moves = 7,
+            peek = false,
+            elapsedMs = 750L,
+            completed = true,
+        )
+
+        val restored = PlaySession.restore(completed) { now }!!
+        now = 9_000L
+
+        assertTrue(restored.isWin())
+        assertEquals(750L, restored.elapsedMs)
+    }
+
+    @Test
+    fun pausedTimerExcludesBackgroundIntervalAfterResume() {
+        var now = 1_000L
+        val session = PlaySession(GridSize.FIVE, true, Random(18L)) { now }
+        now = 1_600L
+
+        session.pauseTimer()
+        now = 8_000L
+        assertEquals(600L, session.elapsedMs)
+
+        session.resumeTimer()
+        now = 8_250L
+        assertEquals(850L, session.elapsedMs)
+    }
+
     private fun findPair(board: Board, joined: Boolean): Pair<Cell, Cell> {
         val cells = (0 until board.n * board.n).map { Cell.fromIndex(it, board.n) }
         for (first in cells) {

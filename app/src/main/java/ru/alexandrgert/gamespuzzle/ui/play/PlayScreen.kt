@@ -22,6 +22,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -35,18 +36,24 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import java.util.Random
 import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlinx.coroutines.delay
 import ru.alexandrgert.gamespuzzle.R
 import ru.alexandrgert.gamespuzzle.data.RecordsStore
+import ru.alexandrgert.gamespuzzle.data.DataStoreActivePlaySessionStore
 import ru.alexandrgert.gamespuzzle.domain.Cell
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 
@@ -61,12 +68,24 @@ fun PlayScreen(
     onAgain: () -> Unit,
     onCatalog: () -> Unit,
 ) {
+    val context = LocalContext.current
+    val activeSessionStore = remember(context) {
+        DataStoreActivePlaySessionStore(context.applicationContext)
+    }
     val playViewModel: PlayViewModel = viewModel(key = "$puzzleId:${size.n}:$statsEnabled") {
         PlayViewModel(
+            savedStateHandle = createSavedStateHandle(),
             statsEnabled = statsEnabled,
             puzzleId = puzzleId,
             recordSaver = recordsStore,
+            activeSessionStore = activeSessionStore,
         )
+    }
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner, playViewModel) {
+        val observer = playLifecycleObserver(playViewModel)
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
     }
     var confirmAbandon by remember { mutableStateOf(false) }
     val state = playViewModel.state
@@ -300,7 +319,10 @@ fun PlayScreen(
             title = { Text(stringResource(R.string.confirm_abandon_title)) },
             text = { Text(stringResource(R.string.confirm_abandon_message)) },
             confirmButton = {
-                TextButton(onClick = onAbandon) {
+                TextButton(onClick = {
+                    playViewModel.abandon()
+                    onAbandon()
+                }) {
                     Text(stringResource(R.string.action_abandon))
                 }
             },
@@ -312,6 +334,15 @@ fun PlayScreen(
         )
     }
 }
+
+internal fun playLifecycleObserver(viewModel: PlayViewModel): LifecycleEventObserver =
+    LifecycleEventObserver { _, event ->
+        when (event) {
+            Lifecycle.Event.ON_START -> viewModel.onForeground()
+            Lifecycle.Event.ON_STOP -> viewModel.onBackground()
+            else -> Unit
+        }
+    }
 
 private fun tileShownAt(state: PlayState, cell: Cell): Int = state.board.tileAt(cell)
 

@@ -22,7 +22,7 @@ class ShippedCatalogTest {
     fun shippedCatalogHasSeventyTwoHighReliefEntries() {
         val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
         assertEquals(72, catalog.puzzles.size)
-        assertEquals(catalog.puzzles.map { it.id }.toSet().size, 72)
+        assertEquals(72, catalog.puzzles.map { it.id }.toSet().size)
         assertEquals(Category.entries.toSet(), catalog.puzzles.map { it.category }.toSet())
         assertTrue(catalog.puzzles.map { it.season }.containsAll(Season.entries - Season.ANY))
         val oldIds = setOf(
@@ -47,7 +47,19 @@ class ShippedCatalogTest {
             assertTrue(puzzle.sourceUrl.startsWith("https://commons.wikimedia.org/wiki/File:"))
             assertTrue(!puzzle.sourceUrl.contains("File%3A"))
         }
+
+        val referencedPuzzleAssets = catalog.puzzles.map { it.file }.toSet()
+        val referencedThumbAssets = catalog.puzzles.map { it.thumb }.toSet()
+        assertEquals(referencedPuzzleAssets, assetPathsBelow("puzzles"))
+        assertEquals(referencedThumbAssets, assetPathsBelow("thumbs"))
     }
+
+    private fun assetPathsBelow(directory: String): Set<String> =
+        File(assets, directory)
+            .walkTopDown()
+            .filter(File::isFile)
+            .map { it.relativeTo(assets).invariantSeparatorsPath }
+            .toSet()
 
     private fun isAllowedShippedLicense(license: String): Boolean {
         val normalized = license.trim()

@@ -224,7 +224,7 @@ class BoardEngineTest {
     }
 
     @Test
-    fun snapLocksHomeNeighbourThatWasAlreadyInPlace() {
+    fun snapCascadesAcrossHomeTilesUntilLastTileLocksAndBoardWins() {
         val tiles = IntArray(25) { it }
         tiles[5] = 0
         tiles[0] = 5
@@ -239,6 +239,27 @@ class BoardEngineTest {
         assertTrue(board.tiles.toList() == (0 until 25).toList())
         assertTrue(board.locked[0] && board.locked[5])
         assertTrue(board.locked[1])
+        assertTrue(board.locked[24])
+        assertTrue(board.locked.all { it })
+        assertTrue(BoardEngine.isWin(board))
+    }
+
+    @Test
+    fun distantJoinedPairAndLockedSeedCascadeToSingleWinningComponent() {
+        val tiles = IntArray(25) { it }.also {
+            it[23] = 24
+            it[24] = 23
+        }
+        val locked = BooleanArray(25).also { it[0] = true }
+        val start = Board(GridSize.FIVE, tiles, locked)
+
+        val result = BoardEngine.trySwap(start, Cell(4, 3), Cell(4, 4))
+
+        assertTrue(result is MoveResult.Applied)
+        val board = (result as MoveResult.Applied).board
+        assertTrue(result.joined)
+        assertTrue(board.tiles.toList() == (0 until 25).toList())
+        assertTrue(board.locked.all { it })
         assertTrue(BoardEngine.isWin(board))
     }
 
