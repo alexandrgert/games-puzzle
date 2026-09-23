@@ -140,3 +140,28 @@ jobs:
             --title "Games Puzzle ${version}" \
             --notes-file "docs/github-release-v${version}.md" \
             --verify-tag
+
+  sync-current-release-notes:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Update published release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(tr -d '\r\n' < VERSION)"
+          notes="docs/github-release-v${version}.md"
+          if gh release view "v${version}" >/dev/null 2>&1; then
+            test -f "$notes"
+            gh release edit "v${version}" \
+              --title "Games Puzzle ${version}" \
+              --notes-file "$notes"
+          else
+            echo "Release v${version} is not published yet; nothing to sync."
+          fi
