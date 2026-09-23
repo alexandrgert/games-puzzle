@@ -138,5 +138,5 @@ jobs:
           gh release create "$GITHUB_REF_NAME" \
             "release-artifact/games-puzzle-${version}.apk" \
             --title "Games Puzzle ${version}" \
-            --notes-file docs/github-release-draft.md \
+            --notes-file "docs/github-release-v${version}.md" \
             --verify-tag
