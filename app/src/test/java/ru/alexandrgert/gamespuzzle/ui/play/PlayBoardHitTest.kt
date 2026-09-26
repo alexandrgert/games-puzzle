@@ -7,6 +7,14 @@ import ru.alexandrgert.gamespuzzle.domain.Cell
 
 class PlayBoardHitTest {
     @Test
+    fun portraitBoardUsesItsOwnWidthAndHeightForTapsAndDrops() {
+        assertEquals(Cell(2, 1), cellAt(150f, 450f, n = 3, widthPx = 300f, heightPx = 600f))
+        assertEquals(Cell(2, 2), cellAt(299f, 599f, n = 3, widthPx = 300f, heightPx = 600f))
+        assertNull(cellAt(350f, 450f, n = 3, widthPx = 300f, heightPx = 600f))
+        assertNull(cellAt(-1f, 450f, n = 3, widthPx = 300f, heightPx = 600f))
+    }
+
+    @Test
     fun mapsOffsetToCellOnSquareBoard() {
         assertEquals(Cell(0, 0), cellAt(10f, 10f, n = 6, widthPx = 600f, heightPx = 600f))
         assertEquals(Cell(0, 5), cellAt(550f, 20f, n = 6, widthPx = 600f, heightPx = 600f))

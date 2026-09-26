@@ -502,5 +502,85 @@
     "category": "flowers",
     "season": "spring",
     "commons_file": "File:Paeonia caucasica.jpg"
+  },
+  {
+    "id": "portrait-altai-spring",
+    "title_ru": "Весна в Тальменском районе",
+    "category": "nature",
+    "season": "spring",
+    "commons_file": "File:Spring in Russia 2014 06.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-lipetsk-spring",
+    "title_ru": "Весна в Нижнем парке Липецка",
+    "category": "nature",
+    "season": "spring",
+    "commons_file": "File:Нижний парк весной.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-pushkin-pagoda",
+    "title_ru": "Скрипучая беседка Екатерининского парка",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:RUS-2016-Pushkin-Catherine Park-Chinese Summer House.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-mutnovsky-summer",
+    "title_ru": "Летний путь от Мутновского вулкана",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:Walking back from the Mutnovsky Volcano - Kamčatka, Russian Federation - Summer 1993.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-ulyanovsk-summer",
+    "title_ru": "Зелёное отражение в Ульяновском дендропарке",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:IMG Зеленое отражение Маришки.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-moscow-japanese-autumn",
+    "title_ru": "Осень в Японском саду Москвы",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:2020 Japanese Garden in Moscow - Autumn Colors 02.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-balashikha-maple",
+    "title_ru": "Осенний клён в Балашихе",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Autumn maple Осенний клён.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-avachinsky-autumn",
+    "title_ru": "Сентябрь на Авачинском вулкане",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka DSC 0342-1 (15807021209).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-birch-winter-sunset",
+    "title_ru": "Зимняя берёза на закате",
+    "category": "nature",
+    "season": "winter",
+    "commons_file": "File:Betula penuda at sunset in winter.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "portrait-kolomenskoe-winter",
+    "title_ru": "Снежная набережная Коломенского",
+    "category": "nature",
+    "season": "winter",
+    "commons_file": "File:Kolomenskoe in white - Dec12 - 03 snow.jpg",
+    "preserve_aspect": true
   }
 ]

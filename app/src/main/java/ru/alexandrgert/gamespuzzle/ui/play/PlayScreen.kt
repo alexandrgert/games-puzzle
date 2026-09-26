@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -29,6 +30,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
@@ -48,7 +50,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import java.util.Random
-import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlinx.coroutines.delay
 import ru.alexandrgert.gamespuzzle.R
@@ -113,18 +114,9 @@ fun PlayScreen(
             modifier = Modifier.padding(16.dp),
         )
     } else {
-        val squareBitmap = remember(sourceBitmap) {
-            val squareSide = min(sourceBitmap.width, sourceBitmap.height)
-            Bitmap.createScaledBitmap(
-                sourceBitmap,
-                squareSide,
-                squareSide,
-                true,
-            )
-        }
-        val tiles = remember(squareBitmap, size) {
+        val tiles = remember(sourceBitmap, size) {
             List(size.n * size.n) { tileId ->
-                tileBitmap(squareBitmap, tileId, size.n).asImageBitmap()
+                tileBitmap(sourceBitmap, tileId, size.n).asImageBitmap()
             }
         }
         var boardPx by remember { mutableStateOf(IntSize.Zero) }
@@ -135,150 +127,160 @@ fun PlayScreen(
         Column(
             modifier = Modifier.fillMaxSize(),
         ) {
-            Box(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth()
-                    .onSizeChanged { boardPx = it }
-                    .pointerInput(size.n, boardPx, state.peek, state.won) {
-                        if (state.peek || state.won) return@pointerInput
-                        detectTapGestures { offset ->
-                            cellAt(
-                                offset.x,
-                                offset.y,
-                                size.n,
-                                boardPx.width.toFloat(),
-                                boardPx.height.toFloat(),
-                            )?.let(playViewModel::onCell)
-                        }
-                    }
-                    .pointerInput(size.n, boardPx, state.peek, state.won, state.board) {
-                        if (state.peek || state.won) return@pointerInput
-                        detectDragGestures(
-                            onDragStart = { offset ->
-                                val cell = cellAt(
+            BoxWithConstraints(
+                modifier = Modifier.weight(1f).fillMaxWidth(),
+                contentAlignment = Alignment.Center,
+            ) {
+                val fitted = fittedBoardSize(
+                    sourceBitmap.width,
+                    sourceBitmap.height,
+                    maxWidth.value,
+                    maxHeight.value,
+                )
+                Box(
+                    modifier = Modifier
+                        .size(fitted.width.dp, fitted.height.dp)
+                        .onSizeChanged { boardPx = it }
+                        .pointerInput(size.n, boardPx, state.peek, state.won) {
+                            if (state.peek || state.won) return@pointerInput
+                            detectTapGestures { offset ->
+                                cellAt(
                                     offset.x,
                                     offset.y,
                                     size.n,
                                     boardPx.width.toFloat(),
                                     boardPx.height.toFloat(),
-                                )
-                                if (cell != null && !state.board.isLockedCell(cell)) {
-                                    dragging = cell
-                                    dragStart = offset
-                                    dragDelta = Offset.Zero
-                                } else {
-                                    dragging = null
-                                }
-                            },
-                            onDrag = { _, amount ->
-                                if (dragging != null) dragDelta += amount
-                            },
-                            onDragEnd = {
-                                val from = dragging
-                                val drop = cellAt(
-                                    dragStart.x + dragDelta.x,
-                                    dragStart.y + dragDelta.y,
-                                    size.n,
-                                    boardPx.width.toFloat(),
-                                    boardPx.height.toFloat(),
-                                )
-                                dragging = null
-                                dragDelta = Offset.Zero
-                                if (from != null && drop != null && drop != from) {
-                                    playViewModel.onSwap(from, drop)
-                                }
-                            },
-                            onDragCancel = {
-                                dragging = null
-                                dragDelta = Offset.Zero
-                            },
-                        )
-                    },
-            ) {
-                Column(Modifier.fillMaxSize()) {
-                    repeat(size.n) { row ->
-                        Row(Modifier.weight(1f).fillMaxWidth()) {
-                            repeat(size.n) { col ->
-                                val cell = Cell(row, col)
-                                val tileId = tileShownAt(state, cell)
-                                val locked = state.board.isLockedCell(cell)
-                                val selected = state.selected == cell
-                                val outlineModifier = when {
-                                    selected -> Modifier.border(4.dp, MaterialTheme.colorScheme.primary)
-                                    PlayTileChrome.shouldDrawUnlockedOutline(
-                                        locked = locked,
-                                        peek = state.peek,
-                                        selected = false,
-                                        dragging = dragging == cell,
-                                    ) -> Modifier.border(
-                                        PlayTileChrome.UNLOCKED_OUTLINE_DP.dp,
-                                        Color.White,
+                                )?.let(playViewModel::onCell)
+                            }
+                        }
+                        .pointerInput(size.n, boardPx, state.peek, state.won, state.board) {
+                            if (state.peek || state.won) return@pointerInput
+                            detectDragGestures(
+                                onDragStart = { offset ->
+                                    val cell = cellAt(
+                                        offset.x,
+                                        offset.y,
+                                        size.n,
+                                        boardPx.width.toFloat(),
+                                        boardPx.height.toFloat(),
                                     )
-                                    else -> Modifier
-                                }
-                                Box(
-                                    modifier = outlineModifier
-                                        .weight(1f)
-                                        .fillMaxHeight(),
-                                ) {
-                                    if (dragging == cell) {
-                                        Box(
-                                            modifier = Modifier
-                                                .fillMaxSize()
-                                                .background(
-                                                    MaterialTheme.colorScheme.surfaceVariant,
-                                                ),
-                                        )
+                                    if (cell != null && !state.board.isLockedCell(cell)) {
+                                        dragging = cell
+                                        dragStart = offset
+                                        dragDelta = Offset.Zero
                                     } else {
-                                        Image(
-                                            bitmap = tiles[tileId],
-                                            contentDescription = null,
-                                            contentScale = ContentScale.FillBounds,
-                                            modifier = Modifier.fillMaxSize(),
+                                        dragging = null
+                                    }
+                                },
+                                onDrag = { _, amount ->
+                                    if (dragging != null) dragDelta += amount
+                                },
+                                onDragEnd = {
+                                    val from = dragging
+                                    val drop = cellAt(
+                                        dragStart.x + dragDelta.x,
+                                        dragStart.y + dragDelta.y,
+                                        size.n,
+                                        boardPx.width.toFloat(),
+                                        boardPx.height.toFloat(),
+                                    )
+                                    dragging = null
+                                    dragDelta = Offset.Zero
+                                    if (from != null && drop != null && drop != from) {
+                                        playViewModel.onSwap(from, drop)
+                                    }
+                                },
+                                onDragCancel = {
+                                    dragging = null
+                                    dragDelta = Offset.Zero
+                                },
+                            )
+                        },
+                ) {
+                    Column(Modifier.fillMaxSize()) {
+                        repeat(size.n) { row ->
+                            Row(Modifier.weight(1f).fillMaxWidth()) {
+                                repeat(size.n) { col ->
+                                    val cell = Cell(row, col)
+                                    val tileId = tileShownAt(state, cell)
+                                    val locked = state.board.isLockedCell(cell)
+                                    val selected = state.selected == cell
+                                    val outlineModifier = when {
+                                        selected -> Modifier.border(4.dp, MaterialTheme.colorScheme.primary)
+                                        PlayTileChrome.shouldDrawUnlockedOutline(
+                                            locked = locked,
+                                            peek = state.peek,
+                                            selected = false,
+                                            dragging = dragging == cell,
+                                        ) -> Modifier.border(
+                                            PlayTileChrome.UNLOCKED_OUTLINE_DP.dp,
+                                            Color.White,
                                         )
+                                        else -> Modifier
+                                    }
+                                    Box(
+                                        modifier = outlineModifier
+                                            .weight(1f)
+                                            .fillMaxHeight(),
+                                    ) {
+                                        if (dragging == cell) {
+                                            Box(
+                                                modifier = Modifier
+                                                    .fillMaxSize()
+                                                    .background(
+                                                        MaterialTheme.colorScheme.surfaceVariant,
+                                                    ),
+                                            )
+                                        } else {
+                                            Image(
+                                                bitmap = tiles[tileId],
+                                                contentDescription = null,
+                                                contentScale = ContentScale.Fit,
+                                                modifier = Modifier.fillMaxSize(),
+                                            )
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                val dragCell = dragging
-                if (dragCell != null && boardPx.width > 0 && boardPx.height > 0) {
-                    val cellW = boardPx.width / size.n.toFloat()
-                    val cellH = boardPx.height / size.n.toFloat()
-                    val originX = dragCell.col * cellW
-                    val originY = dragCell.row * cellH
-                    Image(
-                        bitmap = tiles[state.board.tileAt(dragCell)],
-                        contentDescription = null,
-                        contentScale = ContentScale.FillBounds,
-                        modifier = Modifier
-                            .zIndex(1f)
-                            .offset {
-                                IntOffset(
-                                    (originX + dragDelta.x).roundToInt(),
-                                    (originY + dragDelta.y).roundToInt(),
+                    val dragCell = dragging
+                    if (dragCell != null && boardPx.width > 0 && boardPx.height > 0) {
+                        val cellW = boardPx.width / size.n.toFloat()
+                        val cellH = boardPx.height / size.n.toFloat()
+                        val originX = dragCell.col * cellW
+                        val originY = dragCell.row * cellH
+                        Image(
+                            bitmap = tiles[state.board.tileAt(dragCell)],
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .zIndex(1f)
+                                .offset {
+                                    IntOffset(
+                                        (originX + dragDelta.x).roundToInt(),
+                                        (originY + dragDelta.y).roundToInt(),
+                                    )
+                                }
+                                .size(
+                                    with(density) { cellW.toDp() },
+                                    with(density) { cellH.toDp() },
                                 )
-                            }
-                            .size(
-                                with(density) { cellW.toDp() },
-                                with(density) { cellH.toDp() },
-                            )
-                            .border(4.dp, MaterialTheme.colorScheme.primary),
-                    )
-                }
-                if (state.peek) {
-                    Image(
-                        bitmap = squareBitmap.asImageBitmap(),
-                        contentDescription = stringResource(R.string.puzzle_image),
-                        contentScale = ContentScale.FillBounds,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .pointerInput(Unit) {
-                                detectTapGestures { playViewModel.togglePeek() }
-                            },
-                    )
+                                .border(4.dp, MaterialTheme.colorScheme.primary),
+                        )
+                    }
+                    if (state.peek) {
+                        Image(
+                            bitmap = sourceBitmap.asImageBitmap(),
+                            contentDescription = stringResource(R.string.puzzle_image),
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .pointerInput(Unit) {
+                                    detectTapGestures { playViewModel.togglePeek() }
+                                },
+                        )
+                    }
                 }
             }
             if (statsEnabled) {
@@ -347,19 +349,12 @@ internal fun playLifecycleObserver(viewModel: PlayViewModel): LifecycleEventObse
 private fun tileShownAt(state: PlayState, cell: Cell): Int = state.board.tileAt(cell)
 
 fun tileBitmap(src: Bitmap, tileId: Int, n: Int): Bitmap {
-    require(n > 0)
-    require(tileId in 0 until n * n)
-    val squareSide = min(src.width, src.height)
-    val squareBitmap = Bitmap.createScaledBitmap(src, squareSide, squareSide, true)
-    val tileSide = squareSide / n
-    require(tileSide > 0)
-    val homeRow = tileId / n
-    val homeCol = tileId % n
+    val bounds = tileBounds(src.width, src.height, tileId, n)
     return Bitmap.createBitmap(
-        squareBitmap,
-        homeCol * tileSide,
-        homeRow * tileSide,
-        tileSide,
-        tileSide,
+        src,
+        bounds.left,
+        bounds.top,
+        bounds.width,
+        bounds.height,
     )
 }

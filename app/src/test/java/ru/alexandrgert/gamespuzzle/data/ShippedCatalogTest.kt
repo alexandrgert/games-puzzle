@@ -19,10 +19,10 @@ class ShippedCatalogTest {
     }
 
     @Test
-    fun shippedCatalogHasSeventyTwoHighReliefEntries() {
+    fun shippedCatalogHasEightyTwoEntries() {
         val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
-        assertEquals(72, catalog.puzzles.size)
-        assertEquals(72, catalog.puzzles.map { it.id }.toSet().size)
+        assertEquals(82, catalog.puzzles.size)
+        assertEquals(82, catalog.puzzles.map { it.id }.toSet().size)
         assertEquals(Category.entries.toSet(), catalog.puzzles.map { it.category }.toSet())
         assertTrue(catalog.puzzles.map { it.season }.containsAll(Season.entries - Season.ANY))
         val oldIds = setOf(
@@ -52,6 +52,19 @@ class ShippedCatalogTest {
         val referencedThumbAssets = catalog.puzzles.map { it.thumb }.toSet()
         assertEquals(referencedPuzzleAssets, assetPathsBelow("puzzles"))
         assertEquals(referencedThumbAssets, assetPathsBelow("thumbs"))
+    }
+
+    @Test
+    fun portraitAdditionHasTenPhotosCoveringEverySeason() {
+        val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
+        val portraits = catalog.puzzles.filter { it.id.startsWith("portrait-") }
+        assertEquals(10, portraits.size)
+        assertEquals((Season.entries - Season.ANY).toSet(), portraits.map { it.season }.toSet())
+        portraits.forEach { puzzle ->
+            assertTrue("Missing title for ${puzzle.id}", puzzle.titleRu.isNotBlank())
+            assertTrue("Missing attribution for ${puzzle.id}", puzzle.attribution.isNotBlank())
+            assertTrue("License is not freely reusable for ${puzzle.id}", isAllowedShippedLicense(puzzle.license))
+        }
     }
 
     private fun assetPathsBelow(directory: String): Set<String> =

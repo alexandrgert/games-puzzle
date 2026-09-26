@@ -792,6 +792,116 @@
       "license": "CC BY-SA 4.0",
       "attribution": "Sergei Kazantsev",
       "source_url": "https://commons.wikimedia.org/wiki/File:Paeonia_caucasica.jpg"
+    },
+    {
+      "id": "portrait-altai-spring",
+      "file": "puzzles/portrait-altai-spring.webp",
+      "thumb": "thumbs/portrait-altai-spring.webp",
+      "category": "nature",
+      "season": "spring",
+      "title_ru": "Весна в Тальменском районе",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Игоревич",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spring_in_Russia_2014_06.JPG"
+    },
+    {
+      "id": "portrait-lipetsk-spring",
+      "file": "puzzles/portrait-lipetsk-spring.webp",
+      "thumb": "thumbs/portrait-lipetsk-spring.webp",
+      "category": "nature",
+      "season": "spring",
+      "title_ru": "Весна в Нижнем парке Липецка",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Софья Новикова",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA_%D0%B2%D0%B5%D1%81%D0%BD%D0%BE%D0%B9.jpg"
+    },
+    {
+      "id": "portrait-pushkin-pagoda",
+      "file": "puzzles/portrait-pushkin-pagoda.webp",
+      "thumb": "thumbs/portrait-pushkin-pagoda.webp",
+      "category": "nature",
+      "season": "summer",
+      "title_ru": "Скрипучая беседка Екатерининского парка",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Godot13",
+      "source_url": "https://commons.wikimedia.org/wiki/File:RUS-2016-Pushkin-Catherine_Park-Chinese_Summer_House.jpg"
+    },
+    {
+      "id": "portrait-mutnovsky-summer",
+      "file": "puzzles/portrait-mutnovsky-summer.webp",
+      "thumb": "thumbs/portrait-mutnovsky-summer.webp",
+      "category": "nature",
+      "season": "summer",
+      "title_ru": "Летний путь от Мутновского вулкана",
+      "license": "CC BY 4.0",
+      "attribution": "Giorgio Galeotti",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Walking_back_from_the_Mutnovsky_Volcano_-_Kam%C4%8Datka,_Russian_Federation_-_Summer_1993.jpg"
+    },
+    {
+      "id": "portrait-ulyanovsk-summer",
+      "file": "puzzles/portrait-ulyanovsk-summer.webp",
+      "thumb": "thumbs/portrait-ulyanovsk-summer.webp",
+      "category": "nature",
+      "season": "summer",
+      "title_ru": "Зелёное отражение в Ульяновском дендропарке",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Игорь Улитин",
+      "source_url": "https://commons.wikimedia.org/wiki/File:IMG_%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B5_%D0%BE%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B0%D1%80%D0%B8%D1%88%D0%BA%D0%B8.jpg"
+    },
+    {
+      "id": "portrait-moscow-japanese-autumn",
+      "file": "puzzles/portrait-moscow-japanese-autumn.webp",
+      "thumb": "thumbs/portrait-moscow-japanese-autumn.webp",
+      "category": "nature",
+      "season": "autumn",
+      "title_ru": "Осень в Японском саду Москвы",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Andrey Korzun",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2020_Japanese_Garden_in_Moscow_-_Autumn_Colors_02.jpg"
+    },
+    {
+      "id": "portrait-balashikha-maple",
+      "file": "puzzles/portrait-balashikha-maple.webp",
+      "thumb": "thumbs/portrait-balashikha-maple.webp",
+      "category": "nature",
+      "season": "autumn",
+      "title_ru": "Осенний клён в Балашихе",
+      "license": "CC BY-SA 4.0",
+      "attribution": "AlixSaz",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Autumn_maple_%D0%9E%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9_%D0%BA%D0%BB%D1%91%D0%BD.jpg"
+    },
+    {
+      "id": "portrait-avachinsky-autumn",
+      "file": "puzzles/portrait-avachinsky-autumn.webp",
+      "thumb": "thumbs/portrait-avachinsky-autumn.webp",
+      "category": "nature",
+      "season": "autumn",
+      "title_ru": "Сентябрь на Авачинском вулкане",
+      "license": "CC BY 2.0",
+      "attribution": "kuhnmi",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kamchatka_DSC_0342-1_(15807021209).jpg"
+    },
+    {
+      "id": "portrait-birch-winter-sunset",
+      "file": "puzzles/portrait-birch-winter-sunset.webp",
+      "thumb": "thumbs/portrait-birch-winter-sunset.webp",
+      "category": "nature",
+      "season": "winter",
+      "title_ru": "Зимняя берёза на закате",
+      "license": "CC BY 3.0",
+      "attribution": "Trance Light",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Betula_penuda_at_sunset_in_winter.jpg"
+    },
+    {
+      "id": "portrait-kolomenskoe-winter",
+      "file": "puzzles/portrait-kolomenskoe-winter.webp",
+      "thumb": "thumbs/portrait-kolomenskoe-winter.webp",
+      "category": "nature",
+      "season": "winter",
+      "title_ru": "Снежная набережная Коломенского",
+      "license": "CC BY-SA 3.0",
+      "attribution": "A.Savin",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kolomenskoe_in_white_-_Dec12_-_03_snow.jpg"
     }
   ]
 }

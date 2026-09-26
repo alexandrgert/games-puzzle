@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import io, json, re, sys, urllib.parse, urllib.request
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "app" / "src" / "main" / "assets"
@@ -45,6 +45,13 @@ def square(im: Image.Image, size: int) -> Image.Image:
     return im.crop((left, top, left + side, top + side)).resize((size, size), Image.Resampling.LANCZOS)
 
 
+def full_frame(im: Image.Image, max_side: int) -> Image.Image:
+    """Keep the complete, correctly oriented frame without enlarging it."""
+    im = ImageOps.exif_transpose(im).convert("RGB")
+    im.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
+    return im
+
+
 def fetch_row(row: dict, puzzles_dir: Path, thumbs_dir: Path) -> dict:
     title = row["commons_file"]
     data = api({
@@ -63,8 +70,12 @@ def fetch_row(row: dict, puzzles_dir: Path, thumbs_dir: Path) -> dict:
     if min(im.size) < 1200:
         raise SystemExit(f"too small: {title} {im.size}")
     pid = row["id"]
-    square(im, 1200).save(puzzles_dir / f"{pid}.webp", "WEBP", quality=90)
-    square(im, 256).save(thumbs_dir / f"{pid}.webp", "WEBP", quality=85)
+    if row.get("preserve_aspect") is True:
+        full_frame(im, 2000).save(puzzles_dir / f"{pid}.webp", "WEBP", quality=90)
+        full_frame(im, 256).save(thumbs_dir / f"{pid}.webp", "WEBP", quality=85)
+    else:
+        square(im, 1200).save(puzzles_dir / f"{pid}.webp", "WEBP", quality=90)
+        square(im, 256).save(thumbs_dir / f"{pid}.webp", "WEBP", quality=85)
     return {
         "id": pid,
         "file": f"puzzles/{pid}.webp",
