@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "vertical-nature-01",
+    "replaces_id": "ruskeala-marble-wall",
+    "title_ru": "Горный склон Алтая",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Altai mountain slope (6174859678).jpg",
+    "preserve_aspect": true,
+    "date": "2011-09-14 10:43",
+    "original_dimensions": [
+      2592,
+      3888
+    ],
+    "downloaded_sha256": "b4a16edc7411fd114187c8f9d17fd93469fd369eee647a5cfe7d538c77bdcd1f",
+    "license": "CC BY 2.0",
+    "attribution": "Pavel Kazachkov from Moscow, Russia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Altai_mountain_slope_(6174859678).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-nature-02",
+    "replaces_id": "kungur-ice-grotto",
+    "title_ru": "Спуск с вулкана Горелый",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Descent from Volcano Gorely (16697314500).jpg",
+    "preserve_aspect": true,
+    "date": "2014-09-08 02:13",
+    "original_dimensions": [
+      3894,
+      5192
+    ],
+    "downloaded_sha256": "fbe882f77d22016daf55a43da33c0dc77ebf4693668815eff8370928f068b507",
+    "license": "CC BY 2.0",
+    "attribution": "kuhnmi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kamchatka_Descent_from_Volcano_Gorely_(16697314500).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-nature-03",
+    "replaces_id": "gorely-volcano-crater",
+    "title_ru": "Белые скалы Сочи",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Belye rocks Sochi.jpg",
+    "preserve_aspect": true,
+    "date": "2024-09-04 14:55:06",
+    "original_dimensions": [
+      3120,
+      4160
+    ],
+    "downloaded_sha256": "4eb369f09eb3b3878c8a614263415d765dcca65cfc3f9257693241979400f4c7",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexander V. Solomin",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Belye_rocks_Sochi.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-nature-04",
+    "replaces_id": "altai-kokkel-tundra",
+    "title_ru": "Скалы Териберки",
+    "category": "nature",
+    "season": "spring",
+    "commons_file": "File:Cliffs of Teriberka. Rocks east of the village. Teriberka, Kola District, Murmansk Region. may 2018 03.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 9 May 2018, 12:07:49",
+    "original_dimensions": [
+      2448,
+      3264
+    ],
+    "downloaded_sha256": "ac8cd2790e46c2a5e2fb17e36bf16f20c1c60cb8809a3a28de92a767becb12bf",
+    "license": "CC BY-SA 4.0",
+    "attribution": "JukoFF",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cliffs_of_Teriberka._Rocks_east_of_the_village._Teriberka,_Kola_District,_Murmansk_Region._may_2018_03.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-nature-05",
+    "replaces_id": "shisha-river-canyon-adygea",
+    "title_ru": "Скалы Нижней Туры",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:G. Nizhnyaya Tura, Sverdlovskaya oblast' Russia - panoramio - Oleg Seliverstov (14).jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 22 June 2007",
+    "original_dimensions": [
+      1712,
+      2288
+    ],
+    "downloaded_sha256": "b5f1bc2dd3d9c0432f1334d7fc388fd01d78f26de85ef7bc6e756f9b8a3e303d",
+    "license": "CC BY 3.0",
+    "attribution": "Oleg Seliverstov",
+    "source_url": "https://commons.wikimedia.org/wiki/File:G._Nizhnyaya_Tura,_Sverdlovskaya_oblast'_Russia_-_panoramio_-_Oleg_Seliverstov_(14).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "id": "vertical-nature-06",
+    "replaces_id": "yuryevskaya-cave-interior",
+    "title_ru": "Водопад Кату-Ярык",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:Katu-Yaryk-Waterfall 013 6827.jpg",
+    "preserve_aspect": true,
+    "date": "2021-06-09 12:19:03",
+    "original_dimensions": [
+      4000,
+      6000
+    ],
+    "downloaded_sha256": "bc0c3d1095f91864cc2708bc25131abd30b08ee45df7beaeac0289283fc3861c",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Ludvig14",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Katu-Yaryk-Waterfall_013_6827.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-nature-07",
+    "replaces_id": "tolbachik-lava-tongue",
+    "title_ru": "Закат на Воттовааре",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:\"Там, где закат засыпает...\".jpg",
+    "preserve_aspect": true,
+    "date": "2015-07-22 21:10:14",
+    "original_dimensions": [
+      1944,
+      2592
+    ],
+    "downloaded_sha256": "a028f8a6f470517325066025a9cf727177a586444cad87587d3a946e160944d0",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Serge Kolyzhev",
+    "source_url": "https://commons.wikimedia.org/wiki/File:\"Там,_где_закат_засыпает...\".jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-nature-08",
+    "replaces_id": "kamenny-log-ravine",
+    "title_ru": "Вулкан Большая Удина",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Volcano Udina (22639166139).jpg",
+    "preserve_aspect": true,
+    "date": "2014-09-11 05:54",
+    "original_dimensions": [
+      4000,
+      5333
+    ],
+    "downloaded_sha256": "1e362411f0304d4f8edbcd75eced24f4f35b40f48b34c930caaeb71cefd30afb",
+    "license": "CC BY 2.0",
+    "attribution": "kuhnmi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kamchatka_Volcano_Udina_(22639166139).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-nature-09",
+    "replaces_id": "ergaki-stone-run",
+    "title_ru": "Вилючинский вулкан в тумане",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Volcano Vilyuchinsky (16353258727).jpg",
+    "preserve_aspect": true,
+    "date": "2014-09-07 21:29",
+    "original_dimensions": [
+      3749,
+      4998
+    ],
+    "downloaded_sha256": "51bff920de9167d912a7a7a5622e1018ae547729b4230cd1a9b8ded02e353327",
+    "license": "CC BY 2.0",
+    "attribution": "kuhnmi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kamchatka_Volcano_Vilyuchinsky_(16353258727).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-nature-10",
+    "replaces_id": "taiga-krasnoyarsk-sea-shore",
+    "title_ru": "Кратерное озеро Камчатки",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Volcanoes of Kamchatka-113321.jpg",
+    "preserve_aspect": true,
+    "date": "1 September 2007",
+    "original_dimensions": [
+      2304,
+      3072
+    ],
+    "downloaded_sha256": "42d4c5fa666aa146a3f94151c5feac838d975bb1610218b4c367931a0489ebec",
+    "license": "CC BY-SA 3.0 igo",
+    "attribution": "Guy Debonnet",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Volcanoes_of_Kamchatka-113321.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en"
+  },
+  {
+    "id": "vertical-aquatic-01",
+    "replaces_id": "baikal-methane-bubbles",
+    "title_ru": "Водопад Кивач",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:0322Ga. Kivach Waterfall in Karelia.jpg",
+    "preserve_aspect": true,
+    "date": "2022-07-08 20:02:46",
+    "original_dimensions": [
+      2917,
+      4215
+    ],
+    "downloaded_sha256": "3b1cc168de531a182171670a5dd077982d55df348f554c1ae65bb1333678d534",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Александровы АГ",
+    "source_url": "https://commons.wikimedia.org/wiki/File:0322Ga._Kivach_Waterfall_in_Karelia.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-02",
+    "replaces_id": "kivach-upper-cascade",
+    "title_ru": "Зимние Чегемские водопады",
+    "category": "aquatic",
+    "season": "winter",
+    "commons_file": "File:Chegem waterfalls, Russia (28058251208).jpg",
+    "preserve_aspect": true,
+    "date": "2018-02-26 13:31",
+    "original_dimensions": [
+      3883,
+      5824
+    ],
+    "downloaded_sha256": "5f857feab2b5678df4c902647d335429179d52bd50429243eef0bf020bdba391",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Ekaterina Kuzmina",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chegem_waterfalls,_Russia_(28058251208).jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "vertical-aquatic-03",
+    "replaces_id": "baikal-ice-fractures",
+    "title_ru": "Скалы над Байкалом",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Lake Baikal (15689244777).jpg",
+    "preserve_aspect": true,
+    "date": "2014-09-11 09:55",
+    "original_dimensions": [
+      2848,
+      4288
+    ],
+    "downloaded_sha256": "a439e5614d95ba2fdf57e43e96a061c6e0d64584bb90a4b0e3d29010159d75ae",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Aleksandr Zykov from Russia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Baikal_(15689244777).jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "vertical-aquatic-04",
+    "replaces_id": "black-ice-of-baikal",
+    "title_ru": "Медовый водопад",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Honey waterfall.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 21 August 2016, 13:28:04",
+    "original_dimensions": [
+      2533,
+      3800
+    ],
+    "downloaded_sha256": "ba0a17fe292554bd4fefb6e41048c7b567063fc28e6e34e84edfd000999e5bfe",
+    "license": "CC BY-SA 4.0",
+    "attribution": "AlixSaz",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Honey_waterfall.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-05",
+    "replaces_id": "sea-of-azov-winter-ice",
+    "title_ru": "Водопад Кислино",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Kislino Waterfall P1070612.jpg-P1070614.jpg",
+    "preserve_aspect": true,
+    "date": "2012-06-19 19:25:21",
+    "original_dimensions": [
+      1474,
+      2260
+    ],
+    "downloaded_sha256": "4f7c15d547ea76925b01b87d663fe8666e36e65019df363024b495e685ab425b",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Pansosh",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kislino_Waterfall_P1070612.jpg-P1070614.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-06",
+    "replaces_id": "bashil-glacier-tongue",
+    "title_ru": "Закат над Онежским озером",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Sunset over the Lake Onega in Petrozavodsk, Karelia, Russia, June 2019 - Flickr - sergei.gussev.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 20 June 2019, 22:21",
+    "original_dimensions": [
+      3024,
+      3780
+    ],
+    "downloaded_sha256": "92f4c0d53988f35341e35e996eb2faeb5086fa0c9add41d0a9f26dc4fb0add8c",
+    "license": "CC BY 2.0",
+    "attribution": "Sergei Gussev",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Lake_Onega_in_Petrozavodsk,_Karelia,_Russia,_June_2019_-_Flickr_-_sergei.gussev.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-aquatic-07",
+    "replaces_id": "baikal-ice-geometry",
+    "title_ru": "Обрыв Ольхона над Байкалом",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Olkhon Island and Lake Baikal.jpg",
+    "preserve_aspect": true,
+    "date": "2008-09-16 07:07:09",
+    "original_dimensions": [
+      2000,
+      3008
+    ],
+    "downloaded_sha256": "89a6c1429dec2c696789a89952c4cc79f4a7f1894389786b2a754633cec97971",
+    "license": "CC BY 2.0",
+    "attribution": "Jason Rogers",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Olkhon_Island_and_Lake_Baikal.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-aquatic-08",
+    "replaces_id": "korbu-waterfall",
+    "title_ru": "Река Нерль у Кидекши",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Russia. Nerl River. img 05.jpg",
+    "preserve_aspect": true,
+    "date": "2007-06-23 08:03:59",
+    "original_dimensions": [
+      2200,
+      3309
+    ],
+    "downloaded_sha256": "be0867687293c761b4713cfab0fef0626cf40fcd050ec30076db3796df15cedc",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Dmitry Makeev",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Russia._Nerl_River._img_05.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-09",
+    "replaces_id": "chegem-waterfalls-side-view",
+    "title_ru": "Сосна над Байкалом",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:LakeBaikalWithTree.JPG",
+    "preserve_aspect": true,
+    "date": "2005-08",
+    "original_dimensions": [
+      1484,
+      1969
+    ],
+    "downloaded_sha256": "eea503ddd9c544623c6d629035abe83e1561168356dd1664a411e1347b65040e",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Juhász Péter",
+    "source_url": "https://commons.wikimedia.org/wiki/File:LakeBaikalWithTree.JPG",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "id": "vertical-aquatic-10",
+    "replaces_id": "abai-su-waterfall",
+    "title_ru": "Мыс Дракон зимой",
+    "category": "aquatic",
+    "season": "spring",
+    "commons_file": "File:Mys Drakon (ostrov Ogoy) - winter 2022.jpg",
+    "preserve_aspect": true,
+    "date": "2022-03-15 12:57:14",
+    "original_dimensions": [
+      3284,
+      4950
+    ],
+    "downloaded_sha256": "785106e1da82d4f0da94e3c349c7f97b2be1bbe58665fe9b8d3897a28368f03b",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Victor Gleim",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mys_Drakon_(ostrov_Ogoy)_-_winter_2022.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-11",
+    "replaces_id": "lower-juchur-waterfall-autumn",
+    "title_ru": "Прозрачная вода у Ольхона",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Olkhon 2014-06-13 10-04-18 IMG 6929-18-2-2 (32350791220).jpg",
+    "preserve_aspect": true,
+    "date": "2014-06-13 10:04",
+    "original_dimensions": [
+      3378,
+      5015
+    ],
+    "downloaded_sha256": "db6499e71d17a8eb00f176ea7843698968fb2b7f224dfa09a5fb0aca0c56c85c",
+    "license": "CC BY 2.0",
+    "attribution": "Max Dawncat",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Olkhon_2014-06-13_10-04-18_IMG_6929-18-2-2_(32350791220).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-aquatic-12",
+    "replaces_id": "ladoga-skerries-coast",
+    "title_ru": "Берег Байкала в Листвянке",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Widok z Listwianki na jezioro Bajkał 02.JPG",
+    "preserve_aspect": true,
+    "date": "2010-07-06 06:34:27",
+    "original_dimensions": [
+      2150,
+      3225
+    ],
+    "downloaded_sha256": "ca57b464bd942138ae64b9ea5573ad25897505f669811974c08e19996a268011",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Marcin Konsek",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Widok_z_Listwianki_na_jezioro_Bajkał_02.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-aquatic-13",
+    "replaces_id": "white-sea-tide-mark-pongoma",
+    "title_ru": "Байкальская бухта",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Lake Baikal (15689240057).jpg",
+    "preserve_aspect": true,
+    "date": "2014-09-11 12:48",
+    "original_dimensions": [
+      2848,
+      4288
+    ],
+    "downloaded_sha256": "e8d367d11038c11d239d9590a484b91b5714b071850103f951639f1be7403d4f",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Aleksandr Zykov from Russia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Baikal_(15689240057).jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "vertical-aquatic-14",
+    "replaces_id": "stone-in-baikal-ice",
+    "title_ru": "Остров Лауватсаари на Ладоге",
+    "category": "aquatic",
+    "season": "any",
+    "commons_file": "File:Ladoga. Lauvatsaari island.jpg",
+    "preserve_aspect": true,
+    "date": "1983",
+    "original_dimensions": [
+      2096,
+      3176
+    ],
+    "downloaded_sha256": "2a7672f9e26b665a26400d691bab05f52aaa2ca20df58bc30af1da85ce78aa32",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Vitold Muratov",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ladoga._Lauvatsaari_island.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-aquatic-15",
+    "replaces_id": "yakutia-ice-needles",
+    "title_ru": "Снежные волны на озере",
+    "category": "aquatic",
+    "season": "winter",
+    "commons_file": "File:Снежные волны 02.jpg",
+    "preserve_aspect": true,
+    "date": "2024-01-21 10:59:35",
+    "original_dimensions": [
+      3672,
+      4896
+    ],
+    "downloaded_sha256": "d32abda1fec53b4c0e9b3fa9414f09d936dfd62e45f8a323404796c38c15be8d",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Vitaliy VK",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Снежные_волны_02.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-animals-01",
+    "replaces_id": "amur-tiger-aleksei",
+    "title_ru": "Белка в Татарстане",
+    "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Sciurus vulgaris 186868985.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 8 April 2022",
+    "original_dimensions": [
+      1536,
+      2048
+    ],
+    "downloaded_sha256": "49aafdf85130d914f7ac6e94054a893909733f6da904398e8daca29261ec287d",
+    "license": "CC BY 4.0",
+    "attribution": "Сергей Неклюдов",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sciurus_vulgaris_186868985.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-animals-02",
+    "replaces_id": "novaya-zemlya-fox-scratch",
+    "title_ru": "Белка в Академгородке",
+    "category": "animals",
+    "season": "autumn",
+    "commons_file": "File:Sciurus vulgaris in Novosibirsk.jpg",
+    "preserve_aspect": true,
+    "date": "2012-10-29 11:45",
+    "original_dimensions": [
+      3456,
+      5184
+    ],
+    "downloaded_sha256": "1b72f8f4d712330129b802b13677bb301cf860708b2ee60402491af0caad2b17",
+    "license": "CC BY-SA 2.0",
+    "attribution": "T",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sciurus_vulgaris_in_Novosibirsk.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "vertical-animals-03",
+    "replaces_id": "moscow-zoo-kamchatka-bear",
+    "title_ru": "Белка в Тамбове",
+    "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Squirrel in Friendship Park - 01.jpg",
+    "preserve_aspect": true,
+    "date": "2022-03-23 16:03:06",
+    "original_dimensions": [
+      1851,
+      2776
+    ],
+    "downloaded_sha256": "f0135077c672129905d84539590572ba544aefebf43bae84530ee5de93a10708",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexander Novikov",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Squirrel_in_Friendship_Park_-_01.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-animals-04",
+    "replaces_id": "ushkan-nerpa-pair",
+    "title_ru": "Бурый медведь в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Brown bear, Moscow Zoo 16.07.2013.jpg",
+    "preserve_aspect": true,
+    "date": "2013-07-16 15:25:48",
+    "original_dimensions": [
+      2059,
+      3089
+    ],
+    "downloaded_sha256": "f3af6820bbeaf4084de2826ba9d75d3878d4249f16e40a62ae9f9cb6df70f1d9",
+    "license": "CC BY 4.0",
+    "attribution": "Mos.ru",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brown_bear,_Moscow_Zoo_16.07.2013.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-animals-05",
+    "replaces_id": "baikal-nerpa-pup-zabaykalsky",
+    "title_ru": "Жираф в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Giraffa camelopardalis 02.JPG",
+    "preserve_aspect": true,
+    "date": "2008-06-17",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "bbdc9790da8c2b4de39fbf3fd2dd0b25f50f59f03874c6c655d1e1927345ae6e",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giraffa_camelopardalis_02.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-animals-06",
+    "replaces_id": "kamchatka-arctic-hare",
+    "title_ru": "Горилла в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Gorilla gorilla 06.JPG",
+    "preserve_aspect": true,
+    "date": "2007-08-19",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "2db794146f22444b4ad8dd94d49630ef9ef4ae883c2e18a2695f228e086e3a59",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gorilla_gorilla_06.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-animals-07",
+    "replaces_id": "sarma-red-fox",
+    "title_ru": "Детёныш суматранского орангутана",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Orangutan (sumatran) 01.JPG",
+    "preserve_aspect": true,
+    "date": "2007-06-01",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "7e10dff80f119cf85d04b470b7a4cf722e8768997da1db25c090577c3b29fb37",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kor!An (Корзун Андрей)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Orangutan_(sumatran)_01.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-animals-08",
+    "replaces_id": "momsky-northern-pika",
+    "title_ru": "Пекари в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Pecari 02.JPG",
+    "preserve_aspect": true,
+    "date": "2008-06-17",
+    "original_dimensions": [
+      1585,
+      2112
+    ],
+    "downloaded_sha256": "253e97c7f67e9eaad58afe8482f48927cc1a79970e4c33856f478d84037ed323",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pecari_02.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-animals-09",
+    "replaces_id": "laptev-ringed-seal-portrait",
+    "title_ru": "Зебра Греви в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Zebra 001.JPG",
+    "preserve_aspect": true,
+    "date": "2007-06-17",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "451c10a7ddb4145d3945be95d17073ffa4b6ce00ddc90705649be9109f4f7e41",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Zebra_001.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-animals-10",
+    "replaces_id": "kalmykia-newborn-saiga",
+    "title_ru": "Гепард в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Гепард 02.jpg",
+    "preserve_aspect": true,
+    "date": "2014-06-13 17:39:23",
+    "original_dimensions": [
+      1200,
+      1800
+    ],
+    "downloaded_sha256": "8ef72809e4d3870ecb84d1815334cc563d9af641acf63156a1a69a129170ac2d",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Rigelus",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Гепард_02.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-animals-11",
+    "replaces_id": "begichev-muskox",
+    "title_ru": "Мартышка диана в Московском зоопарке",
+    "category": "animals",
+    "season": "winter",
+    "commons_file": "File:Мартышка диана.jpg",
+    "preserve_aspect": true,
+    "date": "2014-01-11 12:36:48",
+    "original_dimensions": [
+      1310,
+      1600
+    ],
+    "downloaded_sha256": "f4accd1859de98d7cb2a091d20ef9d0f67df96728aedfa361006626e3dd5bc2c",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Rigelus",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Мартышка_диана.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-animals-12",
+    "replaces_id": "dvuhyurtochnoe-kamchatka-brown-bear",
+    "title_ru": "Борнейский орангутан",
+    "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Борнейский орангутан II.jpg",
+    "preserve_aspect": true,
+    "date": "2014-03-22 16:50:11",
+    "original_dimensions": [
+      1300,
+      1470
+    ],
+    "downloaded_sha256": "aa2935773b6e01b2e746d974fdde0020538f4e312dc0908a0c44f9bfed55db38",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Rigelus",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Борнейский_орангутан_II.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-animals-13",
+    "replaces_id": "south-kamchatka-black-capped-marmots",
+    "title_ru": "Корова у воды на Ольхоне",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Cow drinking near village eastern coast of Olkhon Island Lake Baikal Russia (14615050023).jpg",
+    "preserve_aspect": true,
+    "date": "2014-07-06 04:06",
+    "original_dimensions": [
+      3672,
+      4896
+    ],
+    "downloaded_sha256": "76cc1b8f5001210d7fb8d7c18be09f9cad3907196dd26cb245ba71cb24f18ee2",
+    "license": "CC BY 2.0",
+    "attribution": "amanderson2",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cow_drinking_near_village_eastern_coast_of_Olkhon_Island_Lake_Baikal_Russia_(14615050023).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-birds-01",
+    "replaces_id": "commander-rock-ptarmigan",
+    "title_ru": "Красно-зелёный ара",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Ara 02.JPG",
+    "preserve_aspect": true,
+    "date": "2007-08-19",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "6c1edcf48feca0a7d196eb2b4f13209e6c340de444869fb6c084a0e529506e32",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ara_02.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-birds-02",
+    "replaces_id": "moscow-zoo-snowy-owls",
+    "title_ru": "Какаду за обедом",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Bare-eyed Cockatoo 01.JPG",
+    "preserve_aspect": true,
+    "date": "2007-08-19",
+    "original_dimensions": [
+      1585,
+      2112
+    ],
+    "downloaded_sha256": "4939813217a56c958bee62905cc05dac7c8b32d1bd00928c1846f41d1233d52c",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Корзун Андрей (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bare-eyed_Cockatoo_01.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-birds-03",
+    "replaces_id": "novosibirsk-waxwing-april",
+    "title_ru": "Чёрный лебедь",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Black Swan 01.JPG",
+    "preserve_aspect": true,
+    "date": "2007-06-01",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "998257e082077257114670a00c2813f46d0fb0dda1c7c9b786db66400ce9ccc8",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kor!An (Корзун Андрей)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Black_Swan_01.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-birds-04",
+    "replaces_id": "kostroma-hazel-grouse",
+    "title_ru": "Голубь на Манежной площади",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Columba livia - Manezhnaya Square - Moscow1.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 29 August 2024, 17:39:51",
+    "original_dimensions": [
+      3078,
+      3430
+    ],
+    "downloaded_sha256": "271c60a4f3c97b14203524b612592ad1bdec089dca0c03d666364a2d48e85f54",
+    "license": "CC BY 4.0",
+    "attribution": "Юрий Д.К.",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Columba_livia_-_Manezhnaya_Square_-_Moscow1.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-birds-05",
+    "replaces_id": "male-bunting-yellowhammer",
+    "title_ru": "Свиристель в Москве",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Waxwing.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 3 March 2009",
+    "original_dimensions": [
+      1653,
+      2469
+    ],
+    "downloaded_sha256": "a6b880bb2db57373b6761d196679910f146134c208e51dc322a9bcab5b3993b3",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Leruswing",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Waxwing.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-birds-06",
+    "replaces_id": "rostov-dalmatian-pelican-head",
+    "title_ru": "Пеликан в Московском зоопарке",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:ZOO Moscow Pelican.jpg",
+    "preserve_aspect": true,
+    "date": "2022-05-21 12:28:07",
+    "original_dimensions": [
+      2713,
+      3456
+    ],
+    "downloaded_sha256": "3f01924d907cfc27d0d620b9ce3c7f55b9dbd9aec6163db80b76c166916907bf",
+    "license": "CC BY 4.0",
+    "attribution": "Akulov A.S",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ZOO_Moscow_Pelican.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-birds-07",
+    "replaces_id": "kerzhenets-ural-owl",
+    "title_ru": "Скворец на ветке",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Птица2.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 13 April 2018, 14:36:33",
+    "original_dimensions": [
+      1602,
+      2002
+    ],
+    "downloaded_sha256": "a0375853d48dafafce624111aa521bc0daadcd8bdba41cca50bc26424607f8d4",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Варвара Каминская",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Птица2.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-birds-08",
+    "replaces_id": "moscow-oblast-long-tailed-tit",
+    "title_ru": "Длиннохвостая синица в Серебряном бору",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Сорокина А.А. Длиннохвостая синица строит гнездо в Серебряном бору.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 25 March 2020, 11:23:46",
+    "original_dimensions": [
+      1740,
+      2201
+    ],
+    "downloaded_sha256": "0202d4477c308d50ad46df2d3316acc456d15257eb93f8e3f21a788b05882d1b",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Sorokina Anna",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Сорокина_А.А._Длиннохвостая_синица_строит_гнездо_в_Серебряном_бору.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-birds-09",
+    "replaces_id": "mallard-drake-portrait-moscow",
+    "title_ru": "Огарь на московской набережной",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Moscow, Tadorna ferruginea on railing, June 2026 15.jpg",
+    "preserve_aspect": true,
+    "date": "2026-06-13 14:58:15",
+    "original_dimensions": [
+      2560,
+      3198
+    ],
+    "downloaded_sha256": "e1bab7c0f91e63fdd330d03939c6d7decb53a12d0d2a7b45182fd6dbc421b99a",
+    "license": "CC0",
+    "attribution": "Retired electrician",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Moscow,_Tadorna_ferruginea_on_railing,_June_2026_15.jpg",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "id": "vertical-birds-10",
+    "replaces_id": "kolomenskoye-mandarin-duck",
+    "title_ru": "Неясыть в Новосибирской области",
+    "category": "birds",
+    "season": "autumn",
+    "commons_file": "File:2012-11-01 Ural Owl, Novosibirsk Oblast, Russia.jpg",
+    "preserve_aspect": true,
+    "date": "2012-11-01 12:23",
+    "original_dimensions": [
+      2400,
+      3200
+    ],
+    "downloaded_sha256": "1750384a02d4b6d8ae071115a098060b0c87302c96980a0495e723caa01b0313",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Tatiana Bulyonkova from Novosibirsk, Russia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2012-11-01_Ural_Owl,_Novosibirsk_Oblast,_Russia.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "vertical-birds-11",
+    "replaces_id": "dagestan-greater-whitethroat",
+    "title_ru": "Сова в Хакасии",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Owl-WLE.jpg",
+    "preserve_aspect": true,
+    "date": "2019-05-13 00:48:16",
+    "original_dimensions": [
+      1323,
+      1552
+    ],
+    "downloaded_sha256": "abec4e766ce93568f37cd4887657d08b6301ce93956c1e3c518275cc3937727e",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Юрий Амосов",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Owl-WLE.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-birds-12",
+    "replaces_id": "alexandrovsky-garden-starling",
+    "title_ru": "Неясыть среди весенних листьев",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Ural owl (49980015211).jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 31 May 2020, 11:09",
+    "original_dimensions": [
+      1576,
+      2100
+    ],
+    "downloaded_sha256": "2bd6b049a676c9358c02826b3030bd72d8cf93b61cae46b7daa028c0bcf8f622",
+    "license": "CC BY 2.0",
+    "attribution": "Andrey Gulivanov",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ural_owl_(49980015211).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-birds-13",
+    "replaces_id": "dagestan-red-backed-shrike",
+    "title_ru": "Зимующая утка на Яузе",
+    "category": "birds",
+    "season": "winter",
+    "commons_file": "File:Duck spending winter on the Yauza river - Moscow, Russia - panoramio.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 1 January 2005",
+    "original_dimensions": [
+      1384,
+      1868
+    ],
+    "downloaded_sha256": "8e6cff16de2b09a45ff77bef1b05799656d4ba9b8d3d0019a3afa82caaf6ddca",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Sergey Ashmarin",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Duck_spending_winter_on_the_Yauza_river_-_Moscow,_Russia_-_panoramio.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-trees-01",
+    "replaces_id": "moscow-downy-birch-bark",
+    "title_ru": "Магнолия в Краснодаре",
+    "category": "trees",
+    "season": "spring",
+    "commons_file": "File:2023-04-04. Краснодар DSC 1580.jpg",
+    "preserve_aspect": true,
+    "date": "2023",
+    "original_dimensions": [
+      3264,
+      4928
+    ],
+    "downloaded_sha256": "bc25f157822611a51bd6fbaef6a02d43beb289470b561c4893aa749ca8437406",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Andrey Butko",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2023-04-04._Краснодар_DSC_1580.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-02",
+    "replaces_id": "elagin-pedunculate-oak",
+    "title_ru": "Кипарисовая аллея Кисловодска",
+    "category": "trees",
+    "season": "summer",
+    "commons_file": "File:Cypress alley. Kislovodsk. Кипарисовая аллея. Кисловодск.jpg",
+    "preserve_aspect": true,
+    "date": "2017-07-06 14:34:01",
+    "original_dimensions": [
+      1400,
+      2100
+    ],
+    "downloaded_sha256": "6810718e6f9f64c6bbfe7b8b4a7b7c3e069f7c0d95ad50aab68ce820527fdedf",
+    "license": "CC BY-SA 4.0",
+    "attribution": "AlixSaz",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cypress_alley._Kislovodsk._Кипарисовая_аллея._Кисловодск.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-03",
+    "replaces_id": "ergaki-siberian-pine-cone",
+    "title_ru": "Дуб в инее в Ефремове",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Efremov - 2026 - Quercus robur in City Grove.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 25 January 2026, 12:26:16",
+    "original_dimensions": [
+      3864,
+      4544
+    ],
+    "downloaded_sha256": "d00cf5b8c10247ec86ed44cd24770baedb0fc47dc6e0816dd491bf76080dee38",
+    "license": "CC BY 4.0",
+    "attribution": "Юрий Д.К.",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Efremov_-_2026_-_Quercus_robur_in_City_Grove.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-trees-04",
+    "replaces_id": "taiga-cedar-cone",
+    "title_ru": "Плакучая ива у пруда",
+    "category": "trees",
+    "season": "autumn",
+    "commons_file": "File:White weeping willow.jpg",
+    "preserve_aspect": true,
+    "date": "2021-09-11 14:31:05",
+    "original_dimensions": [
+      3648,
+      5472
+    ],
+    "downloaded_sha256": "e502cb430667a7ae513e6a53e8c0d45f0400e97c7e95a73dc6ce073450e42aa0",
+    "license": "CC BY-SA 4.0",
+    "attribution": "AlixSaz",
+    "source_url": "https://commons.wikimedia.org/wiki/File:White_weeping_willow.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-05",
+    "replaces_id": "saratov-cercis-blossoms",
+    "title_ru": "Клён в парке Велькота",
+    "category": "trees",
+    "season": "summer",
+    "commons_file": "File:Парк усадьбы Велькота 03.jpg",
+    "preserve_aspect": true,
+    "date": "2022-06-11 14:49:12",
+    "original_dimensions": [
+      3672,
+      4896
+    ],
+    "downloaded_sha256": "7d3b34f7d873166554361d0131de903f080c6dbf1fff6d87f1377a9ea799c9cb",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Екатерина Борисова",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Парк_усадьбы_Велькота_03.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-06",
+    "replaces_id": "altai-scots-pine-pollen-cone",
+    "title_ru": "Берёзовая аллея в Брянской области",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Birch alley. Bryansk reg. Russia. Березовая аллея. Брянская обл. Россия - panoramio (1).jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 20 February 2010",
+    "original_dimensions": [
+      2592,
+      3888
+    ],
+    "downloaded_sha256": "99285140526b717e7963392b1d544ac45f9a2856019ec47f72079e8918729f2e",
+    "license": "CC BY 3.0",
+    "attribution": "kikiwis",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Birch_alley._Bryansk_reg._Russia._Березовая_аллея._Брянская_обл._Россия_-_panoramio_(1).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "id": "vertical-trees-07",
+    "replaces_id": "omsk-pine-male-blooms",
+    "title_ru": "Осенняя берёза у воды",
+    "category": "trees",
+    "season": "autumn",
+    "commons_file": "File:Birch in autumn.jpg",
+    "preserve_aspect": true,
+    "date": "2009-09-10",
+    "original_dimensions": [
+      2000,
+      3008
+    ],
+    "downloaded_sha256": "64161a3d3d054a11ebc158c9dc9bdfb5cb0b9596abc73ebf597b14e3e1831dd1",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Dmitry Makeev",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Birch_in_autumn.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-08",
+    "replaces_id": "kirov-young-pine-cones",
+    "title_ru": "Берёзовая роща зимой",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Birch in winter.jpg",
+    "preserve_aspect": true,
+    "date": "2010-01-08",
+    "original_dimensions": [
+      2000,
+      3008
+    ],
+    "downloaded_sha256": "6a37c1fe946c5dd668a09e0673d20ecd6b7e76e9b79dcdefbcb7698cd7fd0374",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Dmitry Makeev",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Birch_in_winter.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-09",
+    "replaces_id": "moscow-pine-branchlets",
+    "title_ru": "Берёзовый прешпект Ясной Поляны",
+    "category": "trees",
+    "season": "spring",
+    "commons_file": "File:Russia. Tula Oblast. Yasnaya Polyana. Preshpekt Birch Avenue P5131458 3150.jpg",
+    "preserve_aspect": true,
+    "date": "2026-05-13 13:04:55",
+    "original_dimensions": [
+      3150,
+      4200
+    ],
+    "downloaded_sha256": "0e40c376cf16cdda885f269f847a74c9f93c1ef4267fb981e02a0c9b0c8f83d2",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexxx1979",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Russia._Tula_Oblast._Yasnaya_Polyana._Preshpekt_Birch_Avenue_P5131458_3150.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-10",
+    "replaces_id": "vladimir-young-pine-needles",
+    "title_ru": "Сосна в Воздвиженском лесу",
+    "category": "trees",
+    "season": "autumn",
+    "commons_file": "File:Great Pine Tree In Vozdvizensky Forrest.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 13 September 2018, 13:39:22",
+    "original_dimensions": [
+      3137,
+      4701
+    ],
+    "downloaded_sha256": "257f76f559b7a80d8c03fd772be89acecc23565d5c59a55349ed65b1b5a06f93",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Эдуард Косарев",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Great_Pine_Tree_In_Vozdvizensky_Forrest.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-trees-11",
+    "replaces_id": "birch-catkin-spring",
+    "title_ru": "Зимняя кедровая роща в Коряжме",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Siberian Pine grove Koryazhma (13).JPG",
+    "preserve_aspect": true,
+    "date": "2013-01-27 13:36:01",
+    "original_dimensions": [
+      2448,
+      3264
+    ],
+    "downloaded_sha256": "ffce5c526893dfc679ac908cd29ab0455904078973be61d50528ee790ebe1bdf",
+    "license": "CC0",
+    "attribution": "Georg Pik",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Siberian_Pine_grove_Koryazhma_(13).JPG",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "id": "vertical-flowers-01",
+    "replaces_id": "avacha-kamchatka-rhododendron",
+    "title_ru": "Крокусы на Крымской набережной",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Moscow - 2026 - Crocus flowers on Krymskaya Embankment11.jpg",
+    "preserve_aspect": true,
+    "date": "Taken on 29 March 2026, 12:25:43",
+    "original_dimensions": [
+      4136,
+      4648
+    ],
+    "downloaded_sha256": "b0f4a6abe9e8410f189ce20a3408953348f29e593061159701a978373c59d5b9",
+    "license": "CC BY 4.0",
+    "attribution": "Юрий Д.К.",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Moscow_-_2026_-_Crocus_flowers_on_Krymskaya_Embankment11.jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "vertical-flowers-02",
+    "replaces_id": "altai-siberian-poppy",
+    "title_ru": "Тюльпановое поле на Елагином острове",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:0182Hg2. St. Petersburg. Tulip Festival 2026 on Elagin Island.jpg",
+    "preserve_aspect": true,
+    "date": "2026-05-19 19:53:05",
+    "original_dimensions": [
+      2650,
+      3453
+    ],
+    "downloaded_sha256": "795a3681625917215765bc7277a9e33848c1c18d697f89337a5cee1a2a3e9389",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Александровы АГ",
+    "source_url": "https://commons.wikimedia.org/wiki/File:0182Hg2._St._Petersburg._Tulip_Festival_2026_on_Elagin_Island.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-flowers-03",
+    "replaces_id": "saratov-daurian-rhododendron",
+    "title_ru": "Тюльпаны Банья-Лука в Подмосковье",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Tulip cultivar 'Banja Luka' 15 May 2022 (IMGP1135p).jpg",
+    "preserve_aspect": true,
+    "date": "2022-05-15 10:51:15",
+    "original_dimensions": [
+      1702,
+      3176
+    ],
+    "downloaded_sha256": "ff51a5744092ce7ade4f02bf1e5c8382786815ed414186d5ca39c4d588e124f7",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Alexey V. Kurochkin",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tulip_cultivar_'Banja_Luka'_15_May_2022_(IMGP1135p).jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-flowers-04",
+    "replaces_id": "sochi-kesselring-lily",
+    "title_ru": "Жёлтый тюльпан на Елагином острове",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Tulip festival 2025 on Yelagin Island 21.jpg",
+    "preserve_aspect": true,
+    "date": "2025-05-27 13:05:29",
+    "original_dimensions": [
+      3672,
+      4896
+    ],
+    "downloaded_sha256": "c84e0064c339e285737c64168b56887854c51ac8a481f9cafec36ebda0627129",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Екатерина Борисова",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tulip_festival_2025_on_Yelagin_Island_21.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "vertical-flowers-05",
+    "replaces_id": "sochi-nettle-bellflower",
+    "title_ru": "Разноцветные тюльпаны Аптекарского огорода",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Tulips in the Aptekarsky Ogorod 02.JPG",
+    "preserve_aspect": true,
+    "date": "2010-05-15",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "e40cdc84537414105238a5216df61b422d1160978b13ef8857d892975da798cd",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Kor!An (Андрей Корзун)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tulips_in_the_Aptekarsky_Ogorod_02.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-flowers-06",
+    "replaces_id": "bashmachok-macranthon",
+    "title_ru": "Красная лилия Фаина",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium 'Faina' 05.jpg",
+    "preserve_aspect": true,
+    "date": "2012-07-01 15:31:33",
+    "original_dimensions": [
+      1980,
+      2640
+    ],
+    "downloaded_sha256": "536387f38bd00d2650a06d9a742f12ca292571a00ea02241b6b133cc1fea1eff",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Андрей Корзун (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lilium_'Faina'_05.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-flowers-07",
+    "replaces_id": "podolsk-meadow-geranium",
+    "title_ru": "Жёлтая лилия Трейд Виндс",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium 'Trade Winds' 01.JPG",
+    "preserve_aspect": true,
+    "date": "2012-07-14 15:04:28",
+    "original_dimensions": [
+      2112,
+      2816
+    ],
+    "downloaded_sha256": "d4337544cf7427262af4ec9dc66b446aede10ed40924175d92439a40b7c22a28",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Андрей Корзун (Kor!An)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lilium_'Trade_Winds'_01.JPG",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "vertical-flowers-08",
+    "replaces_id": "dubrovitsy-lungwort",
+    "title_ru": "Лилия саранка в Красноярских Столбах",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium martagon in Stolby reserve (Krasnoyarsk, Russia) 4Y1A8705 (28259509362).jpg",
+    "preserve_aspect": true,
+    "date": "2016-06-19 06:18",
+    "original_dimensions": [
+      1673,
+      2989
+    ],
+    "downloaded_sha256": "2054ad9979f559b3aa2b4f68129a4792f5d1fc808ffa2b351c05efb9ea52a786",
+    "license": "CC BY 2.0",
+    "attribution": "Ninara from Helsinki, Finland",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lilium_martagon_in_Stolby_reserve_(Krasnoyarsk,_Russia)_4Y1A8705_(28259509362).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-flowers-09",
+    "replaces_id": "barsova-gora-pasque-flower",
+    "title_ru": "Карликовая лилия в Красноярских Столбах",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium pumilum in Stolby Reserve (Krasnoyarsk, Russia) 4Y1A8769 (27747464703).jpg",
+    "preserve_aspect": true,
+    "date": "2016-06-19 07:46",
+    "original_dimensions": [
+      1526,
+      1966
+    ],
+    "downloaded_sha256": "138af0e51e99a009b603ff253233c6ea519761e12a4c355c50beda08607c5681",
+    "license": "CC BY 2.0",
+    "attribution": "Ninara from Helsinki, Finland",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lilium_pumilum_in_Stolby_Reserve_(Krasnoyarsk,_Russia)_4Y1A8769_(27747464703).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "vertical-flowers-10",
+    "replaces_id": "sochi-caucasian-peony",
+    "title_ru": "Цветущий ландыш",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:The lily of the valley is blooming.jpg",
+    "preserve_aspect": true,
+    "date": "2026-06-13 16:19:51",
+    "original_dimensions": [
+      2479,
+      3305
+    ],
+    "downloaded_sha256": "7f11823f33507d5131ce62d56ac4d1ad790199118ab0f1c2cb00609804a5a631",
+    "license": "CC0",
+    "attribution": "Vsatinet",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_lily_of_the_valley_is_blooming.jpg",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  }
+]

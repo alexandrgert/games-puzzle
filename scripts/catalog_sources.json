@@ -1,507 +1,579 @@
 [
   {
-    "id": "ruskeala-marble-wall",
-    "title_ru": "Мраморная стена Рускеалы",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Marble wall of Ruskeala.jpg"
-  },
-  {
-    "id": "kungur-ice-grotto",
-    "title_ru": "Ледяной грот Кунгурской пещеры",
-    "category": "nature",
-    "season": "winter",
-    "commons_file": "File:Kungur Ice Cave P6242153 2575.jpg"
-  },
-  {
-    "id": "gorely-volcano-crater",
-    "title_ru": "Кратер вулкана Горелый",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Кратер вулкана Горелый.JPG"
-  },
-  {
-    "id": "altai-kokkel-tundra",
-    "title_ru": "Осенняя тундра у Кок-Кёля",
+    "id": "vertical-nature-01",
+    "title_ru": "Горный склон Алтая",
     "category": "nature",
     "season": "autumn",
-    "commons_file": "File:Altai77.jpg"
+    "commons_file": "File:Altai mountain slope (6174859678).jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "amur-tiger-aleksei",
-    "title_ru": "Амурский тигр Алексей",
+    "id": "vertical-nature-02",
+    "title_ru": "Спуск с вулкана Горелый",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Descent from Volcano Gorely (16697314500).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-03",
+    "title_ru": "Белые скалы Сочи",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Belye rocks Sochi.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-04",
+    "title_ru": "Скалы Териберки",
+    "category": "nature",
+    "season": "spring",
+    "commons_file": "File:Cliffs of Teriberka. Rocks east of the village. Teriberka, Kola District, Murmansk Region. may 2018 03.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-01",
+    "title_ru": "Белка в Татарстане",
     "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Sciurus vulgaris 186868985.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-02",
+    "title_ru": "Белка в Академгородке",
+    "category": "animals",
+    "season": "autumn",
+    "commons_file": "File:Sciurus vulgaris in Novosibirsk.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-03",
+    "title_ru": "Белка в Тамбове",
+    "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Squirrel in Friendship Park - 01.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-04",
+    "title_ru": "Бурый медведь в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Brown bear, Moscow Zoo 16.07.2013.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-01",
+    "title_ru": "Красно-зелёный ара",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Ara 02.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-02",
+    "title_ru": "Какаду за обедом",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Bare-eyed Cockatoo 01.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-03",
+    "title_ru": "Чёрный лебедь",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Black Swan 01.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-04",
+    "title_ru": "Голубь на Манежной площади",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Columba livia - Manezhnaya Square - Moscow1.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-01",
+    "title_ru": "Водопад Кивач",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:0322Ga. Kivach Waterfall in Karelia.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-02",
+    "title_ru": "Зимние Чегемские водопады",
+    "category": "aquatic",
+    "season": "winter",
+    "commons_file": "File:Chegem waterfalls, Russia (28058251208).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-03",
+    "title_ru": "Скалы над Байкалом",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Lake Baikal (15689244777).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-trees-01",
+    "title_ru": "Магнолия в Краснодаре",
+    "category": "trees",
+    "season": "spring",
+    "commons_file": "File:2023-04-04. Краснодар DSC 1580.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-trees-02",
+    "title_ru": "Кипарисовая аллея Кисловодска",
+    "category": "trees",
+    "season": "summer",
+    "commons_file": "File:Cypress alley. Kislovodsk. Кипарисовая аллея. Кисловодск.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-trees-03",
+    "title_ru": "Дуб в инее в Ефремове",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Efremov - 2026 - Quercus robur in City Grove.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-trees-04",
+    "title_ru": "Плакучая ива у пруда",
+    "category": "trees",
+    "season": "autumn",
+    "commons_file": "File:White weeping willow.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-01",
+    "title_ru": "Крокусы на Крымской набережной",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Moscow - 2026 - Crocus flowers on Krymskaya Embankment11.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-02",
+    "title_ru": "Тюльпановое поле на Елагином острове",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:0182Hg2. St. Petersburg. Tulip Festival 2026 on Elagin Island.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-03",
+    "title_ru": "Тюльпаны Банья-Лука в Подмосковье",
+    "category": "flowers",
+    "season": "spring",
+    "commons_file": "File:Tulip cultivar 'Banja Luka' 15 May 2022 (IMGP1135p).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-04",
+    "title_ru": "Медовый водопад",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Honey waterfall.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-05",
+    "title_ru": "Водопад Кислино",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Kislino Waterfall P1070612.jpg-P1070614.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-05",
+    "title_ru": "Скалы Нижней Туры",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:G. Nizhnyaya Tura, Sverdlovskaya oblast' Russia - panoramio - Oleg Seliverstov (14).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-06",
+    "title_ru": "Водопад Кату-Ярык",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:Katu-Yaryk-Waterfall 013 6827.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-07",
+    "title_ru": "Закат на Воттовааре",
+    "category": "nature",
+    "season": "summer",
+    "commons_file": "File:\"Там, где закат засыпает...\".jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-08",
+    "title_ru": "Вулкан Большая Удина",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Volcano Udina (22639166139).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-06",
+    "title_ru": "Закат над Онежским озером",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Sunset over the Lake Onega in Petrozavodsk, Karelia, Russia, June 2019 - Flickr - sergei.gussev.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-09",
+    "title_ru": "Вилючинский вулкан в тумане",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Kamchatka Volcano Vilyuchinsky (16353258727).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-nature-10",
+    "title_ru": "Кратерное озеро Камчатки",
+    "category": "nature",
+    "season": "autumn",
+    "commons_file": "File:Volcanoes of Kamchatka-113321.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-07",
+    "title_ru": "Обрыв Ольхона над Байкалом",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Olkhon Island and Lake Baikal.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-08",
+    "title_ru": "Река Нерль у Кидекши",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Russia. Nerl River. img 05.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-09",
+    "title_ru": "Сосна над Байкалом",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:LakeBaikalWithTree.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-10",
+    "title_ru": "Мыс Дракон зимой",
+    "category": "aquatic",
+    "season": "spring",
+    "commons_file": "File:Mys Drakon (ostrov Ogoy) - winter 2022.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-11",
+    "title_ru": "Прозрачная вода у Ольхона",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Olkhon 2014-06-13 10-04-18 IMG 6929-18-2-2 (32350791220).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-12",
+    "title_ru": "Берег Байкала в Листвянке",
+    "category": "aquatic",
+    "season": "summer",
+    "commons_file": "File:Widok z Listwianki na jezioro Bajkał 02.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-13",
+    "title_ru": "Байкальская бухта",
+    "category": "aquatic",
+    "season": "autumn",
+    "commons_file": "File:Lake Baikal (15689240057).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-aquatic-14",
+    "title_ru": "Остров Лауватсаари на Ладоге",
+    "category": "aquatic",
     "season": "any",
-    "commons_file": "File:Amur tiger aleksei.jpg"
+    "commons_file": "File:Ladoga. Lauvatsaari island.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "novaya-zemlya-fox-scratch",
-    "title_ru": "Песец на Новой Земле",
-    "category": "animals",
+    "id": "vertical-aquatic-15",
+    "title_ru": "Снежные волны на озере",
+    "category": "aquatic",
     "season": "winter",
-    "commons_file": "File:Arctic fox in the Russian Arctic National Park, Novaya Zemlya 2015-2.jpg"
+    "commons_file": "File:Снежные волны 02.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "moscow-zoo-kamchatka-bear",
-    "title_ru": "Камчатский бурый медведь",
-    "category": "animals",
-    "season": "any",
-    "commons_file": "File:Ursus arctos beringianus.jpg"
-  },
-  {
-    "id": "ushkan-nerpa-pair",
-    "title_ru": "Нерпы на Ушканьих островах",
-    "category": "animals",
-    "season": "any",
-    "commons_file": "File:Из жизни байкальской нерпы близ Ушканьих островов 02.jpg"
-  },
-  {
-    "id": "commander-rock-ptarmigan",
-    "title_ru": "Тундряная куропатка на Командорах",
-    "category": "birds",
-    "season": "summer",
-    "commons_file": "File:Командорский заповедник. Куропатка тундряная, самец.jpg"
-  },
-  {
-    "id": "moscow-zoo-snowy-owls",
-    "title_ru": "Белые совы в Московском зоопарке",
-    "category": "birds",
-    "season": "summer",
-    "commons_file": "File:Bubo scandiacus in Moscow Zoo 2014.JPG"
-  },
-  {
-    "id": "novosibirsk-waxwing-april",
-    "title_ru": "Свиристель в Новосибирске",
+    "id": "vertical-birds-05",
+    "title_ru": "Свиристель в Москве",
     "category": "birds",
     "season": "spring",
-    "commons_file": "File:Bombycilla garrulus, Novosibirsk 1.jpg"
+    "commons_file": "File:Waxwing.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "kostroma-hazel-grouse",
-    "title_ru": "Рябчик в таёжном лесу",
+    "id": "vertical-birds-06",
+    "title_ru": "Пеликан в Московском зоопарке",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:ZOO Moscow Pelican.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-07",
+    "title_ru": "Скворец на ветке",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Птица2.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-08",
+    "title_ru": "Длиннохвостая синица в Серебряном бору",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Сорокина А.А. Длиннохвостая синица строит гнездо в Серебряном бору.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-09",
+    "title_ru": "Огарь на московской набережной",
+    "category": "birds",
+    "season": "summer",
+    "commons_file": "File:Moscow, Tadorna ferruginea on railing, June 2026 15.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-10",
+    "title_ru": "Неясыть в Новосибирской области",
     "category": "birds",
     "season": "autumn",
-    "commons_file": "File:Рябчик - птица из рода рябчиков, подсемейства тетеревиных, семейства фазановых отряда курообразных.jpg"
+    "commons_file": "File:2012-11-01 Ural Owl, Novosibirsk Oblast, Russia.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "baikal-methane-bubbles",
-    "title_ru": "Пузыри воздуха в байкальском льду",
-    "category": "aquatic",
+    "id": "vertical-birds-11",
+    "title_ru": "Сова в Хакасии",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Owl-WLE.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-12",
+    "title_ru": "Неясыть среди весенних листьев",
+    "category": "birds",
+    "season": "spring",
+    "commons_file": "File:Ural owl (49980015211).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-birds-13",
+    "title_ru": "Зимующая утка на Яузе",
+    "category": "birds",
     "season": "winter",
-    "commons_file": "File:Пузыри воздуха в байкальском льду.jpg"
+    "commons_file": "File:Duck spending winter on the Yauza river - Moscow, Russia - panoramio.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "kivach-upper-cascade",
-    "title_ru": "Верхний каскад водопада Кивач",
-    "category": "aquatic",
+    "id": "vertical-animals-05",
+    "title_ru": "Жираф в Московском зоопарке",
+    "category": "animals",
     "season": "summer",
-    "commons_file": "File:The upper cascade of the Kivach waterfall.jpg"
+    "commons_file": "File:Giraffa camelopardalis 02.JPG",
+    "preserve_aspect": true
   },
   {
-    "id": "baikal-ice-fractures",
-    "title_ru": "Трещины байкальского льда",
-    "category": "aquatic",
+    "id": "vertical-animals-06",
+    "title_ru": "Горилла в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Gorilla gorilla 06.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-07",
+    "title_ru": "Детёныш суматранского орангутана",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Orangutan (sumatran) 01.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-08",
+    "title_ru": "Пекари в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Pecari 02.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-09",
+    "title_ru": "Зебра Греви в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Zebra 001.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-10",
+    "title_ru": "Гепард в Московском зоопарке",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Гепард 02.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-animals-11",
+    "title_ru": "Мартышка диана в Московском зоопарке",
+    "category": "animals",
     "season": "winter",
-    "commons_file": "File:Необычный байкальский лёд.jpg"
+    "commons_file": "File:Мартышка диана.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "moscow-downy-birch-bark",
-    "title_ru": "Кора берёзы пушистой",
-    "category": "trees",
-    "season": "any",
-    "commons_file": "File:Кора берёзы пушистой.jpg"
+    "id": "vertical-animals-12",
+    "title_ru": "Борнейский орангутан",
+    "category": "animals",
+    "season": "spring",
+    "commons_file": "File:Борнейский орангутан II.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "elagin-pedunculate-oak",
-    "title_ru": "Кора дуба на Елагином острове",
+    "id": "vertical-animals-13",
+    "title_ru": "Корова у воды на Ольхоне",
+    "category": "animals",
+    "season": "summer",
+    "commons_file": "File:Cow drinking near village eastern coast of Olkhon Island Lake Baikal Russia (14615050023).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-trees-05",
+    "title_ru": "Клён в парке Велькота",
     "category": "trees",
     "season": "summer",
-    "commons_file": "File:Wrinkles of History.jpg"
+    "commons_file": "File:Парк усадьбы Велькота 03.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "ergaki-siberian-pine-cone",
-    "title_ru": "Шишка кедра сибирского в Ергаках",
+    "id": "vertical-trees-06",
+    "title_ru": "Берёзовая аллея в Брянской области",
     "category": "trees",
-    "season": "summer",
-    "commons_file": "File:Ergaki, Siberian pine cone with seeds and foliage, Pinus sibirica, Sayan Mountains, Russia.jpg"
+    "season": "winter",
+    "commons_file": "File:Birch alley. Bryansk reg. Russia. Березовая аллея. Брянская обл. Россия - panoramio (1).jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "taiga-cedar-cone",
-    "title_ru": "Кедровая шишка на мху",
+    "id": "vertical-trees-07",
+    "title_ru": "Осенняя берёза у воды",
     "category": "trees",
     "season": "autumn",
-    "commons_file": "File:Кедровая шишка.jpg"
+    "commons_file": "File:Birch in autumn.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "avacha-kamchatka-rhododendron",
-    "title_ru": "Рододендрон камчатский у Авачинской бухты",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Rhododendron camtschaticum (Ericaceae) (54166531065).jpg"
+    "id": "vertical-trees-08",
+    "title_ru": "Берёзовая роща зимой",
+    "category": "trees",
+    "season": "winter",
+    "commons_file": "File:Birch in winter.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "altai-siberian-poppy",
-    "title_ru": "Сибирский мак в Алтайском заповеднике",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Сибирский мак.jpg"
-  },
-  {
-    "id": "saratov-daurian-rhododendron",
-    "title_ru": "Рододендрон даурский в Саратове",
-    "category": "flowers",
+    "id": "vertical-trees-09",
+    "title_ru": "Берёзовый прешпект Ясной Поляны",
+    "category": "trees",
     "season": "spring",
-    "commons_file": "File:Рододендрон даурский цветы в парке Саратов.jpg"
+    "commons_file": "File:Russia. Tula Oblast. Yasnaya Polyana. Preshpekt Birch Avenue P5131458 3150.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "black-ice-of-baikal",
-    "title_ru": "Чёрный лёд Байкала",
-    "category": "aquatic",
-    "season": "winter",
-    "commons_file": "File:Black ice of Baikal.jpg"
-  },
-  {
-    "id": "sea-of-azov-winter-ice",
-    "title_ru": "Лёд Азовского моря",
-    "category": "aquatic",
-    "season": "winter",
-    "commons_file": "File:Sea of Azov, Ice, Russia.jpg"
-  },
-  {
-    "id": "shisha-river-canyon-adygea",
-    "title_ru": "Каньон реки Шиша в Адыгее",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Shisha River Canyon, Adygea, Верховья реки Шиша, Адыгея.jpg"
-  },
-  {
-    "id": "yuryevskaya-cave-interior",
-    "title_ru": "Внутри Юрьевской пещеры",
-    "category": "nature",
-    "season": "any",
-    "commons_file": "File:Юрьевская пещера.jpg"
-  },
-  {
-    "id": "tolbachik-lava-tongue",
-    "title_ru": "Лавовый язык у Толбачика",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Лавовый язык.jpg"
-  },
-  {
-    "id": "kamenny-log-ravine",
-    "title_ru": "Балка Каменный Лог",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Балка Каменный лог.jpg"
-  },
-  {
-    "id": "bashil-glacier-tongue",
-    "title_ru": "Язык ледника Башиль",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:Язык ледника Башиль.jpg"
-  },
-  {
-    "id": "ergaki-stone-run",
-    "title_ru": "Курумник в Ергаках",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Ergaki, Stone run in mountain taiga, Taiga forest, Sayan Mountains, Russia.jpg"
-  },
-  {
-    "id": "taiga-krasnoyarsk-sea-shore",
-    "title_ru": "Таёжный берег Красноярского моря",
-    "category": "nature",
-    "season": "summer",
-    "commons_file": "File:Forest, Taiga, Krasnoyarsk Sea, Russia.jpg"
-  },
-  {
-    "id": "baikal-ice-geometry",
-    "title_ru": "Геометрия байкальского льда",
-    "category": "aquatic",
-    "season": "winter",
-    "commons_file": "File:Геометрия льда.jpg"
-  },
-  {
-    "id": "korbu-waterfall",
-    "title_ru": "Водопад Корбу",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:The Korbu Waterfall.jpg"
-  },
-  {
-    "id": "chegem-waterfalls-side-view",
-    "title_ru": "Чегемские водопады сбоку",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:Side view of the Chegem waterfalls.jpg"
-  },
-  {
-    "id": "abai-su-waterfall",
-    "title_ru": "Водопад Абай-Су",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:Abai-Su waterfall. Panorama of the waterfall.jpg"
-  },
-  {
-    "id": "lower-juchur-waterfall-autumn",
-    "title_ru": "Нижний Чучхурский водопад осенью",
-    "category": "aquatic",
+    "id": "vertical-trees-10",
+    "title_ru": "Сосна в Воздвиженском лесу",
+    "category": "trees",
     "season": "autumn",
-    "commons_file": "File:Autumn Lower Juchur Waterfall.jpg"
+    "commons_file": "File:Great Pine Tree In Vozdvizensky Forrest.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "ladoga-skerries-coast",
-    "title_ru": "Побережье Ладожских шхер",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:Ladoga skerries national Park. Sortavalsky district. Coast.jpg"
-  },
-  {
-    "id": "white-sea-tide-mark-pongoma",
-    "title_ru": "След прилива в бухте Поньгомы",
-    "category": "aquatic",
-    "season": "summer",
-    "commons_file": "File:Pon'goma bay of the White Sea. Tide level.jpg"
-  },
-  {
-    "id": "stone-in-baikal-ice",
-    "title_ru": "Камень во льду Байкала",
-    "category": "aquatic",
+    "id": "vertical-trees-11",
+    "title_ru": "Зимняя кедровая роща в Коряжме",
+    "category": "trees",
     "season": "winter",
-    "commons_file": "File:Камень во льду.jpg"
+    "commons_file": "File:Siberian Pine grove Koryazhma (13).JPG",
+    "preserve_aspect": true
   },
   {
-    "id": "yakutia-ice-needles",
-    "title_ru": "Ледяные иголки в Якутии",
-    "category": "aquatic",
-    "season": "spring",
-    "commons_file": "File:Ледяные иголки.jpg"
-  },
-  {
-    "id": "male-bunting-yellowhammer",
-    "title_ru": "Жёлтая овсянка",
-    "category": "birds",
-    "season": "spring",
-    "commons_file": "File:Male bunting.jpg"
-  },
-  {
-    "id": "rostov-dalmatian-pelican-head",
-    "title_ru": "Голова кудрявого пеликана",
-    "category": "birds",
-    "season": "summer",
-    "commons_file": "File:Голова кудрявого пеликана после рыбной ловли.jpg"
-  },
-  {
-    "id": "kerzhenets-ural-owl",
-    "title_ru": "Длиннохвостая неясыть",
-    "category": "birds",
-    "season": "summer",
-    "commons_file": "File:Длиннохвостая неясыть.jpg"
-  },
-  {
-    "id": "moscow-oblast-long-tailed-tit",
-    "title_ru": "Длиннохвостая синица",
-    "category": "birds",
-    "season": "autumn",
-    "commons_file": "File:Ополовник.jpg"
-  },
-  {
-    "id": "mallard-drake-portrait-moscow",
-    "title_ru": "Портрет селезня кряквы",
-    "category": "birds",
-    "season": "spring",
-    "commons_file": "File:Портрет селезня кряквы.jpg"
-  },
-  {
-    "id": "kolomenskoye-mandarin-duck",
-    "title_ru": "Самец мандаринки",
-    "category": "birds",
-    "season": "spring",
-    "commons_file": "File:Самец мандаринки 4.jpg"
-  },
-  {
-    "id": "dagestan-greater-whitethroat",
-    "title_ru": "Серая славка",
-    "category": "birds",
-    "season": "summer",
-    "commons_file": "File:Серая славка.jpg"
-  },
-  {
-    "id": "alexandrovsky-garden-starling",
-    "title_ru": "Скворец",
-    "category": "birds",
-    "season": "autumn",
-    "commons_file": "File:Скворец.jpg"
-  },
-  {
-    "id": "dagestan-red-backed-shrike",
-    "title_ru": "Жулан",
-    "category": "birds",
-    "season": "spring",
-    "commons_file": "File:Жулан.jpg"
-  },
-  {
-    "id": "baikal-nerpa-pup-zabaykalsky",
-    "title_ru": "Детёныш байкальской нерпы",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Белёк 1.jpg"
-  },
-  {
-    "id": "kamchatka-arctic-hare",
-    "title_ru": "Заяц-беляк на Камчатке",
-    "category": "animals",
-    "season": "spring",
-    "commons_file": "File:Заяц-беляк.jpg"
-  },
-  {
-    "id": "sarma-red-fox",
-    "title_ru": "Лиса в устье Сармы",
-    "category": "animals",
-    "season": "winter",
-    "commons_file": "File:Лиса в устье Сармы.jpg"
-  },
-  {
-    "id": "momsky-northern-pika",
-    "title_ru": "Северная пищуха",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Наблюдательная поза пищухи.jpg"
-  },
-  {
-    "id": "laptev-ringed-seal-portrait",
-    "title_ru": "Кольчатая нерпа у острова Большой Бегичев",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Нерпичий взгляд.jpg"
-  },
-  {
-    "id": "kalmykia-newborn-saiga",
-    "title_ru": "Новорождённый сайгачонок",
-    "category": "animals",
-    "season": "spring",
-    "commons_file": "File:Новорожденный сайгаченок.jpg"
-  },
-  {
-    "id": "begichev-muskox",
-    "title_ru": "Овцебык на острове Большой Бегичев",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Овцебыки - самые грозные млекопитающие Таймыра.jpg"
-  },
-  {
-    "id": "dvuhyurtochnoe-kamchatka-brown-bear",
-    "title_ru": "Камчатский бурый медведь у Двухюрточного",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Kamchatka Brown Bear near Dvuhyurtochnoe on 2015-07-23.png"
-  },
-  {
-    "id": "south-kamchatka-black-capped-marmots",
-    "title_ru": "Черношапочные сурки",
-    "category": "animals",
-    "season": "summer",
-    "commons_file": "File:Сурок черношапочный (камчатский).jpg"
-  },
-  {
-    "id": "saratov-cercis-blossoms",
-    "title_ru": "Цветы церциса в Саратове",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Цветы церциса 2025-04-25 Саратов.jpg"
-  },
-  {
-    "id": "altai-scots-pine-pollen-cone",
-    "title_ru": "Пыльцевая шишка сосны в Алтайском крае",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Сосновая шишка, 2015.BMZF5.jpeg"
-  },
-  {
-    "id": "omsk-pine-male-blooms",
-    "title_ru": "Мужские соцветия сосны обыкновенной",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Цветение сосны обыкновенной.JPG"
-  },
-  {
-    "id": "kirov-young-pine-cones",
-    "title_ru": "Молодые сосновые шишки в Кировской области",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Шишки подрастают.jpg"
-  },
-  {
-    "id": "moscow-pine-branchlets",
-    "title_ru": "Веточки сосны в Москве",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Moscow - 2026 - Pine branches, Voskresenskoye.jpg"
-  },
-  {
-    "id": "vladimir-young-pine-needles",
-    "title_ru": "Молодые иголки сосны во Владимирской области",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Юные иголки сосны.jpg"
-  },
-  {
-    "id": "birch-catkin-spring",
-    "title_ru": "Берёзовая серёжка весной",
-    "category": "trees",
-    "season": "spring",
-    "commons_file": "File:Сережка березы весной.jpg"
-  },
-  {
-    "id": "sochi-kesselring-lily",
-    "title_ru": "Лилия Кессельринга у Сочи",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Lilium kesselringianum in Sochi.jpg"
-  },
-  {
-    "id": "sochi-nettle-bellflower",
-    "title_ru": "Колокольчик крапиволистный в Сочи",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Campanula trachelium in Sochi.jpg"
-  },
-  {
-    "id": "bashmachok-macranthon",
-    "title_ru": "Венерин башмачок крупноцветковый",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Cypripedium macranthon.JPG"
-  },
-  {
-    "id": "podolsk-meadow-geranium",
-    "title_ru": "Луговая герань под Подольском",
-    "category": "flowers",
-    "season": "summer",
-    "commons_file": "File:Луговая герань под Подольском.jpg"
-  },
-  {
-    "id": "dubrovitsy-lungwort",
-    "title_ru": "Медуница в Дубровицком лесу",
+    "id": "vertical-flowers-04",
+    "title_ru": "Жёлтый тюльпан на Елагином острове",
     "category": "flowers",
     "season": "spring",
-    "commons_file": "File:Медуница неясная в Дубровицком лесу 2021 03.jpg"
+    "commons_file": "File:Tulip festival 2025 on Yelagin Island 21.jpg",
+    "preserve_aspect": true
   },
   {
-    "id": "barsova-gora-pasque-flower",
-    "title_ru": "Сон-трава на Барсовой горе",
+    "id": "vertical-flowers-05",
+    "title_ru": "Разноцветные тюльпаны Аптекарского огорода",
     "category": "flowers",
     "season": "spring",
-    "commons_file": "File:Цветущая сон-трава на Барсовой горе 5.jpg"
+    "commons_file": "File:Tulips in the Aptekarsky Ogorod 02.JPG",
+    "preserve_aspect": true
   },
   {
-    "id": "sochi-caucasian-peony",
-    "title_ru": "Кавказский пион в Сочи",
+    "id": "vertical-flowers-06",
+    "title_ru": "Красная лилия Фаина",
     "category": "flowers",
-    "season": "spring",
-    "commons_file": "File:Paeonia caucasica.jpg"
+    "season": "summer",
+    "commons_file": "File:Lilium 'Faina' 05.jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-07",
+    "title_ru": "Жёлтая лилия Трейд Виндс",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium 'Trade Winds' 01.JPG",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-08",
+    "title_ru": "Лилия саранка в Красноярских Столбах",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium martagon in Stolby reserve (Krasnoyarsk, Russia) 4Y1A8705 (28259509362).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-09",
+    "title_ru": "Карликовая лилия в Красноярских Столбах",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:Lilium pumilum in Stolby Reserve (Krasnoyarsk, Russia) 4Y1A8769 (27747464703).jpg",
+    "preserve_aspect": true
+  },
+  {
+    "id": "vertical-flowers-10",
+    "title_ru": "Цветущий ландыш",
+    "category": "flowers",
+    "season": "summer",
+    "commons_file": "File:The lily of the valley is blooming.jpg",
+    "preserve_aspect": true
   },
   {
     "id": "portrait-altai-spring",
