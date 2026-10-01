@@ -36,18 +36,18 @@ fun CreditsScreen(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        if (iconPuzzle != null) {
-            item(key = "launcher-icon") {
-                CreditLines(
-                    text = stringResource(
-                        R.string.credits_launcher_icon,
-                        iconPuzzle.titleRu,
-                        iconPuzzle.attribution,
-                        iconPuzzle.license,
-                    ),
-                    sourceUrl = iconPuzzle.sourceUrl,
-                )
-            }
+        // The launcher still uses Ruskeala after its puzzle leaves the catalog.
+        item(key = "launcher-icon") {
+            CreditLines(
+                text = stringResource(
+                    R.string.credits_launcher_icon,
+                    iconPuzzle?.titleRu ?: "Мраморная стена Рускеалы",
+                    iconPuzzle?.attribution ?: "Aleksander Kaasik",
+                    iconPuzzle?.license ?: "CC BY-SA 4.0",
+                ),
+                sourceUrl = iconPuzzle?.sourceUrl
+                    ?: "https://commons.wikimedia.org/wiki/File:Marble_wall_of_Ruskeala.jpg",
+            )
         }
         items(puzzles, key = { it.id }) { puzzle ->
             CreditLines(
