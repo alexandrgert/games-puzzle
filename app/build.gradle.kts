@@ -14,8 +14,8 @@ android {
         applicationId = "ru.alexandrgert.gamespuzzle"
         minSdk = 26
         targetSdk = 36
-        versionCode = 14
-        versionName = "0.8.2"
+        versionCode = 15
+        versionName = "0.8.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
