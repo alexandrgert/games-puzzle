@@ -86,6 +86,7 @@ def fetch_row(row: dict, puzzles_dir: Path, thumbs_dir: Path) -> dict:
         "license": license_short,
         "attribution": artist or "Unknown",
         "source_url": f"https://commons.wikimedia.org/wiki/{title.replace(' ', '_')}",
+        **({"is_new": True} if row.get("is_new") else {}),
     }
 
 

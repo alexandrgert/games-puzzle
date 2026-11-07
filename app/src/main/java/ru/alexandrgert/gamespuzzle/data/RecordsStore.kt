@@ -5,6 +5,8 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.distinctUntilChanged
 import ru.alexandrgert.gamespuzzle.domain.BestRecord
 import ru.alexandrgert.gamespuzzle.domain.GridSize
 import ru.alexandrgert.gamespuzzle.domain.mergeRecord
@@ -22,6 +24,12 @@ interface RecordSaver {
 }
 
 class RecordsStore(private val context: Context) : RecordSaver {
+    val completedPuzzleIds = context.recordsDataStore.data.map { preferences ->
+        completedPuzzleIds(preferences.asMap().mapNotNull { (key, value) ->
+            (value as? String)?.let { key.name to it }
+        }.toMap())
+    }.distinctUntilChanged()
+
     suspend fun load(puzzleId: String, n: Int): BestRecord? {
         val value = context.recordsDataStore.data.first()[recordKey(puzzleId, n)]
         return parseRecord(value)
@@ -74,3 +82,12 @@ fun parseRecord(value: String?): BestRecord? {
 private fun Long?.orEmpty(): String = this?.toString().orEmpty()
 
 private fun Int?.orEmpty(): String = this?.toString().orEmpty()
+
+/** Existing valid win records count, regardless of board size. */
+internal fun completedPuzzleIds(records: Map<String, String>): Set<String> =
+    records.mapNotNull { (key, value) ->
+        if (!key.startsWith("rec:") || parseRecord(value) == null) return@mapNotNull null
+        val suffix = key.substringAfterLast(':').toIntOrNull()
+        if (GridSize.entries.none { it.n == suffix }) return@mapNotNull null
+        key.removePrefix("rec:").substringBeforeLast(':').takeIf { it.isNotBlank() }
+    }.toSet()

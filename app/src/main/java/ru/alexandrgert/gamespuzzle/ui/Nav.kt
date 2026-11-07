@@ -83,6 +83,9 @@ fun PuzzleNavHost(
     val context = LocalContext.current
     val settingsStore = remember(applicationContext) { SettingsStore(applicationContext) }
     val recordsStore = remember(applicationContext) { RecordsStore(applicationContext) }
+    val completedPuzzleIds by produceState<Set<String>?>(null, recordsStore) {
+        recordsStore.completedPuzzleIds.collect { value = it }
+    }
     val userFiles = remember(applicationContext) { UserFiles(applicationContext) }
     val userPuzzlesStore = remember(applicationContext) {
         UserPuzzlesStore(applicationContext)
@@ -175,6 +178,7 @@ fun PuzzleNavHost(
                 CatalogScreen(
                     catalog = catalog,
                     assets = assets,
+                    completedPuzzleIds = completedPuzzleIds,
                     onPuzzleClick = { id ->
                         navController.navigate(Routes.preview(id, SOURCE_BUILTIN))
                     },

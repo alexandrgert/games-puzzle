@@ -4,7 +4,10 @@
   "title": "Games Puzzle catalog",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "puzzles"],
+  "required": [
+    "schema_version",
+    "puzzles"
+  ],
   "properties": {
     "schema_version": {
       "type": "integer",
@@ -27,21 +30,58 @@
           "source_url"
         ],
         "properties": {
-          "id": { "type": "string", "minLength": 1 },
-          "file": { "type": "string", "minLength": 1 },
-          "thumb": { "type": "string", "minLength": 1 },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1
+          },
+          "thumb": {
+            "type": "string",
+            "minLength": 1
+          },
           "category": {
             "type": "string",
-            "enum": ["nature", "animals", "birds", "aquatic", "trees", "flowers"]
+            "enum": [
+              "nature",
+              "animals",
+              "birds",
+              "aquatic",
+              "trees",
+              "flowers"
+            ]
           },
           "season": {
             "type": "string",
-            "enum": ["spring", "summer", "autumn", "winter", "any"]
+            "enum": [
+              "spring",
+              "summer",
+              "autumn",
+              "winter",
+              "any"
+            ]
           },
-          "title_ru": { "type": "string", "minLength": 1 },
-          "license": { "type": "string", "minLength": 1 },
-          "attribution": { "type": "string", "minLength": 1 },
-          "source_url": { "type": "string", "format": "uri" }
+          "title_ru": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "is_new": {
+            "type": "boolean"
+          }
         }
       }
     }

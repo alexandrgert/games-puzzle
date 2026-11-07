@@ -63,4 +63,5 @@
     <string name="error_install_permission">Разрешите установку приложений из этого источника</string>
     <string name="photo_imported">Фотография добавлена</string>
     <string name="photo_deleted">Фотография удалена</string>
+    <string name="catalog_new">New</string>
 </resources>

@@ -14,6 +14,16 @@ class RecordsStoreTest {
     }
 
     @Test
+    fun winsOnAnyGridCountButInvalidRecordsDoNot() {
+        assertEquals(setOf("a", "b"), completedPuzzleIds(mapOf(
+            "rec:a:5" to "100,20", "rec:a:12" to "200,30",
+            "rec:b:8" to "0,0", "rec:broken:6" to "bad",
+            "rec:negative:10" to "-1,20", "rec:wrong-grid:9" to "100,20",
+            "unrelated" to "100,20",
+        )))
+    }
+
+    @Test
     fun malformedPreferenceValueIsIgnored() {
         assertNull(parseRecord("not-a-record"))
         assertNull(parseRecord("100,-2"))

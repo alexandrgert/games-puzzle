@@ -55,6 +55,8 @@ data class CatalogPuzzle(
     val attribution: String,
     @SerialName("source_url")
     val sourceUrl: String,
+    @SerialName("is_new")
+    val isNew: Boolean = false,
 )
 
 @Serializable

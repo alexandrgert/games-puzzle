@@ -6,6 +6,7 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,12 +21,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -40,6 +44,7 @@ import ru.alexandrgert.gamespuzzle.domain.Season
 fun CatalogScreen(
     catalog: CatalogFile,
     assets: AssetManager,
+    completedPuzzleIds: Set<String>?,
     onPuzzleClick: (String) -> Unit,
     onSettingsClick: () -> Unit,
     onMyPhotosClick: () -> Unit,
@@ -98,6 +103,7 @@ fun CatalogScreen(
                     CatalogThumbnail(
                         puzzle = puzzle,
                         assets = assets,
+                        showNew = shouldShowNew(puzzle, completedPuzzleIds),
                         onClick = { onPuzzleClick(puzzle.id) },
                     )
                 }
@@ -131,6 +137,7 @@ private fun <T> FilterRow(
 private fun CatalogThumbnail(
     puzzle: CatalogPuzzle,
     assets: AssetManager,
+    showNew: Boolean,
     onClick: () -> Unit,
 ) {
     val bitmap = remember(puzzle.thumb, assets) {
@@ -141,14 +148,30 @@ private fun CatalogThumbnail(
             .fillMaxWidth()
             .clickable(onClick = onClick),
     ) {
-        Image(
-            bitmap = bitmap.asImageBitmap(),
-            contentDescription = stringResource(R.string.puzzle_image),
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxWidth()
-                .size(160.dp),
-        )
+        Box {
+            Image(
+                bitmap = bitmap.asImageBitmap(),
+                contentDescription = stringResource(R.string.puzzle_image),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .size(160.dp),
+            )
+            if (showNew) {
+                Surface(
+                    modifier = Modifier.align(Alignment.TopEnd).padding(6.dp),
+                    shape = MaterialTheme.shapes.small,
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                ) {
+                    Text(
+                        text = stringResource(R.string.catalog_new),
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
+                        style = MaterialTheme.typography.labelMedium,
+                    )
+                }
+            }
+        }
         Text(
             text = puzzle.titleRu,
             modifier = Modifier.padding(top = 4.dp),
@@ -183,3 +206,6 @@ private fun Season.labelResource(): Int = when (this) {
     Season.WINTER -> R.string.season_winter
     Season.ANY -> R.string.season_any
 }
+
+internal fun shouldShowNew(puzzle: CatalogPuzzle, completedPuzzleIds: Set<String>?): Boolean =
+    puzzle.isNew && completedPuzzleIds != null && puzzle.id !in completedPuzzleIds
