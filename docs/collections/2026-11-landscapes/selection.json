@@ -1,0 +1,1823 @@
+{
+  "created": "2026-11-07",
+  "status": "integrated_in_catalog_0.8.0",
+  "count": 50,
+  "criteria": [
+    "Real photographs taken in Russia",
+    "Original portrait orientation after EXIF; original width >=1200 px",
+    "Full frame, no crop/stretch/upscale",
+    "No visible watermarks",
+    "Free licenses with source and author",
+    "All four seasons represented",
+    "No exact duplicate or existing catalog source"
+  ],
+  "season_counts": {
+    "Осень": 14,
+    "Лето": 18,
+    "Зима": 4,
+    "Весна": 12,
+    "Дата не подтверждена": 2
+  },
+  "photos": [
+    {
+      "number": 1,
+      "id": "commons-111728761",
+      "title": "Домик для чайной церемонии",
+      "location": "Москва",
+      "theme": "Сады и мостики",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2019-09-08 15:04:16",
+      "author": "Andrey Korzun",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2019_Japanese_Garden_Moscow_Chashitsu_03.jpg",
+      "commons_file": "File:2019 Japanese Garden Moscow Chashitsu 03.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/2019_Japanese_Garden_Moscow_Chashitsu_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3775,
+        5669
+      ],
+      "output_dimensions": [
+        1332,
+        2000
+      ],
+      "original_bytes": 10722429,
+      "original_sha256": "b3bbdf6878e83cc745f5dac363469d922a225cdd6426a1f4e496a2b65a81f6d8",
+      "output_sha256": "5116067166a6feb726f2a978b885941fbc3651c9dab24f63bc6bf4f8b1f66694",
+      "date_original": "2019-09-08 15:04:16",
+      "geographic_evidence": {
+        "description": "Autumn tranquility and meditation in the Japanese Garden, Moscow. Chashitsu is a house for tea ceremonies, an indispensable attribute of a Japanese tea garden. The Japanese Garden is located on the territory of the Main Botanical Garden of the Academy of Sciences. It was opened in 1987 and is a gift from the Government of Japan to the Government of the USSR. This Japanese Garden is the only Japanese garden in Russia created by Japanese landscape architects and gardeners. Renowned landscape architect Ken Nakajima oversaw the creation of the garden.",
+        "categories": "Taken with Nikon D5200 and AF-S DX NIKKOR 18-105mm f/3.5-5.6G ED VR|Self-published work|Moscow photographs taken on 2019-09-08|Images by Andrey Korzun|Pavilions in Moscow|Japanese garden in Moscow in autumn|Chashitsu (Japanese garden in Moscow)",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-111728761.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-111728761.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 2,
+      "id": "commons-111643113",
+      "title": "Каменный каскад Японского сада",
+      "location": "Москва",
+      "theme": "Водопады и ручьи",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2019-09-08 15:23:34",
+      "author": "Andrey Korzun",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2019_Japanese_Garden_Moscow_cascade_01.jpg",
+      "commons_file": "File:2019 Japanese Garden Moscow cascade 01.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/2019_Japanese_Garden_Moscow_cascade_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3694,
+        5541
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 7490141,
+      "original_sha256": "913d131d809e8c989ae1da36a47f6caf0f1f0d919cddbda9ba1d197ebee6f201",
+      "output_sha256": "77ca391bd42ab4f3bc2887d58fae330e7ffd221ea5488c20f4ecdd87c5506ecd",
+      "date_original": "2019-09-08 15:23:34",
+      "geographic_evidence": {
+        "description": "Autumn tranquility and meditation in the Japanese Garden, Moscow. A cascade of small waterfalls on the stream. The Japanese Garden is located on the territory of the Main Botanical Garden of the Academy of Sciences. It was opened in 1987 and is a gift from the Government of Japan to the Government of the USSR. This Japanese Garden is the only Japanese garden in Russia created by Japanese landscape architects and gardeners. Renowned landscape architect Ken Nakajima oversaw the creation of the garden.",
+        "categories": "Taken with Nikon D5200 and AF-S DX NIKKOR 18-105mm f/3.5-5.6G ED VR|Self-published work|Moscow photographs taken on 2019-09-08|Images by Andrey Korzun|Japanese garden in Moscow in autumn|Streams in Moscow",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-111643113.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-111643113.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 3,
+      "id": "commons-152614194",
+      "title": "Падун на реке Варзуге",
+      "location": "Мурманская область",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2024-08-06 13:31:04",
+      "author": "Vsatinet",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:09_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%92%D0%B0%D1%80%D0%B7%D1%83%D0%B3%D0%B0,_%D0%9F%D0%B0%D0%B4%D1%83%D0%BD.jpg",
+      "commons_file": "File:09 Большая Варзуга, Падун.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/09_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%92%D0%B0%D1%80%D0%B7%D1%83%D0%B3%D0%B0%2C_%D0%9F%D0%B0%D0%B4%D1%83%D0%BD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2803,
+        3737
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 8074438,
+      "original_sha256": "3cf26d4732eb24b7ea992696b16211b5081907c2d014ff52fdafc9409c65207c",
+      "output_sha256": "e9a7355f87f03dd0a847707f5106a05c698d9e59cf616f3890eb64720af5f899",
+      "date_original": "2024-08-06 13:31:04",
+      "geographic_evidence": {
+        "description": "Left site of Padun Waterfall on Varzuga river, lower stage",
+        "categories": "Varzuga River|Waterfalls in Murmansk Oblast|Self-published work|Files with coordinates missing SDC location of creation",
+        "latitude": "66.834975",
+        "longitude": "37.032692"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-152614194.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-152614194.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 4,
+      "id": "commons-106578774",
+      "title": "Медовые водопады среди зелени",
+      "location": "Карачаево-Черкесия",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 3 July 2017, 13:29:08",
+      "author": "AlixSaz",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Honey_Falls_%D0%9C%D0%B5%D0%B4%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4%D1%8B_20.jpg",
+      "commons_file": "File:Honey Falls Медовые водопады 20.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Honey_Falls_%D0%9C%D0%B5%D0%B4%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4%D1%8B_20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2864,
+        4275
+      ],
+      "output_dimensions": [
+        1340,
+        2000
+      ],
+      "original_bytes": 15577527,
+      "original_sha256": "561fb730b78f58a7697209fc07050a4e6784941635dac1b3ee5f699e96b3b749",
+      "output_sha256": "48e52d492c01f6994d15294cb205ef1fc7770106953223869ed785baa148b2ad",
+      "date_original": "Taken on 3 July 2017, 13:29:08",
+      "geographic_evidence": {
+        "description": "Honey falls: Malokarachayevsky district, Karachay-Cherkessia",
+        "categories": "Medovyye Vodopady|Self-published work|Russia photographs taken on 2017-07-03|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0910047",
+        "latitude": "43.883420",
+        "longitude": "42.590050"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-106578774.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-106578774.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 5,
+      "id": "commons-9637205",
+      "title": "Пороги Фиагдона",
+      "location": "Северная Осетия — Алания",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2008-06-29",
+      "author": "User:Скампецкий",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ossetia_Waterfall.JPG",
+      "commons_file": "File:Ossetia Waterfall.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Ossetia_Waterfall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1296,
+        1728
+      ],
+      "output_dimensions": [
+        1296,
+        1728
+      ],
+      "original_bytes": 1876660,
+      "original_sha256": "6734f1d4c982837a46c0ff6146a6df631df22c141b175fd09fc57cea20e9e4f5",
+      "output_sha256": "dda62cb20e95fe7a2ecda6c4eb791d9740f029d7f7f5cd2eb81c0b25eed7ac48",
+      "date_original": "2008-06-29",
+      "geographic_evidence": {
+        "description": "Fiagdon river rapids in North Ossetia",
+        "categories": "Rivers of North Ossetia – Alania|GFDL|Taken with Olympus FE-120 / X-700|License migration redundant|Waterfalls in North Ossetia – Alania|Self-published work",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-9637205.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-9637205.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 6,
+      "id": "commons-91658214",
+      "title": "Ассинский водопад подо льдом",
+      "location": "Башкортостан",
+      "theme": "Зимние пейзажи",
+      "season": "winter",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 23 February 2020, 16:56:18",
+      "author": "Arina Kost",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4.jpg",
+      "commons_file": "File:Асинский зеркальный водопад.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/%D0%90%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3024,
+        4032
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 4534167,
+      "original_sha256": "bd6f0413a81fc1832fa8706a2b91f30d0120c3360b254502bd53118a3259f8ac",
+      "output_sha256": "75325ce6f44d3592bbfdc165bcede5c0f052199d585ef04719e5cfd3d5527fdf",
+      "date_original": "Taken on 23 February 2020, 16:56:18",
+      "geographic_evidence": {
+        "description": "Ассинский зеркальный водопад:   Архангельский район, Башкортостан",
+        "categories": "Waterfalls in Bashkortostan|Self-published work|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Russia photographs taken on 2020-02-23|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Arkhangelsky District|Protected areas of Russia/0210026",
+        "latitude": "54.465964",
+        "longitude": "56.642681"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91658214.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91658214.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 7,
+      "id": "commons-200768627",
+      "title": "Золотая берёза в Химках",
+      "location": "Московская область",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 1 October 2026 (according to   Exif   data)",
+      "author": "Sergey A. Demidov",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20261001_Khimki_autumn_landscape_03_(27274).jpg",
+      "commons_file": "File:20261001 Khimki autumn landscape 03 (27274).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/20261001_Khimki_autumn_landscape_03_%2827274%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        4592,
+        8160
+      ],
+      "output_dimensions": [
+        1125,
+        2000
+      ],
+      "original_bytes": 21022753,
+      "original_sha256": "fc928beb9dfb6ddb858dd931d37515566d27e69575304507a8a60508cef4cc1d",
+      "output_sha256": "a9a27e279ff435c33838b31c84beb6dafac5622e9f8ebc738853e522f536f1a2",
+      "date_original": "1 October 2026 (according to   Exif   data)",
+      "geographic_evidence": {
+        "description": "Осенний пейзаж на территории городского округа Химки.",
+        "categories": "Khimki|Self-published work|Autumn landscapes in Russia|Uploaded with Mobile/Android|Autumn 2026 in Europe|October 2026 in Moscow Oblast|Photographs taken on 2026-10-01",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-200768627.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-200768627.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 8,
+      "id": "commons-21275764",
+      "title": "Дворец у Чёрного озера",
+      "location": "Гатчина, Ленинградская область",
+      "theme": "Сады и мостики",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 31 August 2012, 08:24:32",
+      "author": "Canes",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gatchina._Priory_Palace_on_the_Black_Lake_2.jpg",
+      "commons_file": "File:Gatchina. Priory Palace on the Black Lake 2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Gatchina._Priory_Palace_on_the_Black_Lake_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3065,
+        4672
+      ],
+      "output_dimensions": [
+        1312,
+        2000
+      ],
+      "original_bytes": 10254090,
+      "original_sha256": "fa890be9a43cb73e65e58374b13dd25e87cca4fae8d039a72c7e63a7cbc5e018",
+      "output_sha256": "2b843d5a31520228c1358c721b316c6fa84c6779d1bec998a7ee1ee602ba9676",
+      "date_original": "Taken on 31 August 2012, 08:24:32",
+      "geographic_evidence": {
+        "description": "Gatchina. Priory Palace on the Black Lake",
+        "categories": "Taken with Pentax K-7|Chernoye Lake, Gatchina|ISO speed rating 100|Self-published work|F-number f/8|Leningrad Oblast photographs taken on 2012-08-31|Cultural heritage monuments in Russia with known IDs|Images from Wiki Loves Monuments 2012|Water reflections of clouds in Russia|Nominated pictures for Wiki Loves Monuments International|2012 in Gatchina|Lens focal length 50 mm|Nominated pictures for Wiki Loves Monuments International 2012|Images from Wiki Loves Monuments 2012 in Russia|Water reflections of buildings in Russia|Water reflections of trees in Russia|Files with coordinates missing SDC location of creation|Russia photographs taken on 2012-08-31|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Winners of Wiki Loves Monuments 2012 in Russia|Cultural heritage monuments in Russia missing SDC location of creation|Cultural heritage monuments in Russia missing SDC depicts|Clouds and blue sky in Leningrad Oblast|Shortlisted images of Wiki Loves Monuments 2012 in Russia|Exposure time 100/5999 sec|Russian heritage ID 4710217001",
+        "latitude": "59.560245",
+        "longitude": "30.121422"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-21275764.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-21275764.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 9,
+      "id": "commons-122344096",
+      "title": "Воздушный шар у воды",
+      "location": "Тамбов",
+      "theme": "Озёра и отражения",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2022-07-06 19:56:10",
+      "author": "Alexander Novikov",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hot-air_balloon_in_Tambov_-_01.jpg",
+      "commons_file": "File:Hot-air balloon in Tambov - 01.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Hot-air_balloon_in_Tambov_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2516,
+        3774
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 5584682,
+      "original_sha256": "b98ce6a270aa6439d07fdafdb296d5533a1c5da955906b71ebe4dcb6d7dcb24c",
+      "output_sha256": "fe8c796d1f9997aa06508a7a723994e4f1447a9b8bc151a09b8825045586bc1b",
+      "date_original": "2022-07-06 19:56:10",
+      "geographic_evidence": {
+        "description": "Preparing the hot-air balloon for flight in the city of  Tambov ,  Russia .",
+        "categories": "Tambov|Tsna River|Naberezhnaya Street (Tambov)|Self-published work|Unassessed QI candidates|Motorboats in Russia|Hot air balloons of Russia|Water reflections of trees in Russia|2 girls in Russia|Files with coordinates missing SDC location of creation|Photographs by Alexander Novikov|Photographs by Alexander Novikov/Tambov|Water reflections of vehicles in Russia|People looking at hot air balloons|Fishing platforms",
+        "latitude": "52.722322",
+        "longitude": "41.461275"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-122344096.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-122344096.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 10,
+      "id": "commons-126606566",
+      "title": "Золотой берег и отражения",
+      "location": "Гатчина, Ленинградская область",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2015-10-16 12:37:21",
+      "author": "Tsyganov Sergey",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Water_reflections_%D0%92%D1%81%D0%B5_%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BE%D1%81%D0%B5%D0%BD%D0%B8_%D0%93%D0%B0%D1%82%D1%87%D0%B8%D0%BD%D0%B0_02.jpg",
+      "commons_file": "File:Water reflections Все краски осени Гатчина 02.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Water_reflections_%D0%92%D1%81%D0%B5_%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BE%D1%81%D0%B5%D0%BD%D0%B8_%D0%93%D0%B0%D1%82%D1%87%D0%B8%D0%BD%D0%B0_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3000,
+        3561
+      ],
+      "output_dimensions": [
+        1685,
+        2000
+      ],
+      "original_bytes": 6192765,
+      "original_sha256": "6e34a23333da2d694b37ce80501b25645391ac086ab6f9523ebaae0826f70bbf",
+      "output_sha256": "4b045b9e361a6c47a0b7ba22f84116a37d12b4aed5468074f2d1a59ad43db0be",
+      "date_original": "2015-10-16 12:37:21",
+      "geographic_evidence": {
+        "description": "Water reflections Все краски осени Гатчина",
+        "categories": "Self-published work|Water reflections|Water reflections of trees in Russia",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-126606566.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-126606566.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 11,
+      "id": "commons-156422857",
+      "title": "Осеннее золото у воды",
+      "location": "Россия, Озёрки; регион не уточнён источником",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2024-10-20 09:34:23",
+      "author": "Tsyganov Sergey",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Water_reflections_%D0%92%D1%81%D0%B5_%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BE%D1%81%D0%B5%D0%BD%D0%B8_%D0%9E%D0%B7%D0%B5%D1%80%D0%BA%D0%B8.jpg",
+      "commons_file": "File:Water reflections Все краски осени Озерки.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Water_reflections_%D0%92%D1%81%D0%B5_%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BE%D1%81%D0%B5%D0%BD%D0%B8_%D0%9E%D0%B7%D0%B5%D1%80%D0%BA%D0%B8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2159,
+        2714
+      ],
+      "output_dimensions": [
+        1591,
+        2000
+      ],
+      "original_bytes": 7085936,
+      "original_sha256": "707235db69be23fa984ff1a33287e1ab3820f5bf532691956e0d115f674f9867",
+      "output_sha256": "3ef9fce276f57c190e1634d6c1a51a49dc60e5ea217f6197aadd44f1c5ccd7b5",
+      "date_original": "2024-10-20 09:34:23",
+      "geographic_evidence": {
+        "description": "Water reflections",
+        "categories": "CC-Zero|Self-published work|Water reflections|Water reflections of trees in Russia",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-156422857.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-156422857.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 12,
+      "id": "commons-106874401",
+      "title": "Закат на лесной воде",
+      "location": "Томск",
+      "theme": "Озёра и отражения",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 10 April 2021, 19:43:12",
+      "author": "Razumov tomsk",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9E%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BA%D0%B0%D1%82%D0%B0.jpg",
+      "commons_file": "File:Отражение заката.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/%D0%9E%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BA%D0%B0%D1%82%D0%B0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3840,
+        5120
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 9440302,
+      "original_sha256": "5b0a84961f4895aadaa4328c8bba227e6690335cd7bc400e9f14d1026ee56b76",
+      "output_sha256": "75e4ed6b679898c3d4f345768d4d68a6b4358c99bdc9e1450fee0a70c52477ad",
+      "date_original": "Taken on 10 April 2021, 19:43:12",
+      "geographic_evidence": {
+        "description": "Лагерный сад:   Томск, Томская область",
+        "categories": "Lagerny Garden in Tomsk|Self-published work|Russia photographs taken on 2021-04-10|Water reflections of trees in Russia|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/7020146|Wiki Loves Earth 2021 Human Rights and Environment Special Nomination",
+        "latitude": "56.455379",
+        "longitude": "84.949142"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-106874401.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-106874401.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 13,
+      "id": "commons-69728985",
+      "title": "Зимний ручей на Голубых озёрах",
+      "location": "Татарстан",
+      "theme": "Зимние пейзажи",
+      "season": "winter",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 11 January 2011, 16:47:34",
+      "author": "Ilegri",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B8%D1%87%D1%83%D0%B4%D0%BB%D0%B8%D0%B2%D1%8B%D0%B5_%D0%BE%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F._%D0%9C%D0%B0%D0%BB%D0%BE%D0%B5_%D0%93%D0%BE%D0%BB%D1%83%D0%B1%D0%BE%D0%B5.jpg",
+      "commons_file": "File:Причудливые отражения. Малое Голубое.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/%D0%9F%D1%80%D0%B8%D1%87%D1%83%D0%B4%D0%BB%D0%B8%D0%B2%D1%8B%D0%B5_%D0%BE%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F._%D0%9C%D0%B0%D0%BB%D0%BE%D0%B5_%D0%93%D0%BE%D0%BB%D1%83%D0%B1%D0%BE%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3000,
+        4000
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 3803526,
+      "original_sha256": "b62a1bd4088ab2fdbe74088145da8d981cab7bef33a8e99e27621ee9df3a228c",
+      "output_sha256": "a7624f38e230c865ca445459edd9850b43ee0638b4ea6b97ec04f19dc228816c",
+      "date_original": "Taken on 11 January 2011, 16:47:34",
+      "geographic_evidence": {
+        "description": "Голубые озера: Высокогорский район, Татарстан",
+        "categories": "Golubye Lakes, Vysokogorsky District of Tatarstan|Self-published work|Images from Wiki Loves Earth 2018|Water reflections of trees in Russia|Uploaded via Campaign:wle-ru|Protected areas of Russia/1610066|Images from Wiki Loves Earth 2018 in Russia|Russia photographs taken on 2011-01-11|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-69728985.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-69728985.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 14,
+      "id": "commons-106310638",
+      "title": "Пруд Нижнего дендрария",
+      "location": "Сочи, Краснодарский край",
+      "theme": "Сады и мостики",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 6 May 2021, 14:50:20",
+      "author": "Mariyal1709",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9.jpg",
+      "commons_file": "File:Нижний дендрарий.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2890,
+        3612
+      ],
+      "output_dimensions": [
+        1600,
+        2000
+      ],
+      "original_bytes": 4135398,
+      "original_sha256": "12a0ba328aa7f4d5b1f2db34858bde05a2bc0952f5b7ed21b5bc2791b778fe18",
+      "output_sha256": "560a8cc794e75ee9047a12ecf9fa672673a6d5889be1cea3fd4b0ab43f62d311",
+      "date_original": "Taken on 6 May 2021, 14:50:20",
+      "geographic_evidence": {
+        "description": "Дендрологический парк Дендрарий: Курортный проспект, 74. Дендрологический парк \"Дендрарий\",  Сочи, Краснодарский край",
+        "categories": "Self-published work|Russia photographs taken on 2021-05-06|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/2300362|Gazebo near pond in Sochi Arboretum",
+        "latitude": "43.566597",
+        "longitude": "39.742108"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-106310638.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-106310638.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 15,
+      "id": "commons-91706740",
+      "title": "Цветущая сакура",
+      "location": "Сочи, Краснодарский край",
+      "theme": "Цветущие сады",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 25 March 2020, 18:31:01",
+      "author": "Aleda12",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B0%D1%8F_%D0%A1%D0%B0%D0%BA%D1%83%D1%80%D0%B0_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg",
+      "commons_file": "File:Цветущая Сакура в Дендрологическом парке \"Дендрарий\".jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B0%D1%8F_%D0%A1%D0%B0%D0%BA%D1%83%D1%80%D0%B0_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        5504,
+        8256
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 2943309,
+      "original_sha256": "06537fe41851faaf5878c4412e61d3e04953b8d634d302d2603d7096df5ac710",
+      "output_sha256": "85787dab317c84537990e8da1c799ab6b669039dd7f39b738e78ee054d40e230",
+      "date_original": "Taken on 25 March 2020, 18:31:01",
+      "geographic_evidence": {
+        "description": "Дендрологический парк Дендрарий: Курортный проспект, 74. Дендрологический парк \"Дендрарий\",  Сочи, Краснодарский край",
+        "categories": "Sochi Arboretum|Blossoms|Self-published work|Prunus in Russia|Russia photographs taken on 2020-03-25|2020 in Sochi|Uploaded via Campaign:wle-ru|Flowers in Sochi|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/2300362",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91706740.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91706740.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 16,
+      "id": "commons-91706741",
+      "title": "Белая алыча под голубым небом",
+      "location": "Сочи, Краснодарский край",
+      "theme": "Цветущие сады",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 24 March 2020, 16:18:40",
+      "author": "Aleda12",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B0%D1%8F_%D0%B0%D0%BB%D1%8B%D1%87%D0%B0_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg",
+      "commons_file": "File:Цветущая алыча в Дендрологическом парке \"Дендрарий\".jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B0%D1%8F_%D0%B0%D0%BB%D1%8B%D1%87%D0%B0_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        5504,
+        8256
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 4828424,
+      "original_sha256": "868e9a3721e66ee9cff9fad9851af5e120a607912f9ac4c434dcc6b4d13fc510",
+      "output_sha256": "ef1de2b4483cf40de3201501f749fa25101488c5dcaf7895cee51af4f3df1f7c",
+      "date_original": "Taken on 24 March 2020, 16:18:40",
+      "geographic_evidence": {
+        "description": "Дендрологический парк Дендрарий: Курортный проспект, 74. Дендрологический парк \"Дендрарий\",  Сочи, Краснодарский край",
+        "categories": "Sochi Arboretum|Blossoms|Self-published work|Russia photographs taken on 2020-03-24|Unidentified trees in Russia|2020 in Sochi|Uploaded via Campaign:wle-ru|Flowers in Sochi|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/2300362",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91706741.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91706741.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 17,
+      "id": "commons-91706742",
+      "title": "Цветущий церцис",
+      "location": "Сочи, Краснодарский край",
+      "theme": "Цветущие сады",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 25 March 2020, 16:48:24",
+      "author": "Aleda12",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B8%D0%B9_%D0%A6%D0%B5%D1%80%D1%86%D0%B8%D1%81_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg",
+      "commons_file": "File:Цветущий Церцис в Дендрологическом парке \"Дендрарий\".jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/%D0%A6%D0%B2%D0%B5%D1%82%D1%83%D1%89%D0%B8%D0%B9_%D0%A6%D0%B5%D1%80%D1%86%D0%B8%D1%81_%D0%B2_%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D0%B0%D1%80%D0%BA%D0%B5_%22%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        5504,
+        8256
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 4423180,
+      "original_sha256": "2335ddc281c796183c7548b61ada035c3b5435dd478166caeeaef1dc5ebafa81",
+      "output_sha256": "43351f55f5ecddda8accc63da7838438fb259cc945fe5ca759bcb664178ebc02",
+      "date_original": "Taken on 25 March 2020, 16:48:24",
+      "geographic_evidence": {
+        "description": "Дендрологический парк Дендрарий: Курортный проспект, 74. Дендрологический парк \"Дендрарий\",  Сочи, Краснодарский край",
+        "categories": "Sochi Arboretum|Self-published work|Russia photographs taken on 2020-03-25|Uploaded via Campaign:wle-ru|Flowers in Sochi|Unidentified Fabales in Russia|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/2300362|Cercis in Russia",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91706742.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91706742.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 18,
+      "id": "commons-57494183",
+      "title": "Кивач среди хвойного леса",
+      "location": "Карелия",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2016-07-19 11:01:54",
+      "author": "Alexxx1979",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kivach_Falls_P7190541_2325.jpg",
+      "commons_file": "File:Kivach Falls P7190541 2325.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Kivach_Falls_P7190541_2325.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2325,
+        3313
+      ],
+      "output_dimensions": [
+        1404,
+        2000
+      ],
+      "original_bytes": 10119768,
+      "original_sha256": "d3f3468811e3936284ca3cb07620f5adb8535097dca2e3f04aa3a1a7ca5e6ac5",
+      "output_sha256": "f3bd5b3754589360014c2e506cfd2486ffd39d8932800e67164da2642a5c3835",
+      "date_original": "2016-07-19 11:01:54",
+      "geographic_evidence": {
+        "description": "Kivach Falls",
+        "categories": "Kivach waterfall|Self-published work|Photos by Alexxx-Malev (Alexxx1979)|Files with coordinates missing SDC location of creation",
+        "latitude": "62.267711",
+        "longitude": "33.980610"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-57494183.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-57494183.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 19,
+      "id": "commons-48429250",
+      "title": "Лермонтовский водопад",
+      "location": "Кисловодск, Ставропольский край",
+      "theme": "Водопады и ручьи",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 18 April 2016, 16:43:03",
+      "author": "Dmitry89",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lermontov_waterfall_03.JPG",
+      "commons_file": "File:Lermontov waterfall 03.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Lermontov_waterfall_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3264,
+        4928
+      ],
+      "output_dimensions": [
+        1325,
+        2000
+      ],
+      "original_bytes": 4308805,
+      "original_sha256": "95868c4666835b523eaed815f4e724f01ada64b90c4d98db9796edc8989abe06",
+      "output_sha256": "8bf77851a8aa840a8fcebc078fdd083bccdd0304c93340c42e7dffb742820f31",
+      "date_original": "Taken on 18 April 2016, 16:43:03",
+      "geographic_evidence": {
+        "description": "Лермонтовский водопад: Г. Кисловодск, южная окраина города, река Ольховка,  Кисловодск, Ставропольский край",
+        "categories": "Self-published work|Files by Dmitry89|Uploaded via Campaign:wle-ru|Russia photographs taken on 2016-04-18|Protected areas of Russia with known IDs|Lermontov waterfall|Protected areas of Russia/2610077",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-48429250.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-48429250.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 20,
+      "id": "commons-136839415",
+      "title": "Водопад Рисйок в Хибинах",
+      "location": "Мурманская область",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2023-08-15 10:31:26",
+      "author": "KpokeJlJla",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Risjok_Waterfall_1.jpg",
+      "commons_file": "File:Risjok Waterfall 1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Risjok_Waterfall_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3744,
+        5616
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 18360331,
+      "original_sha256": "7c6cc012b52244016ff56ade0a50396abec30a87b981cff378264586ef46d854",
+      "output_sha256": "e6ff74e9773d343d4942398c9b14c212d72fbf8302aaad07bafe6f36d08264a6",
+      "date_original": "2023-08-15 10:31:26",
+      "geographic_evidence": {
+        "description": "Risjok Waterfall at Khibiny mointain massif, Murmansk Region, Russia",
+        "categories": "Waterfalls in Murmansk Oblast|Self-published work|Files with coordinates missing SDC location of creation",
+        "latitude": "67.794797",
+        "longitude": "33.616906"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-136839415.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-136839415.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 21,
+      "id": "commons-113169778",
+      "title": "Водопад Радужный",
+      "location": "Калужская область",
+      "theme": "Водопады и ручьи",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2012-10-02 17:45:41",
+      "author": "Pansosh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waterfall_%22Rainbow%22_P1090399.jpg",
+      "commons_file": "File:Waterfall \"Rainbow\" P1090399.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Waterfall_%22Rainbow%22_P1090399.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2304,
+        3072
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 1934518,
+      "original_sha256": "702c3a9661bb698749be6dc2a888b0013e5e216f4b007499807193aca6751793",
+      "output_sha256": "e72ae39f1699b31469522688045ebde54f961f0a6658b88899d9a267c8db88e7",
+      "date_original": "2012-10-02 17:45:41",
+      "geographic_evidence": {
+        "description": "Пойма реки Нары с водопадом «Радужный»: у д. Папино, на другом берегу реки, ориентир – бензозаправка, Папино, Жуковский район, Калужская область",
+        "categories": "Protected areas of Russia|Self-published work|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Protected areas of Russia with known IDs|Waterfall \"Rainbow\"|Protected areas of Russia/4010226",
+        "latitude": "55.212022",
+        "longitude": "36.953995"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-113169778.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-113169778.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 22,
+      "id": "commons-91008027",
+      "title": "Камышлинский водопад",
+      "location": "Республика Алтай",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 2 August 2016, 17:39:03",
+      "author": "Арина Ахметова",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B4%D0%BF.%D0%9A%D0%B0%D0%BC%D1%8B%D1%88%D0%BB%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9.jpg",
+      "commons_file": "File:Вдп.Камышлинский.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/%D0%92%D0%B4%D0%BF.%D0%9A%D0%B0%D0%BC%D1%8B%D1%88%D0%BB%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2760,
+        4074
+      ],
+      "output_dimensions": [
+        1355,
+        2000
+      ],
+      "original_bytes": 6112776,
+      "original_sha256": "7f2b4fd7022747819d3147110443cc300b236fce930ee06cb67ab8eca6cfacc4",
+      "output_sha256": "a8c820f3964bb7964928c294f10d6ee0028ae104b0212b238ce6091a9e6ff7fd",
+      "date_original": "Taken on 2 August 2016, 17:39:03",
+      "geographic_evidence": {
+        "description": "Северный отрог хр. Семинский, приустьевая часть р. Камышла, в 260 м от устья.",
+        "categories": "Kamyshlinsky Waterfall|Self-published work|Russia photographs taken on 2016-08-02|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410049",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91008027.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91008027.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 23,
+      "id": "commons-54389520",
+      "title": "Осенний ручей в заповеднике Кивач",
+      "location": "Карелия",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2016-09-27 13:09:41",
+      "author": "mikhail Proskalov",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0_%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0_%D0%9A%D0%B8%D0%B2%D0%B0%D1%87.jpg",
+      "commons_file": "File:На территории заповедника Кивач.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/%D0%9D%D0%B0_%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D0%B7%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0_%D0%9A%D0%B8%D0%B2%D0%B0%D1%87.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2285,
+        3000
+      ],
+      "output_dimensions": [
+        1523,
+        2000
+      ],
+      "original_bytes": 4911558,
+      "original_sha256": "7e6686e2f7dd78ed5a6231599c423aadbfcdd0eb5d1c5cacf83b71f173bf2379",
+      "output_sha256": "6a7ab935f0b9db8d9a061a75801205a5bd2ecf14a1aaa9771e50df4b885854bb",
+      "date_original": "2016-09-27 13:09:41",
+      "geographic_evidence": {
+        "description": "Узоры заповедника кивач",
+        "categories": "Kivach waterfall|Self-published work",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-54389520.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-54389520.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 24,
+      "id": "commons-118275611",
+      "title": "Бирюзовое озеро Провальное",
+      "location": "Архыз, Карачаево-Черкесия",
+      "theme": "Озёра и отражения",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2020-08-19 07:49:52",
+      "author": "Lexinart",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D1%85%D1%8B%D0%B7._%D0%BE%D0%B7.%D0%9F%D1%80%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%81_%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D1%8B_%D0%BF%D1%82%D0%B8%D1%87%D1%8C%D0%B5%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BB%D1%91%D1%82%D0%B0_%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%B5%D1%82_%D0%BC%D0%BE%D1%80%D0%B4%D1%83_%D1%82%D0%B8%D0%B3%D1%80%D1%91%D0%BD%D0%BA%D0%B0.jpg",
+      "commons_file": "File:Архыз. оз.Провальное с высоты птичьего полёта напоминает морду тигрёнка.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/%D0%90%D1%80%D1%85%D1%8B%D0%B7._%D0%BE%D0%B7.%D0%9F%D1%80%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%81_%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D1%8B_%D0%BF%D1%82%D0%B8%D1%87%D1%8C%D0%B5%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BB%D1%91%D1%82%D0%B0_%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%B5%D1%82_%D0%BC%D0%BE%D1%80%D0%B4%D1%83_%D1%82%D0%B8%D0%B3%D1%80%D1%91%D0%BD%D0%BA%D0%B0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2992,
+        3992
+      ],
+      "output_dimensions": [
+        1499,
+        2000
+      ],
+      "original_bytes": 10180129,
+      "original_sha256": "b2c32fac13bd8d38638b49360aaaffee7beb4435ca0d822022d82eb8e504936d",
+      "output_sha256": "c11792b3c5b93132360aa8805b6ca162312c7e19ab03a1c957f9944b53a25cc1",
+      "date_original": "2020-08-19 07:49:52",
+      "geographic_evidence": {
+        "description": "Arkhyz. Lake Provalnoe from a bird's eye view. Drone photo",
+        "categories": "Self-published work|Files with coordinates missing SDC location of creation|Russia photographs taken on 2020-08-19|Images from Wiki Science Competition 2022 in Russia|Nature category images from Russian Science Photo Competition 2022|Uploaded via Campaign:wsc22-ru",
+        "latitude": "43.604008",
+        "longitude": "41.158600"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-118275611.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-118275611.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 25,
+      "id": "commons-153391205",
+      "title": "Драконий мост среди осенних деревьев",
+      "location": "Пушкин, Санкт-Петербург",
+      "theme": "Сады и мостики",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2022-10-15 15:52:54",
+      "author": "Александровы АГ",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:0619Ga1._Pushkin._Chinese_bridge_with_dragons.jpg",
+      "commons_file": "File:0619Ga1. Pushkin. Chinese bridge with dragons.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/0619Ga1._Pushkin._Chinese_bridge_with_dragons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3456,
+        4608
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 5969464,
+      "original_sha256": "d22be9381fe40b4d48172958b8ca4ceff9dd7a06c2b5f9b6a9458b0a1877e4f9",
+      "output_sha256": "936ed7ec0ad235b72bb473f2eba82b6f683c8b2eab42d2a9fcb75730d2b9d96e",
+      "date_original": "2022-10-15 15:52:54",
+      "geographic_evidence": {
+        "description": "Chinese bridge with dragons: Alexander Park, across the Cross channel, on a clearing from Arsenal to the Catherine Palace, Pushkin, Pushkin district, St. Petersburg",
+        "categories": "Self-published work|Cultural heritage monuments in Russia with known IDs|Images from Wiki Loves Monuments 2024|Uploaded via Campaign:wlm-ru|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Cultural heritage monuments in Russia missing SDC location of creation|Cultural heritage monuments in Russia missing SDC depicts|Dragon Bridge, Tsarskoe Selo|Images from Wiki Loves Monuments 2024 in Russia|Russian heritage ID 7810445025",
+        "latitude": "59.719109",
+        "longitude": "30.386047"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-153391205.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-153391205.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 26,
+      "id": "commons-98588282",
+      "title": "Крестовый мост над каналом",
+      "location": "Пушкин, Санкт-Петербург",
+      "theme": "Сады и мостики",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2018-05-13",
+      "author": "Bärbel Miemietz",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2018-05-13_Catherine_Park_Reflections_02.jpeg",
+      "commons_file": "File:2018-05-13 Catherine Park Reflections 02.jpeg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/2018-05-13_Catherine_Park_Reflections_02.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2670,
+        4004
+      ],
+      "output_dimensions": [
+        1334,
+        2000
+      ],
+      "original_bytes": 2074508,
+      "original_sha256": "9eb9a354c8c7e17452d23cbe7f3cecda59582c1d8c11ec07198fa4321999dbde",
+      "output_sha256": "ffb2aec392e99c686af91a9d773ece32c966db71e9f6f2463c3be5c0f018839f",
+      "date_original": "2018-05-13",
+      "geographic_evidence": {
+        "description": "Spiegelungen der Krestovyj Brücke im Park des Katharinenpalasts in Puschkin (ehemals Carskoe Selo) in Russland",
+        "categories": "Self-published work|Cross Bridge (Krestovy Most) with Gazebo|Water reflections of bridges in Saint Petersburg",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-98588282.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-98588282.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 27,
+      "id": "commons-61950086",
+      "title": "Мраморный мост Екатерининского парка",
+      "location": "Пушкин, Санкт-Петербург",
+      "theme": "Сады и мостики",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 7 July 2014, 07:58",
+      "author": "sergejf",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Marble_Bridge_-_Catherine_Park_in_Tsarskoye_Selo_(17839157453).jpg",
+      "commons_file": "File:Marble Bridge - Catherine Park in Tsarskoye Selo (17839157453).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Marble_Bridge_-_Catherine_Park_in_Tsarskoye_Selo_%2817839157453%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3264,
+        4928
+      ],
+      "output_dimensions": [
+        1325,
+        2000
+      ],
+      "original_bytes": 3334088,
+      "original_sha256": "e37f0780b2dff1b89a32ef42c8090e7c4b69dbe34a50cd9f7d507d60b50dbb06",
+      "output_sha256": "46a08da2ce1b526db4dca5bd1f013200ed0710535bc297e16adc276d63894357",
+      "date_original": "Taken on 7 July 2014, 07:58",
+      "geographic_evidence": {
+        "description": "Marble Bridge : Catherine Park in Tsarskoye Selo",
+        "categories": "Marble Bridge|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation|Russia photographs taken on 2014-07-07|Files from sergejf Flickr stream",
+        "latitude": "59.711144",
+        "longitude": "30.390480"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-61950086.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-61950086.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 28,
+      "id": "commons-69888182",
+      "title": "Белый мостик над зелёным каналом",
+      "location": "Пушкин, Санкт-Петербург",
+      "theme": "Сады и мостики",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 16 June 2017, 13:30:15",
+      "author": "Игорь Малафеев",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA_6.jpg",
+      "commons_file": "File:Екатерининский парк 6.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1944,
+        2592
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 1269429,
+      "original_sha256": "b2a7877ba51f381f897d7ca60e507c955d4f058f6bb300bf60f68bbe1a07da06",
+      "output_sha256": "6baab40f24aa83be43e7ce6212e66f959f886ec9590d9b05216b93e44313ada8",
+      "date_original": "Taken on 16 June 2017, 13:30:15",
+      "geographic_evidence": {
+        "description": "Государственный художественно-архитектурный дворцово-парковый музей-заповедник 'Царское Село':  Пушкин, Пушкинский район, Санкт-Петербург",
+        "categories": "Self-published work|Images from Wiki Loves Earth 2018|Uploaded via Campaign:wle-ru|Russia photographs taken on 2017-06-16|Images from Wiki Loves Earth 2018 in Russia|Fish Canal in Catherine Park|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Bridges of Catherine Park in Tsarskoe Selo|Protected areas of Russia/7800008",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-69888182.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-69888182.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 29,
+      "id": "commons-8789050",
+      "title": "Осень у реки Славянки",
+      "location": "Павловск, Санкт-Петербург",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Осень указана в названии файла и категории источника; точная дата неизвестна.",
+      "author": "Andrew Krizhanovsky / Андрей Крижановский",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Autumn_and_twig_above_river_Pavlovsk.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Autumn_and_twig_above_river_Pavlovsk.jpg",
+      "commons_file": "File:Autumn and twig above river Pavlovsk.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Autumn_and_twig_above_river_Pavlovsk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2304,
+        3072
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 4447458,
+      "original_sha256": "8cba391d67097c0955a3173acc2370ed999c0ef5bac707757e11ede0278d2db7",
+      "output_sha256": "08e1458d252f85593eb12edced3f7e59b65d66f29d59986ffdc661907cdf05e2",
+      "date_original": "2009",
+      "geographic_evidence": {
+        "description": "The twig of tree and view of river  Slavyanka ,  Pavlovsk  park.",
+        "categories": "Taken with Canon PowerShot A710 IS|PD-user|Photos by Andrew Krizhanovsky|Autumn in Saint Petersburg|Files with coordinates missing SDC location of creation|Slavyanka River in Pavlovsk park",
+        "latitude": "59.692780",
+        "longitude": "30.460710"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-8789050.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-8789050.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 30,
+      "id": "commons-8789153",
+      "title": "Павильон и сосны у воды",
+      "location": "Павловск, Санкт-Петербург",
+      "theme": "Сады и мостики",
+      "season": "autumn",
+      "season_evidence": "Осень указана в названии файла и категории источника; точная дата неизвестна.",
+      "author": "Andrew Krizhanovsky / Андрей Крижановский",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Autumn_rosy_pavilion_Pavlovsk.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Autumn_rosy_pavilion_Pavlovsk.jpg",
+      "commons_file": "File:Autumn rosy pavilion Pavlovsk.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Autumn_rosy_pavilion_Pavlovsk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2216,
+        2982
+      ],
+      "output_dimensions": [
+        1486,
+        2000
+      ],
+      "original_bytes": 5560630,
+      "original_sha256": "0247abb2bbe2885fd35c0f6b1a1c424db97289353f2ca47e307581e9d60235e7",
+      "output_sha256": "a3ce143211a639ebe80d2458f93d806cf17be4e1006c7aff3bf551bf403493e7",
+      "date_original": "2009",
+      "geographic_evidence": {
+        "description": "Rosy pavilion, river  Slavyanka , autumn at  Pavlovsk  park.",
+        "categories": "PD-user|Rose Pavilion, Pavlovsk|Photos by Andrew Krizhanovsky|Autumn in Saint Petersburg|Files with coordinates missing SDC location of creation",
+        "latitude": "59.690170",
+        "longitude": "30.466360"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-8789153.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-8789153.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 31,
+      "id": "commons-8281984",
+      "title": "Весенний каскад среди камней",
+      "location": "Москва",
+      "theme": "Водопады и ручьи",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 3 May 2008, 16:33:26 (according to   Exif   data)",
+      "author": "Kor!An (Корзун Андрей)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cascade_of_falls_01.JPG",
+      "commons_file": "File:Cascade of falls 01.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Cascade_of_falls_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2112,
+        2816
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 4054796,
+      "original_sha256": "81c902aa3aec9d4a403f5f7463b940b428d247e7eb222f74f711fd97b8fe3ea4",
+      "output_sha256": "255961996f297ace6f98d787f48545cc902d47fd89f93601995049b6ce2289bc",
+      "date_original": "3 May 2008, 16:33:26 (according to   Exif   data)",
+      "geographic_evidence": {
+        "description": "Japanese garden in a Moscow Botanical Garden of Academy of Sciences.",
+        "categories": "GFDL|Taken with Canon PowerShot S3 IS|License migration redundant|Self-published work|Images by Andrey Korzun|Photographs taken on 2008-05-03|Japanese garden in Moscow",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-8281984.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-8281984.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 32,
+      "id": "commons-8282027",
+      "title": "Пруд Японского сада",
+      "location": "Москва",
+      "theme": "Сады и мостики",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 3 May 2008, 17:27:15 (according to   Exif   data)",
+      "author": "Kor!An (Корзун Андрей)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Japanese_garden_in_Moscow_02.JPG",
+      "commons_file": "File:Japanese garden in Moscow 02.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Japanese_garden_in_Moscow_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2112,
+        2816
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 4191939,
+      "original_sha256": "bc91ae03a1203fc147b52e3a6aa9b3743dc87e636f9dd303203c3beacaeb4cf2",
+      "output_sha256": "ad2d7fbd7fafa28a0a5ae00cd06dabad5eff7e600a9b41326aa0444b3dc032ea",
+      "date_original": "3 May 2008, 17:27:15 (according to   Exif   data)",
+      "geographic_evidence": {
+        "description": "Japanese garden in a Moscow Botanical Garden of Academy of Sciences.",
+        "categories": "GFDL|Taken with Canon PowerShot S3 IS|License migration redundant|Self-published work|Images by Andrey Korzun|May 2008 in Moscow|Russia photographs taken on 2008-05-03|Ponds in Japanese garden in Moscow",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-8282027.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-8282027.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 33,
+      "id": "commons-24376879",
+      "title": "Розовая сакура в саду",
+      "location": "Москва",
+      "theme": "Цветущие сады",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2012-05-01 17:17:27",
+      "author": "Kor!An (Андрей Корзун)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Prunus_sargentii_(Moscow)_06.JPG",
+      "commons_file": "File:Prunus sargentii (Moscow) 06.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Prunus_sargentii_%28Moscow%29_06.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2112,
+        2816
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 5244760,
+      "original_sha256": "9d7caa00c6f7a691e0430c96342157fdc34ca26996d67e2b7b5071185e84059a",
+      "output_sha256": "08a95a04c5bb6af279b70d2332f5e15b298b36b6d3637b71643c7724038ed3b0",
+      "date_original": "2012-05-01 17:17:27",
+      "geographic_evidence": {
+        "description": "North Japanese hill cherry (Prunus sargentii), Sakura, in the Japanese Garden. Main Botanical Garden of Academy of Sciences in Moscow.",
+        "categories": "Prunus sargentii|Taken with Canon PowerShot S3 IS|Self-published work|Pale pink flowers|Images by Andrey Korzun|Sakura in the Japanese garden in Moscow",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-24376879.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-24376879.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 34,
+      "id": "commons-79571518",
+      "title": "Красная листва над прудом",
+      "location": "Москва",
+      "theme": "Осенние краски",
+      "season": null,
+      "season_evidence": "В источнике некорректная дата 1899-11-30; сезон по дате не подтверждён.",
+      "author": "Aleksandra057",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%AF%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4%D0%B8%D0%BA_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_2017_%D1%84%D0%BE%D1%82%D0%BE_2.jpg",
+      "commons_file": "File:Ботанический сад Японский садик Москва 2017 фото 2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%AF%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4%D0%B8%D0%BA_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_2017_%D1%84%D0%BE%D1%82%D0%BE_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        4428,
+        5906
+      ],
+      "output_dimensions": [
+        1499,
+        2000
+      ],
+      "original_bytes": 9018566,
+      "original_sha256": "af1cbbd03af24c50b565c8f61a7bef297289e6e52f06c5499942988effc6ddfe",
+      "output_sha256": "800e1e0589665e2fcde74323b4cd1ee913b5e92ad4f5d44d2c713a3964544e46",
+      "date_original": "1899-11-30",
+      "geographic_evidence": {
+        "description": "Главный ботанический сад им. Н.В. Цицина:   Северо-Восточный округ, Москва",
+        "categories": "Self-published work|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth 2019 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Japanese garden in Moscow|Protected areas of Russia/7700046",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-79571518.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-79571518.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 35,
+      "id": "commons-79571534",
+      "title": "Осенние листья у каскада",
+      "location": "Москва",
+      "theme": "Осенние краски",
+      "season": null,
+      "season_evidence": "В источнике некорректная дата 1899-11-30; сезон по дате не подтверждён.",
+      "author": "Aleksandra057",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%AF%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4%D0%B8%D0%BA_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_2017_%D1%84%D0%BE%D1%82%D0%BE_8.jpg",
+      "commons_file": "File:Ботанический сад Японский садик Москва 2017 фото 8.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%AF%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4%D0%B8%D0%BA_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0_2017_%D1%84%D0%BE%D1%82%D0%BE_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        4291,
+        5906
+      ],
+      "output_dimensions": [
+        1453,
+        2000
+      ],
+      "original_bytes": 19117809,
+      "original_sha256": "f4492f059590238f2ad97450a9970ddde41c16245af68ddf211d103868a925fe",
+      "output_sha256": "b77ef3ccd80b5e7e40acec57dec3f5bf2d606ba3e0b7421912f40fcd920ada36",
+      "date_original": "1899-11-30",
+      "geographic_evidence": {
+        "description": "Главный ботанический сад им. Н.В. Цицина:   Северо-Восточный округ, Москва",
+        "categories": "Self-published work|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth 2019 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Japanese garden in Moscow|Protected areas of Russia/7700046",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-79571534.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-79571534.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 36,
+      "id": "commons-107126250",
+      "title": "Телецкое озеро: горы и отражение",
+      "location": "Республика Алтай",
+      "theme": "Озёра и отражения",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 11 June 2021, 11:43:56",
+      "author": "Ludvig14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Teletskoye_Lake_014_1189.jpg",
+      "commons_file": "File:Teletskoye Lake 014 1189.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Teletskoye_Lake_014_1189.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3952,
+        6000
+      ],
+      "output_dimensions": [
+        1317,
+        2000
+      ],
+      "original_bytes": 20141743,
+      "original_sha256": "5c2bac04d2c6d2df2a538aa5ad23fd6b547544e2f1bb2307bc592fdb09478dd6",
+      "output_sha256": "866aa777043aae50174325d065818eae27dba60086d3142cc9653be52f290d96",
+      "date_original": "Taken on 11 June 2021, 11:43:56",
+      "geographic_evidence": {
+        "description": "Teletskoye Lake, Altai Republic, Russia",
+        "categories": "Teletskoye Lake|Self-published work|Altai Republic photographs taken on 2021-06-11|Water reflections of mountains in Russia|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410032|Russian Wikivoyage expedition Altay 2021",
+        "latitude": "51.399884",
+        "longitude": "87.740129"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-107126250.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-107126250.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 37,
+      "id": "commons-79682351",
+      "title": "Цветение маральника над озером",
+      "location": "Республика Алтай",
+      "theme": "Цветущие сады",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 7 May 2019, 15:42:13",
+      "author": "Just Julia 07",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D0%B5%D1%82%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B0%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%B0_%D0%BD%D0%B0_%D0%A2%D0%B5%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%BC_%D0%BE%D0%B7%D0%B5%D1%80%D0%B5.jpg",
+      "commons_file": "File:Цветение маральника на Телецком озере.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/%D0%A6%D0%B2%D0%B5%D1%82%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B0%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%B0_%D0%BD%D0%B0_%D0%A2%D0%B5%D0%BB%D0%B5%D1%86%D0%BA%D0%BE%D0%BC_%D0%BE%D0%B7%D0%B5%D1%80%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1960,
+        4032
+      ],
+      "output_dimensions": [
+        972,
+        2000
+      ],
+      "original_bytes": 3379915,
+      "original_sha256": "ee564909e4148724685692d99f26e5413e1f550299f753b7883eb4959db8b682",
+      "output_sha256": "9b4027de098401205054f1bd7fd82e90e11d12a80f1965c76f332e8d90b96d48",
+      "date_original": "Taken on 7 May 2019, 15:42:13",
+      "geographic_evidence": {
+        "description": "Телецкое озеро: между хребтом Алтынту и западными отрогами Абаканского хребта (хр. Корбу, хр. Телецкий); на территории Турочакского и Улаганского районов,   Алтай",
+        "categories": "Teletskoye Lake|Self-published work|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth 2019 in Russia|Russia photographs taken on 2019-05-07|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410032",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-79682351.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-79682351.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 38,
+      "id": "commons-18397152",
+      "title": "Клён у сторожки парка Сильвия",
+      "location": "Гатчина, Ленинградская область",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2008-09-22",
+      "author": "Artem Topchiy (Art-top)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2008-09-22_%D0%93%D0%B0%D1%82%D1%87%D0%B8%D0%BD%D0%B0._%D0%9A%D0%BB%D0%B5%D0%BD_%D1%83_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%B6%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D0%BF%D0%B0%D1%80%D0%BA_%D0%A1%D0%B8%D0%BB%D1%8C%D0%B2%D0%B8%D1%8F.jpg",
+      "commons_file": "File:2008-09-22 Гатчина. Клен у сторожки при входе в парк Сильвия.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/2008-09-22_%D0%93%D0%B0%D1%82%D1%87%D0%B8%D0%BD%D0%B0._%D0%9A%D0%BB%D0%B5%D0%BD_%D1%83_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%B6%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D0%BF%D0%B0%D1%80%D0%BA_%D0%A1%D0%B8%D0%BB%D1%8C%D0%B2%D0%B8%D1%8F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1944,
+        2592
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 3578623,
+      "original_sha256": "34a7ce17f1e53e6dd14f9bf0eb9a1a23b7df22c99241372edbcca3920c6846b0",
+      "output_sha256": "3a88e0f776bef2b0caa588ba6547ef637ea5a9f3c2992749c89664309e308a82",
+      "date_original": "2008-09-22",
+      "geographic_evidence": {
+        "description": "Клён остролистный у сторожки при входе в парк «Сильвия» ( Гатчина ,  Россия )",
+        "categories": "GFDL|Taken with Canon PowerShot S2 IS|Sylvia park (Gatchina)|License migration redundant|September 2008 in Russia|Self-published work|2008 in Gatchina|All photos, created by Art-top|Autumn in Gatchina|September 2008 in Leningrad Oblast|Acer platanoides in autumn 2008|Photos, created by Art-top in Gatchina|Photos, created by Art-top in 2008|Photos of plants, created by Art-top|Acer platanoides in the Northern Hemisphere in September 2008",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-18397152.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-18397152.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 39,
+      "id": "commons-122901019",
+      "title": "Гортензии у Юрьева монастыря",
+      "location": "Великий Новгород",
+      "theme": "Цветущие сады",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2022-08-05 17:55:16",
+      "author": "NaNiSol",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE-%D0%AE%D1%80%D1%8C%D0%B5%D0%B2%D0%B0_%D0%BC%D0%BE%D0%BD%D0%B0%D1%81%D1%82%D1%8B%D1%80%D1%8F_2022.jpg",
+      "commons_file": "File:Георгиевский собор Свято-Юрьева монастыря 2022.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE-%D0%AE%D1%80%D1%8C%D0%B5%D0%B2%D0%B0_%D0%BC%D0%BE%D0%BD%D0%B0%D1%81%D1%82%D1%8B%D1%80%D1%8F_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        6000,
+        8000
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 11386765,
+      "original_sha256": "b72c726f73ca740236c4cbe47c456979a5f78ae84895ab902d7ef0deb37631e0",
+      "output_sha256": "6ad4dbdb2a5bfb0dfe94f371f17bf0cc3ed2bb61bc6ff24a4942be1e26d5403d",
+      "date_original": "2022-08-05 17:55:16",
+      "geographic_evidence": {
+        "description": "Георгиевский собор: Юрьевское шоссе, 10, стр. 1, Великий Новгород, Новгородская область",
+        "categories": "Saint George's Church (Veliky Novgorod)|Self-published work|Cultural heritage monuments in Russia with known IDs|Hydrangea in Russia|Uploaded via Campaign:wlm-ru|Nature of Velikiy Novgorod|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Cultural heritage monuments in Russia missing SDC location of creation|Cultural heritage monuments in Russia missing SDC depicts|Images from Wiki Loves Monuments 2022|Images from Wiki Loves Monuments 2022 in Russia|Taken with Realme C25s|Russian heritage ID 5310045020",
+        "latitude": "58.487679",
+        "longitude": "31.284542"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-122901019.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-122901019.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 40,
+      "id": "commons-200026680",
+      "title": "Розовая гортензия в Петергофе",
+      "location": "Петергоф, Санкт-Петербург",
+      "theme": "Цветущие сады",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2026-08-13 17:05:03",
+      "author": "Екатерина Борисова",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B3%D0%BE%D1%84,_%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA,_%D0%9E%D1%80%D0%B0%D0%BD%D0%B6%D0%B5%D1%80%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9_%D1%81%D0%B0%D0%B4,_%D0%B3%D0%BE%D1%80%D1%82%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_06.jpg",
+      "commons_file": "File:Петергоф, Нижний парк, Оранжерейный сад, гортензия 06.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B3%D0%BE%D1%84%2C_%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA%2C_%D0%9E%D1%80%D0%B0%D0%BD%D0%B6%D0%B5%D1%80%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9_%D1%81%D0%B0%D0%B4%2C_%D0%B3%D0%BE%D1%80%D1%82%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3334,
+        4461
+      ],
+      "output_dimensions": [
+        1495,
+        2000
+      ],
+      "original_bytes": 6699636,
+      "original_sha256": "0c60093e6899274546e714a829aa52f8fd7cf67510bf1186efa92dbec51b428b",
+      "output_sha256": "af9fbf44e28754471a366118c0857ea401a049001d8d10b2e5551e6d326edade",
+      "date_original": "2026-08-13 17:05:03",
+      "geographic_evidence": {
+        "description": "Hydrangea in Orangery Garden of Lower Park, Peterhof, Saint Petersburg, Russia",
+        "categories": "Hydrangea (cultivars)|Self-published work|Cultural heritage monuments in Russia with known IDs|Uploaded via Campaign:wlm-ru|Images from Wiki Loves Monuments missing SDC participant in|Images from Wiki Loves Monuments missing SDC creator|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Images from Wiki Loves Monuments missing SDC source of file|Cultural heritage monuments in Russia missing SDC location of creation|Cultural heritage monuments in Russia missing SDC depicts|Images from Wiki Loves Monuments 2026|Orangery Garden of Lower Park, Peterhof|Russian heritage ID 7810406080|Flowers in Lower Park of Peterhof|Images from Wiki Loves Monuments 2026 in Russia",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-200026680.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-200026680.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 41,
+      "id": "commons-174476425",
+      "title": "Цветущий сад в Старой Руссе",
+      "location": "Старая Русса, Новгородская область",
+      "theme": "Цветущие сады",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2025-08-15 13:24:55",
+      "author": "Екатерина Борисова",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B0%D1%80%D0%B0%D1%8F_%D0%A0%D1%83%D1%81%D1%81%D0%B0._%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B9_%D1%86%D0%B5%D1%80%D0%BA%D0%B2%D0%B8,_%D0%B3%D0%BE%D1%80%D1%82%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_%D0%B2_%D1%86%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_07.jpg",
+      "commons_file": "File:Старая Русса. Комплекс Георгиевской церкви, гортензия в церковном саду 07.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/%D0%A1%D1%82%D0%B0%D1%80%D0%B0%D1%8F_%D0%A0%D1%83%D1%81%D1%81%D0%B0._%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B9_%D1%86%D0%B5%D1%80%D0%BA%D0%B2%D0%B8%2C_%D0%B3%D0%BE%D1%80%D1%82%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_%D0%B2_%D1%86%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3672,
+        4896
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 9070080,
+      "original_sha256": "04998bf4c93c5d14a3bbfa6790238f0dc17e8358a8c33551df0e164999546e7e",
+      "output_sha256": "5f233e21765a0f7b9812bb6145aab0a3ab9a0959368d58f0f542f80a905d7d5d",
+      "date_original": "2025-08-15 13:24:55",
+      "geographic_evidence": {
+        "description": "Храмовый комплекс: Георгиевская улица, 26, Старая Русса, Новгородская область",
+        "categories": "Saint George church, Staraya Russa|Hydrangea paniculata (cultivars)|Self-published work|Cultural heritage monuments in Russia with known IDs|Hydrangea in Russia|Uploaded via Campaign:wlm-ru|Flowers in Novgorod Oblast|Images from Wiki Loves Monuments missing SDC location of creation|Cultural heritage monuments in Russia missing SDC location of creation|Photos by Yekaterina Borisova|Images from Wiki Loves Monuments 2025|Images from Wiki Loves Monuments 2025 in Russia|Nature of Staraya Russa|Russian heritage ID 5310136000",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-174476425.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-174476425.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 42,
+      "id": "commons-64972802",
+      "title": "Осень у горного домика",
+      "location": "Домбай, Карачаево-Черкесия",
+      "theme": "Горы и долины",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2007-10-10",
+      "author": "Riadchikova",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dombay1.jpg",
+      "commons_file": "File:Dombay1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Dombay1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2112,
+        2816
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 3126932,
+      "original_sha256": "2a6d46d2727c803da1c59c47821a9c8541edf3ffa4f731a34e62e86e0b65a183",
+      "output_sha256": "ddc3c43516b89151cb94c78bd89d2d3de3b37d001827e02c69f57779c14d98d5",
+      "date_original": "2007-10-10",
+      "geographic_evidence": {
+        "description": "Dombay, Karachay-Cherkess Republic, Russia, hotel Flying Saucer",
+        "categories": "Futuro|Dombai|Self-published work",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-64972802.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-64972802.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 43,
+      "id": "commons-91038501",
+      "title": "Домбай в снежной долине",
+      "location": "Карачаево-Черкесия",
+      "theme": "Зимние пейзажи",
+      "season": "winter",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 6 January 2020",
+      "author": "Максим Трифонов",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dombay_Mountain_9.jpg",
+      "commons_file": "File:Dombay Mountain 9.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Dombay_Mountain_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2884,
+        3845
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 7003633,
+      "original_sha256": "0883f27a49fdf8d881d678970a0fbb905b6b4bc67c542e6766fb5ca2389de3f8",
+      "output_sha256": "991936ef4570981f60d5fd3b3124f0968e397aa351e990936fdfa38010a6f5f9",
+      "date_original": "Taken on 6 January 2020",
+      "geographic_evidence": {
+        "description": "Курорт Домбай:  Домбай, Карачаевский район, Карачаево-Черкесия",
+        "categories": "Dombai|Self-published work|Uploaded via Campaign:wle-ru|Russia photographs taken on 2020-01-06|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Russia|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0930095",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-91038501.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-91038501.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 44,
+      "id": "commons-69135386",
+      "title": "Бирюзовая река среди скал",
+      "location": "Домбай, Карачаево-Черкесия",
+      "theme": "Водопады и ручьи",
+      "season": "spring",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2013-05-12 13:50:24",
+      "author": "Radzhela",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BA%D0%B8_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%84%D0%B0%D0%BD%D1%82%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%8B.jpg",
+      "commons_file": "File:Горные реки очень фантастичны.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/%D0%93%D0%BE%D1%80%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BA%D0%B8_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%84%D0%B0%D0%BD%D1%82%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%8B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3240,
+        4320
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 3189712,
+      "original_sha256": "5d60f82a9b4883ec9724f124d3ebffc9132f8568936ebe82dd7af89d28fb0c3d",
+      "output_sha256": "e9564d7fc507420bdff984211964467c13e2faf3e73afeebedde413d47d8cc2b",
+      "date_original": "2013-05-12 13:50:24",
+      "geographic_evidence": {
+        "description": "Шикарная природа Северного Кавказа",
+        "categories": "Rivers of Karachay-Cherkessia|Dombai|Self-published work|May 2013 in Karachay-Cherkessia|Russia photographs taken on 2013-05-12",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-69135386.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-69135386.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 45,
+      "id": "commons-95356417",
+      "title": "Золотые склоны и снежные вершины",
+      "location": "Домбай, Карачаево-Черкесия",
+      "theme": "Осенние краски",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2018-11-02 15:39:21",
+      "author": "Елена Кривушина",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D0%B0%D1%87%D0%B0%D0%B5%D0%B2%D0%BE-%D0%A7%D0%B5%D1%80%D0%BA%D0%B5%D1%81%D1%81%D0%B8%D1%8F._%D0%94%D0%BE%D0%BC%D0%B1%D0%B0%D0%B9._%D0%9E%D1%81%D0%B5%D0%BD%D1%8C.jpg",
+      "commons_file": "File:Карачаево-Черкессия. Домбай. Осень.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/%D0%9A%D0%B0%D1%80%D0%B0%D1%87%D0%B0%D0%B5%D0%B2%D0%BE-%D0%A7%D0%B5%D1%80%D0%BA%D0%B5%D1%81%D1%81%D0%B8%D1%8F._%D0%94%D0%BE%D0%BC%D0%B1%D0%B0%D0%B9._%D0%9E%D1%81%D0%B5%D0%BD%D1%8C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3120,
+        4160
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 6236850,
+      "original_sha256": "9a6dc493cae131d61346513675ffaaa6ecfee93020780fa8ed64f13fe5db9996",
+      "output_sha256": "8524d021a339da3b780288a8268824d0945cbf137416690c968076fbfffe0f44",
+      "date_original": "2018-11-02 15:39:21",
+      "geographic_evidence": {
+        "description": "Домбай, Карачаевский район, Карачаево-Черкесия",
+        "categories": "Dombai|Self-published work|Uploaded via Campaign:wlm-ru|Files with coordinates missing SDC location of creation",
+        "latitude": "43.291355",
+        "longitude": "41.641981"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-95356417.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-95356417.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 46,
+      "id": "commons-118628097",
+      "title": "Заснеженные вершины над домиками",
+      "location": "Домбай, Карачаево-Черкесия",
+      "theme": "Зимние пейзажи",
+      "season": "winter",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2020-02-15 11:10:04",
+      "author": "Александра Зайцева",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%83%D1%80%D0%BE%D1%80%D1%82_%D0%94%D0%BE%D0%BC%D0%B1%D0%B0%D0%B9_3.jpg",
+      "commons_file": "File:Курорт Домбай 3.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/%D0%9A%D1%83%D1%80%D0%BE%D1%80%D1%82_%D0%94%D0%BE%D0%BC%D0%B1%D0%B0%D0%B9_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3000,
+        4000
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 7236218,
+      "original_sha256": "423fbc4f81e854948c7126b5704cbc4da851014fbf73c908a02167c7b86a3026",
+      "output_sha256": "6a53a822f393d14581a547db19f96987bf507c75615cd22c981dd5a6daa312b9",
+      "date_original": "2020-02-15 11:10:04",
+      "geographic_evidence": {
+        "description": "Курорт Домбай: Домбай, Карачаевский район, Карачаево-Черкесия",
+        "categories": "Dombai|Self-published work|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2022|Images from Wiki Loves Earth 2022 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Images from Wiki Loves Earth missing SDC creator|Images from Wiki Loves Earth missing SDC inception|Protected areas of Russia/0930095",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-118628097.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-118628097.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 47,
+      "id": "commons-107009929",
+      "title": "Долина Домбай-Ульген",
+      "location": "Карачаево-Черкесия",
+      "theme": "Горы и долины",
+      "season": "autumn",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 12 September 2018, 12:47:42",
+      "author": "Александр Байдуков",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Perspective_of_the_Dombay-Ulgen_gorge_in_the_south-eastern_direction.jpg",
+      "commons_file": "File:Perspective of the Dombay-Ulgen gorge in the south-eastern direction.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Perspective_of_the_Dombay-Ulgen_gorge_in_the_south-eastern_direction.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        4016,
+        6016
+      ],
+      "output_dimensions": [
+        1335,
+        2000
+      ],
+      "original_bytes": 15951357,
+      "original_sha256": "c01660e00d8599c654a5ac3d195c00322a54d46c39a72e956935f0d943dcbb61",
+      "output_sha256": "eb40b1d2b877ced0224295897f58d5f0a41bfe5b701f6bc09a23f7a67c7c8f9e",
+      "date_original": "Taken on 12 September 2018, 12:47:42",
+      "geographic_evidence": {
+        "description": "Teberdinsky Reserve: within the Main Caucasian Ridge, in the Zelenchuk and Karachay districts, Zelenchuk and Karachay districts, Karachay-Cherkessia",
+        "categories": "Dombai-Ulgen|Canyons|Teberda Nature Reserve|Self-published work|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Russia photographs taken on 2018-09-12|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Images from Wiki Loves Earth missing SDC creator|Protected areas of Russia/0900019",
+        "latitude": "43.278917",
+        "longitude": "41.653278"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-107009929.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-107009929.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 48,
+      "id": "commons-79579114",
+      "title": "Мультинские озёра: каскад Шумы",
+      "location": "Республика Алтай",
+      "theme": "Водопады и ручьи",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 18 July 2016, 19:16:47",
+      "author": "Jack Stalwart NN",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE,_%D0%92%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4_%D0%A8%D1%83%D0%BC%D1%8B.jpg",
+      "commons_file": "File:Нижнее Мультинское озеро, Водопад Шумы.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%2C_%D0%92%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4_%D0%A8%D1%83%D0%BC%D1%8B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2640,
+        3960
+      ],
+      "output_dimensions": [
+        1333,
+        2000
+      ],
+      "original_bytes": 4837639,
+      "original_sha256": "84f8dff9f27a21bed77ef8d8bb5d077535e1104206a9cbc81b058ec22af25e28",
+      "output_sha256": "0dedf9a37a2fb606631f2316531ea8877688ca463c3648a793005fef4d3d5018",
+      "date_original": "Taken on 18 July 2016, 19:16:47",
+      "geographic_evidence": {
+        "description": "Мультинские озера: Северо-западный фланг Катунского хребта, в 7-10 км к северо-западу от высоты 3145., Мульта, Усть-Коксинский район, Алтай",
+        "categories": "Multinskie lakes|Self-published work|Russia photographs taken on 2016-07-18|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth 2019 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410044",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-79579114.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-79579114.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 49,
+      "id": "commons-106281550",
+      "title": "Цветы у Каракольских озёр",
+      "location": "Республика Алтай",
+      "theme": "Цветущие сады",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: Taken on 7 July 2010, 11:00:16",
+      "author": "Viktoria Dragunova",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%80%D0%B0%D0%B9,_%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0,_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B0%D0%BB_%D0%91%D0%B0%D0%B3%D0%B0%D1%82%D0%B0%D1%88.jpg",
+      "commons_file": "File:Алтайский край, Каракольские озера, перевал Багаташ.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/%D0%90%D0%BB%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D1%80%D0%B0%D0%B9%2C_%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0%2C_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B0%D0%BB_%D0%91%D0%B0%D0%B3%D0%B0%D1%82%D0%B0%D1%88.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1704,
+        2272
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 678551,
+      "original_sha256": "e6fd1af0db459c634ba3a10b8142552e3cdb674b67f2c9e8a3ee96f08b70ca80",
+      "output_sha256": "38ad832a3cac992708223f6b3e577f2d0edccc0372e6e5d0d1d00c7024c18473",
+      "date_original": "Taken on 7 July 2010, 11:00:16",
+      "geographic_evidence": {
+        "description": "Каракольские озера: Западный склон хр. Иолго, в 1 км к северо-западу от г. Аккая (высота 2385)., Чемал, Чемальский район, Алтай",
+        "categories": "Chemalsky District|Karakolskie Lakes|Self-published work|Uploaded via Campaign:wle-ru|Files with coordinates missing SDC location of creation|Russia photographs taken on 2010-07-07|Images from Wiki Loves Earth 2021|Images from Wiki Loves Earth 2021 in Russia|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410046",
+        "latitude": "51.471850",
+        "longitude": "86.381989"
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-106281550.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-106281550.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    },
+    {
+      "number": 50,
+      "id": "commons-79660789",
+      "title": "Горное озеро среди хвойного леса",
+      "location": "Республика Алтай",
+      "theme": "Озёра и отражения",
+      "season": "summer",
+      "season_evidence": "Месяц даты съёмки из метаданных источника: 2018-07-05",
+      "author": "Dasha Murashova",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0._%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_1.jpg",
+      "commons_file": "File:Каракольские озера. озеро 1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%B0._%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        3024,
+        4032
+      ],
+      "output_dimensions": [
+        1500,
+        2000
+      ],
+      "original_bytes": 5348731,
+      "original_sha256": "2741674e4cb8a95f390218c177c04efacaeadfb12e5cc15b14950e89ae5ddcf9",
+      "output_sha256": "ac4c2d6136b021c9e18faaa7a6f2e44d4f1c6b7758a78efe1bcab4be0997357b",
+      "date_original": "2018-07-05",
+      "geographic_evidence": {
+        "description": "Каракольские озера: Западный склон хр. Иолго, в 1 км к северо-западу от г. Аккая (высота 2385)., Чемал, Чемальский район, Алтай",
+        "categories": "Karakolskie Lakes|Self-published work|Uploaded via Campaign:wle-ru|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth 2019 in Russia|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Protected areas of Russia with known IDs|Protected areas of Russia/0410046",
+        "latitude": "",
+        "longitude": ""
+      },
+      "image": "../../../app/src/main/assets/puzzles/landscape-79660789.webp",
+      "thumbnail": "../../../app/src/main/assets/thumbs/landscape-79660789.webp",
+      "changes": "EXIF orientation applied; proportional downscale to at most 2000 px; WebP quality 90; no cropping, stretching or enlargement. Thumbnail: at most 300 px, WebP quality 85."
+    }
+  ]
+}

@@ -19,10 +19,10 @@ class ShippedCatalogTest {
     }
 
     @Test
-    fun shippedCatalogHasEightyTwoEntries() {
+    fun shippedCatalogHasOneHundredThirtyTwoEntries() {
         val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
-        assertEquals(82, catalog.puzzles.size)
-        assertEquals(82, catalog.puzzles.map { it.id }.toSet().size)
+        assertEquals(132, catalog.puzzles.size)
+        assertEquals(132, catalog.puzzles.map { it.id }.toSet().size)
         assertEquals(Category.entries.toSet(), catalog.puzzles.map { it.category }.toSet())
         assertTrue(catalog.puzzles.map { it.season }.containsAll(Season.entries - Season.ANY))
         val oldIds = setOf(
@@ -64,6 +64,19 @@ class ShippedCatalogTest {
             assertTrue("Missing title for ${puzzle.id}", puzzle.titleRu.isNotBlank())
             assertTrue("Missing attribution for ${puzzle.id}", puzzle.attribution.isNotBlank())
             assertTrue("License is not freely reusable for ${puzzle.id}", isAllowedShippedLicense(puzzle.license))
+        }
+    }
+
+    @Test
+    fun landscapeAdditionHasFiftyPhotosWithIndependentIdsAndEverySeason() {
+        val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
+        val landscapes = catalog.puzzles.filter { it.id.startsWith("landscape-") }
+        assertEquals(50, landscapes.size)
+        assertTrue(landscapes.map { it.season }.containsAll(Season.entries - Season.ANY))
+        assertEquals(2, landscapes.count { it.season == Season.ANY })
+        landscapes.forEach { puzzle ->
+            assertTrue(puzzle.titleRu.isNotBlank())
+            assertTrue(puzzle.attribution.isNotBlank())
         }
     }
 
