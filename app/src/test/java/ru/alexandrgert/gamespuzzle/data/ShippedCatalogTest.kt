@@ -72,6 +72,8 @@ class ShippedCatalogTest {
         val catalog = CatalogJson.parse(File(assets, "catalog.json").readText())
         val landscapes = catalog.puzzles.filter { it.id.startsWith("landscape-") }
         assertEquals(50, landscapes.size)
+        assertEquals(landscapes, catalog.puzzles.take(50))
+        assertTrue(catalog.puzzles.drop(50).none { it.id.startsWith("landscape-") })
         assertTrue(landscapes.map { it.season }.containsAll(Season.entries - Season.ANY))
         assertEquals(2, landscapes.count { it.season == Season.ANY })
         landscapes.forEach { puzzle ->
